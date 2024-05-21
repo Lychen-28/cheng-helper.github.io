@@ -50,13 +50,24 @@
 <body>
   <div id="app">
     
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
       
     <main class="content on">
       
 <section class="cover">
     
       
-      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+      <a class="forkMe" href="https://git.weixin.qq.com/lycistc/cheng.git"
         target="_blank"><img width="149" height="149" src="/images/forkme.png"
           class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
     
@@ -91,7 +102,7 @@
   <script>
     try {
       var typed = new Typed("#subtitle", {
-        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+        strings: ['感谢使用小乘', '如果有任何问题,欢迎联系604058', '祝各位使用愉快'],
         startDelay: 0,
         typeSpeed: 200,
         loop: true,
@@ -106,64 +117,6 @@
 <div id="main">
   <section class="outer">
   
-  <ul class="ads">
-    
-        <li>
-            <a target="_blank" rel="noopener" href="https://curl.qcloud.com/kvO7hb43">
-                <img src="https://pic.imgdb.cn/item/62174b452ab3f51d912a5ccc.jpg" width="300" alt="云服务器限时秒杀">
-            </a>
-        </li>
-    
-        <li>
-            <a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=8630075">
-                <img src="https://pic.imgdb.cn/item/62174b452ab3f51d912a5cd7.png" width="300" alt="vultr优惠vps">
-            </a>
-        </li>
-    
-</ul>
-  
-  
-  
-
-<div class="notice" style="margin-top:50px">
-    <i class="ri-heart-fill"></i>
-    <div class="notice-content" id="broad"></div>
-</div>
-<script type="text/javascript">
-    fetch('https://v1.hitokoto.cn')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("broad").innerHTML = data.hitokoto;
-        })
-        .catch(console.error)
-</script>
-
-<style>
-    .notice {
-        padding: 20px;
-        border: 1px dashed #e6e6e6;
-        color: #969696;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        background: #fbfbfb50;
-        border-radius: 10px;
-    }
-
-    .notice i {
-        float: left;
-        color: #999;
-        font-size: 16px;
-        padding-right: 10px;
-        vertical-align: middle;
-        margin-top: -2px;
-    }
-
-    .notice-content {
-        display: initial;
-        vertical-align: middle;
-    }
-</style>
   
   <article class="articles">
     
@@ -171,7 +124,7 @@
     
     
     <article
-  id="post-hello-world"
+  id="post-司机更改个人信息"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -182,8 +135,8 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/hello-world/"
-    >Hello World</a> 
+  <a class="article-title" href="/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/"
+    >司机用户积分操作</a> 
 </h2>
  
 
@@ -191,30 +144,31 @@
     </header>
      
     <div class="article-meta">
-      <a href="/hello-world/" class="article-date">
-  <time datetime="2021-02-03T08:47:12.000Z" itemprop="datePublished">2021-02-03</time>
+      <a href="/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/" class="article-date">
+  <time datetime="2024-05-21T01:25:30.000Z" itemprop="datePublished">2024-05-21</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/test-dad/">test-dad</a> / <a class="article-category-link" href="/categories/test-dad/test-son/">test-son</a>
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">使用说明</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E5%8F%B8%E6%9C%BA%E5%8A%9F%E8%83%BD/">司机功能</a>
   </div>
    
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+  <blockquote>
+<p>个人信息会影响部分积分条目</p>
+<blockquote>
+<p>更改后会自动生成对应的分数</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p>
+<ol>
+<li>点击<strong>积分更改</strong>查看现有个人信息</li>
+<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
+<li>点击<strong>确定</strong>向队长发出申请</li>
+<li>队长同意则更改成功</li>
+</ol>
  
       <!-- reward -->
       
@@ -225,7 +179,639 @@
     
     <footer class="article-footer">
        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test-t/" rel="tag">test-t</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/" rel="tag">积分功能</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-司机用户积分操作"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/%E5%8F%B8%E6%9C%BA%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E6%93%8D%E4%BD%9C/"
+    >司机用户积分操作</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E5%8F%B8%E6%9C%BA%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2024-05-21T01:23:30.000Z" itemprop="datePublished">2024-05-21</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">使用说明</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E5%8F%B8%E6%9C%BA%E5%8A%9F%E8%83%BD/">司机功能</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>每类用户有不同的可申请积分项,其他用户可参考本文</p>
+</blockquote>
+<hr>
+<h2 id="发起积分流程"><a href="#发起积分流程" class="headerlink" title="发起积分流程"></a>发起积分流程</h2><h3 id="相关设定"><a href="#相关设定" class="headerlink" title="相关设定"></a>相关设定</h3><ul>
+<li>可以随时记录自己满足的加分项</li>
+<li>仅可选择非红字标识积分条目</li>
+<li>可以记录<strong>最早到上个月1号</strong>的加分项</li>
+<li>每个月<strong>只能</strong>在25号之后提交</li>
+</ul>
+<h3 id="发起步奏"><a href="#发起步奏" class="headerlink" title="发起步奏"></a>发起步奏</h3><p><img src="/../images/sjSend.gif"></p>
+<ol>
+<li>新建并选择可以选的加分项</li>
+<li>选择上个月和本月日期</li>
+<li>如果可以选择倍数,请设置,不设置则为默认值</li>
+<li>添加备注</li>
+<li>新建完成</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/" rel="tag">积分功能</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-排班相关"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/%E6%8E%92%E7%8F%AD%E7%9B%B8%E5%85%B3/"
+    >排班相关</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E6%8E%92%E7%8F%AD%E7%9B%B8%E5%85%B3/" class="article-date">
+  <time datetime="2024-05-21T01:22:30.000Z" itemprop="datePublished">2024-05-21</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">使用说明</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/">通用功能</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>自动生成用户排班数据的相关功能</p>
+</blockquote>
+<hr>
+<h2 id="司机版"><a href="#司机版" class="headerlink" title="司机版"></a>司机版</h2><p><img src="/../images/sjPB.gif"></p>
+<ul>
+<li>可以查看到本月最后一天为止的所有车次与发车时间</li>
+<li>可以查指定班次的车次与发车时间</li>
+<li>提供本月全队公里数排行</li>
+</ul>
+<h2 id="队长版"><a href="#队长版" class="headerlink" title="队长版"></a>队长版</h2><p><img src="/../images/leaderPB.gif"></p>
+<ul>
+<li>可以查看当日全队班次信息与特殊交路信息</li>
+<li>可以根据车次查由谁驾驶</li>
+<li>可以发布全队人员可见通知</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E7%8F%AD%E5%8A%9F%E8%83%BD/" rel="tag">排班功能</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-数据导出文档"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%87%E6%A1%A3/"
+    >数据导出文档</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%87%E6%A1%A3/" class="article-date">
+  <time datetime="2024-05-20T12:23:30.000Z" itemprop="datePublished">2024-05-20</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">使用说明</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/">通用功能</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>不同用户可见数据不同</p>
+<blockquote>
+<p>司机以上可以导出数据,生成Excel</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="数据转文档网站"><a href="#数据转文档网站" class="headerlink" title="数据转文档网站"></a>数据转文档网站</h2><p><strong>请务必在浏览器收藏,方便使用</strong><br><a target="_blank" rel="noopener" href="https://www.lddgo.net/string/json-to-excel">在线JSON转Excel (lddgo.net)</a></p>
+<hr>
+<h2 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h2><blockquote>
+<p>以快捷排行数据为例<br><img src="/../images/outExcel.gif"></p>
+</blockquote>
+<p><strong>步奏:</strong></p>
+<ol>
+<li>开启表格</li>
+<li>长按表格提示是否复制表格数据</li>
+<li>确认后复制进上方给出网站</li>
+<li>点击下载</li>
+</ol>
+<p><strong>注意:</strong><br>各种表格导出方式略有不同,但复制数据与下载文档方式没区别</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/" rel="tag">积分功能</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-订阅消息通知"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/"
+    >订阅消息通知</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/" class="article-date">
+  <time datetime="2024-05-20T12:23:20.000Z" itemprop="datePublished">2024-05-20</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">使用说明</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/">通用功能</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
+</blockquote>
+<hr>
+<p><img src="/../images/mesSubscribe.gif"></p>
+<p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/" rel="tag">积分功能</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-登陆与密码"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/"
+    >登陆与密码</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/" class="article-date">
+  <time datetime="2024-05-20T12:22:20.000Z" itemprop="datePublished">2024-05-20</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">使用说明</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/">通用功能</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>仅能通过工号登陆</p>
+</blockquote>
+<hr>
+<h1 id="登陆与密码说明"><a href="#登陆与密码说明" class="headerlink" title="登陆与密码说明"></a>登陆与密码说明</h1><p>密码将<strong>绑定微信号与工号</strong><br>即<strong>只有在</strong>换了微信号使用该工号登陆时<strong>才需要</strong>输入密码</p>
+<hr>
+<h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="/../images/loginFail.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p>
+<hr>
+<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="/../images/loginSuc.gif"></p>
+<ul>
+<li>请牢记密码</li>
+<li>密码只有在更换微信登陆工号时需要使用</li>
+<li>绝大部分用户从未使用过密码登陆,导致遗忘的比比皆是</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/" rel="tag">积分功能</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-准备材料"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/"
+    >准备材料</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/" class="article-date">
+  <time datetime="2024-05-20T12:21:20.000Z" itemprop="datePublished">2024-05-20</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">使用说明</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/">通用功能</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>只有导入了用户数据才能登陆系统</p>
+<blockquote>
+<p>请联系开发者索取信息模板文档</p>
+</blockquote>
+</blockquote>
+<hr>
+<p><strong>注意:</strong></p>
+<p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/" rel="tag">积分功能</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-介绍与进入"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/"
+    >介绍与进入</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/" class="article-date">
+  <time datetime="2024-05-20T12:20:20.000Z" itemprop="datePublished">2024-05-20</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">使用说明</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/">通用功能</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>如果有表达不清楚的地方,欢迎联系工号604058</p>
+</blockquote>
+<hr>
+<h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p><strong>积分的组成</strong>由用户自身初始数据与后期积分操作相关</p>
+<p>本程序制作的初衷在于:</p>
+<ul>
+<li>让各级别用户都能参与</li>
+<li>通过各司其职避免某级别用户工作量过大</li>
+<li>避免遗漏加分带来的损失</li>
+<li>可视化展现积分变化,较少信息差</li>
+</ul>
+<hr>
+<h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="/../images/mini-QR.jpg" alt="二维码"></p>
+<p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="/../images/seach_name.gif" alt="搜索"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/" rel="tag">积分功能</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-V1.3.12"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/V1.3.12/"
+    >V1.3.12</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/V1.3.12/" class="article-date">
+  <time datetime="2024-05-20T12:20:12.000Z" itemprop="datePublished">2024-05-20</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/">更新日志</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>2024.5.20</p>
+</blockquote>
+<hr>
+<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
+<li>自动生成队长用户月度&#x2F;季度&#x2F;半年&#x2F;全年必发积分流程列表</li>
+<li>记录队长发送过的积分流程,标注未发送的</li>
+<li>主任用户可以选择驳回的积分条目,而不是驳回整个积分申请</li>
+<li>快速排行榜表格现在可以根据用户技能等级筛选表格项</li>
+</ol>
+<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
+<li>取消积分表格同名项合并</li>
+<li>积分流程详情不再同名项合并</li>
+<li>仅检测最近两个月发出的申请</li>
+<li>更改部分弹窗位置</li>
+<li>删除模板相关功能</li>
+</ol>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
+<li>队长发出积分申请工程师无法收到推送通知</li>
+<li>部分按钮无法使用</li>
+<li>表格数据条数显示错误</li>
+<li>部分情况流程处理完后红点不消失</li>
+<li>流程已被他人处理,依然弹出红点</li>
+<li>积分流程详情不显示赋分情况</li>
+<li>部分情况工程师收不到工程车积分申请</li>
+<li>部分情况驳回积分信息系统无法识别</li>
+</ol>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
+<li>压缩图片,减少加载时间</li>
+<li>重复代码抽象公共部分,形成公用函数</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/V1-3/" rel="tag">V1.3</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-V1.3.11"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/V1.3.11/"
+    >V1.3.11</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/V1.3.11/" class="article-date">
+  <time datetime="2024-05-14T08:31:24.000Z" itemprop="datePublished">2024-05-14</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/">更新日志</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>2024.5.14</p>
+</blockquote>
+<hr>
+<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
+<li>主页版本号显示</li>
+<li>车间主任现在可以选择某用户积分明细中的条目，进行删除，删除后将删除整个积分申请流程，并通知所有分数发生变动的人员</li>
+<li>考虑到使用不便,删除了查询已阅按钮,添加整月分数变化表格代替</li>
+<li>删除了查询已办按钮,添加了车队积分详情表代替</li>
+</ol>
+<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
+<li>工程师的待办列表将置顶自己负责车队的积分条目</li>
+<li>更换建议的表格生成网站 - <a target="_blank" rel="noopener" href="https://www.lddgo.net/string/json-to-excel">https://www.lddgo.net/string/json-to-excel</a></li>
+<li>移除司机每月提交申请次数与相同条目次数限制</li>
+<li>部分按钮增加了圆角和阴影</li>
+</ol>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
+<li>修复某些跳转太快的情况，数据加载不全的问题</li>
+<li>修复了班表更新失败的问题</li>
+<li>修复了部分情况通知接收不到问题</li>
+<li>修复了积分页面数据不同步问题</li>
+</ol>
+<h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><ol>
+<li>优化内存释放逻辑,避免系统卡顿</li>
+<li>删除已弃用代码，增加渲染速度</li>
+<li>压缩部分图片，增加渲染速度</li>
+<li>对于小数据，使用全局变量保存实现页面间数据共享，减少页面加载时间</li>
+<li>对于大数据，使用按需加载策略，减少页面加载时间</li>
+<li>尽量避免使用setdata方法,降低渲染负担</li>
+<li>计算时使用浅复制替代深复制,降低运算负担</li>
+<li>增加筛选条件减减轻络数据传输负担</li>
+<li>彻底解耦合审批页面与积分页面数据，提高系统灵活性</li>
+<li>重写积分申请的处理算法，计算量降低超过99%</li>
+<li>优化红点检测代码,从全量变为增量,处理速度理论上提高800%</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/V1-3/" rel="tag">V1.3</a></li></ul>
 
     </footer>
   </div>
@@ -247,7 +833,7 @@
     <ul>
       <li>
         Copyrights &copy;
-        2015-2024
+        2023-2024
         <i class="ri-heart-fill heart_icon"></i> Lychen
       </li>
     </ul>
@@ -258,13 +844,6 @@
     </ul>
     <ul>
       <li>
-        
-        
-        <span>
-  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
-  <span class="division">|</span>
-  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
-</span>
         
       </li>
     </ul>
@@ -277,8 +856,6 @@
     <ul>
       <li>
         <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
         
       </li>
     </ul>
@@ -310,10 +887,6 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
       <a class="nav-item-link" href="/categories">分类</a>
     </li>
     
@@ -322,19 +895,11 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+      <a class="nav-item-link" href="/archives">归档</a>
     </li>
     
     <li class="nav-item">
       <a class="nav-item-link" href="/friends">友链</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/2019/about">关于我</a>
     </li>
     
   </ul>
@@ -347,10 +912,6 @@
         <i class="ri-search-line"></i>
       </a>
       
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="ri-rss-line"></i>
-      </a>
       
     </li>
   </ul>
@@ -511,13 +1072,15 @@
 <!-- Katex -->
 
 <!-- busuanzi  -->
- 
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
- 
+
 <!-- ClickLove -->
 
 <!-- ClickBoom1 -->
 
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
 <!-- ClickBoom2 -->
 
 <!-- CodeCopy -->
