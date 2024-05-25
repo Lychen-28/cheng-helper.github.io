@@ -188,7 +188,7 @@
     <link href="http://example.com/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/"/>
     <id>http://example.com/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/</id>
     <published>2024-05-20T12:22:20.000Z</published>
-    <updated>2024-05-20T16:23:57.716Z</updated>
+    <updated>2024-05-25T03:41:30.369Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>仅能通过工号登陆</p></blockquote><hr><h1 id="登陆与密码说明"><a href="#登陆与密码说明" class="headerlink" title="登陆与密码说明"></a>登陆与密码说明</h1><p>密码将<strong>绑定微信号与工号</strong><br>即<strong>只有在</strong>换了微信号使用该工号登陆时<strong>才需要</strong>输入密码</p><hr><h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="/../images/loginFail.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p><hr><h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="/../images/loginSuc.gif"></p><ul><li>请牢记密码</li><li>密码只有在更换微信登陆工号时需要使用</li><li>绝大部分用户从未使用过密码登陆,导致遗忘的比比皆是</li></ul>]]></content>
     
@@ -211,7 +211,7 @@
     <category term="通用功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="积分功能" scheme="http://example.com/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
+    <category term="登陆相关" scheme="http://example.com/tags/%E7%99%BB%E9%99%86%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
@@ -220,7 +220,7 @@
     <link href="http://example.com/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/"/>
     <id>http://example.com/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</id>
     <published>2024-05-20T12:21:20.000Z</published>
-    <updated>2024-05-20T16:36:19.479Z</updated>
+    <updated>2024-05-25T03:41:31.619Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>只有导入了用户数据才能登陆系统</p><blockquote><p>请联系开发者索取信息模板文档</p></blockquote></blockquote><hr><p><strong>注意:</strong></p><p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>]]></content>
     
@@ -247,7 +247,7 @@
     <category term="通用功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="积分功能" scheme="http://example.com/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
+    <category term="登陆相关" scheme="http://example.com/tags/%E7%99%BB%E9%99%86%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
@@ -256,7 +256,7 @@
     <link href="http://example.com/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/"/>
     <id>http://example.com/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/</id>
     <published>2024-05-20T12:20:20.000Z</published>
-    <updated>2024-05-20T15:42:01.682Z</updated>
+    <updated>2024-05-25T03:41:32.849Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>如果有表达不清楚的地方,欢迎联系工号604058</p></blockquote><hr><h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p><strong>积分的组成</strong>由用户自身初始数据与后期积分操作相关</p><p>本程序制作的初衷在于:</p><ul><li>让各级别用户都能参与</li><li>通过各司其职避免某级别用户工作量过大</li><li>避免遗漏加分带来的损失</li><li>可视化展现积分变化,较少信息差</li></ul><hr><h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="/../images/mini-QR.jpg" alt="二维码"></p><p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="/../images/seach_name.gif" alt="搜索"></p>]]></content>
     
@@ -279,7 +279,7 @@
     <category term="通用功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="积分功能" scheme="http://example.com/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
+    <category term="登陆相关" scheme="http://example.com/tags/%E7%99%BB%E9%99%86%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
@@ -319,7 +319,7 @@
     <link href="http://example.com/V1.3.11/"/>
     <id>http://example.com/V1.3.11/</id>
     <published>2024-05-14T08:31:24.000Z</published>
-    <updated>2024-05-20T15:18:33.866Z</updated>
+    <updated>2024-05-25T03:41:56.593Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>2024.5.14</p></blockquote><hr><h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol><li>主页版本号显示</li><li>车间主任现在可以选择某用户积分明细中的条目，进行删除，删除后将删除整个积分申请流程，并通知所有分数发生变动的人员</li><li>考虑到使用不便,删除了查询已阅按钮,添加整月分数变化表格代替</li><li>删除了查询已办按钮,添加了车队积分详情表代替</li></ol><h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol><li>工程师的待办列表将置顶自己负责车队的积分条目</li><li>更换建议的表格生成网站 - <a href="https://www.lddgo.net/string/json-to-excel">https://www.lddgo.net/string/json-to-excel</a></li><li>移除司机每月提交申请次数与相同条目次数限制</li><li>部分按钮增加了圆角和阴影</li></ol><h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol><li>修复某些跳转太快的情况，数据加载不全的问题</li><li>修复了班表更新失败的问题</li><li>修复了部分情况通知接收不到问题</li><li>修复了积分页面数据不同步问题</li></ol><h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><ol><li>优化内存释放逻辑,避免系统卡顿</li><li>删除已弃用代码，增加渲染速度</li><li>压缩部分图片，增加渲染速度</li><li>对于小数据，使用全局变量保存实现页面间数据共享，减少页面加载时间</li><li>对于大数据，使用按需加载策略，减少页面加载时间</li><li>尽量避免使用setdata方法,降低渲染负担</li><li>计算时使用浅复制替代深复制,降低运算负担</li><li>增加筛选条件减减轻络数据传输负担</li><li>彻底解耦合审批页面与积分页面数据，提高系统灵活性</li><li>重写积分申请的处理算法，计算量降低超过99%</li><li>优化红点检测代码,从全量变为增量,处理速度理论上提高800%</li></ol>]]></content>
     

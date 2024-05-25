@@ -48,6 +48,28 @@
       </tags>
   </entry>
   <entry>
+    <title>准备材料</title>
+    <url>/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</url>
+    <content><![CDATA[<blockquote>
+<p>只有导入了用户数据才能登陆系统</p>
+<blockquote>
+<p>请联系开发者索取信息模板文档</p>
+</blockquote>
+</blockquote>
+<hr>
+<p><strong>注意:</strong></p>
+<p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>登陆相关</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>V1.3.12</title>
     <url>/V1.3.12/</url>
     <content><![CDATA[<blockquote>
@@ -91,22 +113,27 @@
       </tags>
   </entry>
   <entry>
-    <title>准备材料</title>
-    <url>/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</url>
+    <title>司机用户积分操作</title>
+    <url>/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</url>
     <content><![CDATA[<blockquote>
-<p>只有导入了用户数据才能登陆系统</p>
+<p>个人信息会影响部分积分条目</p>
 <blockquote>
-<p>请联系开发者索取信息模板文档</p>
+<p>更改后会自动生成对应的分数</p>
 </blockquote>
 </blockquote>
 <hr>
-<p><strong>注意:</strong></p>
-<p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>
+<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p>
+<ol>
+<li>点击<strong>积分更改</strong>查看现有个人信息</li>
+<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
+<li>点击<strong>确定</strong>向队长发出申请</li>
+<li>队长同意则更改成功</li>
+</ol>
 ]]></content>
       <categories>
         <category>小乘排班</category>
         <category>使用说明</category>
-        <category>通用功能</category>
+        <category>司机功能</category>
       </categories>
       <tags>
         <tag>积分功能</tag>
@@ -137,7 +164,7 @@
         <category>通用功能</category>
       </categories>
       <tags>
-        <tag>积分功能</tag>
+        <tag>登陆相关</tag>
       </tags>
   </entry>
   <entry>
@@ -166,6 +193,52 @@
         <category>小乘排班</category>
         <category>使用说明</category>
         <category>司机功能</category>
+      </categories>
+      <tags>
+        <tag>积分功能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>登陆与密码</title>
+    <url>/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/</url>
+    <content><![CDATA[<blockquote>
+<p>仅能通过工号登陆</p>
+</blockquote>
+<hr>
+<h1 id="登陆与密码说明"><a href="#登陆与密码说明" class="headerlink" title="登陆与密码说明"></a>登陆与密码说明</h1><p>密码将<strong>绑定微信号与工号</strong><br>即<strong>只有在</strong>换了微信号使用该工号登陆时<strong>才需要</strong>输入密码</p>
+<hr>
+<h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="/../images/loginFail.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p>
+<hr>
+<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="/../images/loginSuc.gif"></p>
+<ul>
+<li>请牢记密码</li>
+<li>密码只有在更换微信登陆工号时需要使用</li>
+<li>绝大部分用户从未使用过密码登陆,导致遗忘的比比皆是</li>
+</ul>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>登陆相关</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>订阅消息通知</title>
+    <url>/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</url>
+    <content><![CDATA[<blockquote>
+<p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
+</blockquote>
+<hr>
+<p><img src="/../images/mesSubscribe.gif"></p>
+<p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
       </categories>
       <tags>
         <tag>积分功能</tag>
@@ -205,33 +278,6 @@
       </tags>
   </entry>
   <entry>
-    <title>登陆与密码</title>
-    <url>/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/</url>
-    <content><![CDATA[<blockquote>
-<p>仅能通过工号登陆</p>
-</blockquote>
-<hr>
-<h1 id="登陆与密码说明"><a href="#登陆与密码说明" class="headerlink" title="登陆与密码说明"></a>登陆与密码说明</h1><p>密码将<strong>绑定微信号与工号</strong><br>即<strong>只有在</strong>换了微信号使用该工号登陆时<strong>才需要</strong>输入密码</p>
-<hr>
-<h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="/../images/loginFail.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p>
-<hr>
-<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="/../images/loginSuc.gif"></p>
-<ul>
-<li>请牢记密码</li>
-<li>密码只有在更换微信登陆工号时需要使用</li>
-<li>绝大部分用户从未使用过密码登陆,导致遗忘的比比皆是</li>
-</ul>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>排班相关</title>
     <url>/%E6%8E%92%E7%8F%AD%E7%9B%B8%E5%85%B3/</url>
     <content><![CDATA[<blockquote>
@@ -258,52 +304,6 @@
       </categories>
       <tags>
         <tag>排班功能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>订阅消息通知</title>
-    <url>/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</url>
-    <content><![CDATA[<blockquote>
-<p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
-</blockquote>
-<hr>
-<p><img src="/../images/mesSubscribe.gif"></p>
-<p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>司机用户积分操作</title>
-    <url>/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</url>
-    <content><![CDATA[<blockquote>
-<p>个人信息会影响部分积分条目</p>
-<blockquote>
-<p>更改后会自动生成对应的分数</p>
-</blockquote>
-</blockquote>
-<hr>
-<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p>
-<ol>
-<li>点击<strong>积分更改</strong>查看现有个人信息</li>
-<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
-<li>点击<strong>确定</strong>向队长发出申请</li>
-<li>队长同意则更改成功</li>
-</ol>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>司机功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
       </tags>
   </entry>
 </search>
