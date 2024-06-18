@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>V1.3.12</title>
+    <url>/V1.3.12/</url>
+    <content><![CDATA[<blockquote>
+<p>2024.5.20</p>
+</blockquote>
+<hr>
+<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
+<li>自动生成队长用户月度&#x2F;季度&#x2F;半年&#x2F;全年必发积分流程列表</li>
+<li>记录队长发送过的积分流程,标注未发送的</li>
+<li>主任用户可以选择驳回的积分条目,而不是驳回整个积分申请</li>
+<li>快速排行榜表格现在可以根据用户技能等级筛选表格项</li>
+</ol>
+<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
+<li>取消积分表格同名项合并</li>
+<li>积分流程详情不再同名项合并</li>
+<li>仅检测最近两个月发出的申请</li>
+<li>更改部分弹窗位置</li>
+<li>删除模板相关功能</li>
+</ol>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
+<li>队长发出积分申请工程师无法收到推送通知</li>
+<li>部分按钮无法使用</li>
+<li>表格数据条数显示错误</li>
+<li>部分情况流程处理完后红点不消失</li>
+<li>流程已被他人处理,依然弹出红点</li>
+<li>积分流程详情不显示赋分情况</li>
+<li>部分情况工程师收不到工程车积分申请</li>
+<li>部分情况驳回积分信息系统无法识别</li>
+</ol>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
+<li>压缩图片,减少加载时间</li>
+<li>重复代码抽象公共部分,形成公用函数</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>更新日志</category>
+      </categories>
+      <tags>
+        <tag>V1.3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>V1.3.11</title>
     <url>/V1.3.11/</url>
     <content><![CDATA[<blockquote>
@@ -48,60 +91,36 @@
       </tags>
   </entry>
   <entry>
-    <title>准备材料</title>
-    <url>/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</url>
+    <title>V1.3.13</title>
+    <url>/V1.3.13/</url>
     <content><![CDATA[<blockquote>
-<p>只有导入了用户数据才能登陆系统</p>
-<blockquote>
-<p>请联系开发者索取信息模板文档</p>
-</blockquote>
-</blockquote>
-<hr>
-<p><strong>注意:</strong></p>
-<p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>登陆相关</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>V1.3.12</title>
-    <url>/V1.3.12/</url>
-    <content><![CDATA[<blockquote>
-<p>2024.5.20</p>
+<p>2024.6.4</p>
 </blockquote>
 <hr>
 <h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>自动生成队长用户月度&#x2F;季度&#x2F;半年&#x2F;全年必发积分流程列表</li>
-<li>记录队长发送过的积分流程,标注未发送的</li>
-<li>主任用户可以选择驳回的积分条目,而不是驳回整个积分申请</li>
-<li>快速排行榜表格现在可以根据用户技能等级筛选表格项</li>
+<li>加载数据进度条</li>
+<li>在队长每月必发积分条目列表中增加了数条</li>
+<li>参考导入人员信息方法,上传表格生成考核与捐款赋分</li>
 </ol>
 <h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>取消积分表格同名项合并</li>
-<li>积分流程详情不再同名项合并</li>
-<li>仅检测最近两个月发出的申请</li>
-<li>更改部分弹窗位置</li>
-<li>删除模板相关功能</li>
+<li>加载过程分割为多次进行,避免单次获取过多数据,导致系统加载失败</li>
+<li>将部分积分类型的算法改为下载后合成,增加可溯源恢复性</li>
 </ol>
 <h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>队长发出积分申请工程师无法收到推送通知</li>
-<li>部分按钮无法使用</li>
-<li>表格数据条数显示错误</li>
-<li>部分情况流程处理完后红点不消失</li>
-<li>流程已被他人处理,依然弹出红点</li>
-<li>积分流程详情不显示赋分情况</li>
-<li>部分情况工程师收不到工程车积分申请</li>
-<li>部分情况驳回积分信息系统无法识别</li>
+<li>队长每月必发只记录自己发的积分申请,改为全队已发</li>
+<li>队长每月必发功能已发数字错误</li>
+<li>队长每月必发功能数据筛选逻辑优化</li>
+<li>部分情况,队长和司机收不到积分信息</li>
+<li>部分情况收不到新待处理流程通知</li>
+<li>工程师无法通过点击通知进入正确版本小程序</li>
+<li>带小数点数字计算逻辑问题</li>
 </ol>
 <h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
-<li>压缩图片,减少加载时间</li>
-<li>重复代码抽象公共部分,形成公用函数</li>
+<li>裁剪大数据,减少单次渲染的工作量</li>
+<li>改用同步函数读取数据,避免数据量增大后,读取失败</li>
+<li>即时删除不再用到的数据,减少内存占用</li>
+<li>将处理上限为1M的缓存操作改为上限为100M的数据存储操作</li>
+<li>提取出所有访问数据库的函数,放到一个文件夹方便复用和管理</li>
 </ol>
 ]]></content>
       <categories>
@@ -110,33 +129,6 @@
       </categories>
       <tags>
         <tag>V1.3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>司机用户积分操作</title>
-    <url>/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</url>
-    <content><![CDATA[<blockquote>
-<p>个人信息会影响部分积分条目</p>
-<blockquote>
-<p>更改后会自动生成对应的分数</p>
-</blockquote>
-</blockquote>
-<hr>
-<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p>
-<ol>
-<li>点击<strong>积分更改</strong>查看现有个人信息</li>
-<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
-<li>点击<strong>确定</strong>向队长发出申请</li>
-<li>队长同意则更改成功</li>
-</ol>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>司机功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
       </tags>
   </entry>
   <entry>
@@ -168,25 +160,41 @@
       </tags>
   </entry>
   <entry>
-    <title>司机用户积分操作</title>
-    <url>/%E5%8F%B8%E6%9C%BA%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E6%93%8D%E4%BD%9C/</url>
+    <title>准备材料</title>
+    <url>/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</url>
     <content><![CDATA[<blockquote>
-<p>每类用户有不同的可申请积分项,其他用户可参考本文</p>
+<p>只有导入了用户数据才能登陆系统</p>
 </blockquote>
 <hr>
-<h2 id="发起积分流程"><a href="#发起积分流程" class="headerlink" title="发起积分流程"></a>发起积分流程</h2><h3 id="相关设定"><a href="#相关设定" class="headerlink" title="相关设定"></a>相关设定</h3><ul>
-<li>可以随时记录自己满足的加分项</li>
-<li>仅可选择非红字标识积分条目</li>
-<li>可以记录<strong>最早到上个月1号</strong>的加分项</li>
-<li>每个月<strong>只能</strong>在25号之后提交</li>
-</ul>
-<h3 id="发起步奏"><a href="#发起步奏" class="headerlink" title="发起步奏"></a>发起步奏</h3><p><img src="/../images/sjSend.gif"></p>
+<p>[# 点击下载](..&#x2F;doc&#x2F;2号线三队用户积分信息表模板 202401111951.xlsx)</p>
+<p><strong>注意:</strong></p>
+<p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>登陆相关</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>司机用户积分操作</title>
+    <url>/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<blockquote>
+<p>个人信息会影响部分积分条目</p>
+<blockquote>
+<p>更改后会自动生成对应的分数</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p>
 <ol>
-<li>新建并选择可以选的加分项</li>
-<li>选择上个月和本月日期</li>
-<li>如果可以选择倍数,请设置,不设置则为默认值</li>
-<li>添加备注</li>
-<li>新建完成</li>
+<li>点击<strong>积分更改</strong>查看现有个人信息</li>
+<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
+<li>点击<strong>确定</strong>向队长发出申请</li>
+<li>队长同意则更改成功</li>
 </ol>
 ]]></content>
       <categories>
@@ -226,25 +234,6 @@
       </tags>
   </entry>
   <entry>
-    <title>订阅消息通知</title>
-    <url>/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</url>
-    <content><![CDATA[<blockquote>
-<p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
-</blockquote>
-<hr>
-<p><img src="/../images/mesSubscribe.gif"></p>
-<p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据导出文档</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%87%E6%A1%A3/</url>
     <content><![CDATA[<blockquote>
@@ -278,6 +267,37 @@
       </tags>
   </entry>
   <entry>
+    <title>司机用户积分操作</title>
+    <url>/%E5%8F%B8%E6%9C%BA%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<blockquote>
+<p>每类用户有不同的可申请积分项,其他用户可参考本文</p>
+</blockquote>
+<hr>
+<h2 id="发起积分流程"><a href="#发起积分流程" class="headerlink" title="发起积分流程"></a>发起积分流程</h2><h3 id="相关设定"><a href="#相关设定" class="headerlink" title="相关设定"></a>相关设定</h3><ul>
+<li>可以随时记录自己满足的加分项</li>
+<li>仅可选择非红字标识积分条目</li>
+<li>可以记录<strong>最早到上个月1号</strong>的加分项</li>
+<li>每个月<strong>只能</strong>在25号之后提交</li>
+</ul>
+<h3 id="发起步奏"><a href="#发起步奏" class="headerlink" title="发起步奏"></a>发起步奏</h3><p><img src="/../images/sjSend.gif"></p>
+<ol>
+<li>新建并选择可以选的加分项</li>
+<li>选择上个月和本月日期</li>
+<li>如果可以选择倍数,请设置,不设置则为默认值</li>
+<li>添加备注</li>
+<li>新建完成</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>司机功能</category>
+      </categories>
+      <tags>
+        <tag>积分功能</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>排班相关</title>
     <url>/%E6%8E%92%E7%8F%AD%E7%9B%B8%E5%85%B3/</url>
     <content><![CDATA[<blockquote>
@@ -304,6 +324,25 @@
       </categories>
       <tags>
         <tag>排班功能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>订阅消息通知</title>
+    <url>/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</url>
+    <content><![CDATA[<blockquote>
+<p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
+</blockquote>
+<hr>
+<p><img src="/../images/mesSubscribe.gif"></p>
+<p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>积分功能</tag>
       </tags>
   </entry>
 </search>

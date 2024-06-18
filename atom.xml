@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-21T01:41:06.162Z</updated>
+  <updated>2024-06-18T13:12:12.418Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>V1.3.13</title>
+    <link href="http://example.com/V1.3.13/"/>
+    <id>http://example.com/V1.3.13/</id>
+    <published>2024-06-04T12:20:12.000Z</published>
+    <updated>2024-06-18T13:12:12.418Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>2024.6.4</p></blockquote><hr><h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol><li>加载数据进度条</li><li>在队长每月必发积分条目列表中增加了数条</li><li>参考导入人员信息方法,上传表格生成考核与捐款赋分</li></ol><h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol><li>加载过程分割为多次进行,避免单次获取过多数据,导致系统加载失败</li><li>将部分积分类型的算法改为下载后合成,增加可溯源恢复性</li></ol><h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol><li>队长每月必发只记录自己发的积分申请,改为全队已发</li><li>队长每月必发功能已发数字错误</li><li>队长每月必发功能数据筛选逻辑优化</li><li>部分情况,队长和司机收不到积分信息</li><li>部分情况收不到新待处理流程通知</li><li>工程师无法通过点击通知进入正确版本小程序</li><li>带小数点数字计算逻辑问题</li></ol><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol><li>裁剪大数据,减少单次渲染的工作量</li><li>改用同步函数读取数据,避免数据量增大后,读取失败</li><li>即时删除不再用到的数据,减少内存占用</li><li>将处理上限为1M的缓存操作改为上限为100M的数据存储操作</li><li>提取出所有访问数据库的函数,放到一个文件夹方便复用和管理</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;2024.6.4&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;新增&quot;&gt;&lt;a href=&quot;#新增&quot; class=&quot;headerlink&quot; title=&quot;新增&quot;&gt;&lt;/a&gt;新增&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;加载数据进度条&lt;/li&gt;
+&lt;li</summary>
+      
+    
+    
+    
+    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    
+    <category term="更新日志" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
+    
+    
+    <category term="V1.3" scheme="http://example.com/tags/V1-3/"/>
+    
+  </entry>
   
   <entry>
     <title>司机用户积分操作</title>
@@ -220,22 +252,19 @@
     <link href="http://example.com/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/"/>
     <id>http://example.com/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</id>
     <published>2024-05-20T12:21:20.000Z</published>
-    <updated>2024-05-25T03:41:31.619Z</updated>
+    <updated>2024-06-18T13:12:07.489Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>只有导入了用户数据才能登陆系统</p><blockquote><p>请联系开发者索取信息模板文档</p></blockquote></blockquote><hr><p><strong>注意:</strong></p><p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>只有导入了用户数据才能登陆系统</p></blockquote><hr><p>[# 点击下载](..&#x2F;doc&#x2F;2号线三队用户积分信息表模板 202401111951.xlsx)</p><p><strong>注意:</strong></p><p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>]]></content>
     
     
       
       
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;只有导入了用户数据才能登陆系统&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;请联系开发者索取信息模板文档&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;注意:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;每一个可以</summary>
+&lt;p&gt;[# 点击下载](..&amp;#x2F;doc&amp;#x2F;2号线三队用户积分信息表模板 202401111951.xlsx)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意:&lt;/st</summary>
       
     
     
