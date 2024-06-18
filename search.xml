@@ -1,6 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>V1.3.13</title>
+    <url>/V1.3.13/</url>
+    <content><![CDATA[<blockquote>
+<p>2024.6.4</p>
+</blockquote>
+<hr>
+<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
+<li>加载数据进度条</li>
+<li>在队长每月必发积分条目列表中增加了数条</li>
+<li>参考导入人员信息方法,上传表格生成考核与捐款赋分</li>
+</ol>
+<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
+<li>加载过程分割为多次进行,避免单次获取过多数据,导致系统加载失败</li>
+<li>将部分积分类型的算法改为下载后合成,增加可溯源恢复性</li>
+</ol>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
+<li>队长每月必发只记录自己发的积分申请,改为全队已发</li>
+<li>队长每月必发功能已发数字错误</li>
+<li>队长每月必发功能数据筛选逻辑优化</li>
+<li>部分情况,队长和司机收不到积分信息</li>
+<li>部分情况收不到新待处理流程通知</li>
+<li>工程师无法通过点击通知进入正确版本小程序</li>
+<li>带小数点数字计算逻辑问题</li>
+</ol>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
+<li>裁剪大数据,减少单次渲染的工作量</li>
+<li>改用同步函数读取数据,避免数据量增大后,读取失败</li>
+<li>即时删除不再用到的数据,减少内存占用</li>
+<li>将处理上限为1M的缓存操作改为上限为100M的数据存储操作</li>
+<li>提取出所有访问数据库的函数,放到一个文件夹方便复用和管理</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>更新日志</category>
+      </categories>
+      <tags>
+        <tag>V1.3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>司机用户积分操作</title>
+    <url>/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<blockquote>
+<p>个人信息会影响部分积分条目</p>
+<blockquote>
+<p>更改后会自动生成对应的分数</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p>
+<ol>
+<li>点击<strong>积分更改</strong>查看现有个人信息</li>
+<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
+<li>点击<strong>确定</strong>向队长发出申请</li>
+<li>队长同意则更改成功</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>司机功能</category>
+      </categories>
+      <tags>
+        <tag>积分功能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>司机用户积分操作</title>
+    <url>/%E5%8F%B8%E6%9C%BA%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<blockquote>
+<p>每类用户有不同的可申请积分项,其他用户可参考本文</p>
+</blockquote>
+<hr>
+<h2 id="发起积分流程"><a href="#发起积分流程" class="headerlink" title="发起积分流程"></a>发起积分流程</h2><h3 id="相关设定"><a href="#相关设定" class="headerlink" title="相关设定"></a>相关设定</h3><ul>
+<li>可以随时记录自己满足的加分项</li>
+<li>仅可选择非红字标识积分条目</li>
+<li>可以记录<strong>最早到上个月1号</strong>的加分项</li>
+<li>每个月<strong>只能</strong>在25号之后提交</li>
+</ul>
+<h3 id="发起步奏"><a href="#发起步奏" class="headerlink" title="发起步奏"></a>发起步奏</h3><p><img src="/../images/sjSend.gif"></p>
+<ol>
+<li>新建并选择可以选的加分项</li>
+<li>选择上个月和本月日期</li>
+<li>如果可以选择倍数,请设置,不设置则为默认值</li>
+<li>添加备注</li>
+<li>新建完成</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>司机功能</category>
+      </categories>
+      <tags>
+        <tag>积分功能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排班相关</title>
+    <url>/%E6%8E%92%E7%8F%AD%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<blockquote>
+<p>自动生成用户排班数据的相关功能</p>
+</blockquote>
+<hr>
+<h2 id="司机版"><a href="#司机版" class="headerlink" title="司机版"></a>司机版</h2><p><img src="/../images/sjPB.gif"></p>
+<ul>
+<li>可以查看到本月最后一天为止的所有车次与发车时间</li>
+<li>可以查指定班次的车次与发车时间</li>
+<li>提供本月全队公里数排行</li>
+</ul>
+<h2 id="队长版"><a href="#队长版" class="headerlink" title="队长版"></a>队长版</h2><p><img src="/../images/leaderPB.gif"></p>
+<ul>
+<li>可以查看当日全队班次信息与特殊交路信息</li>
+<li>可以根据车次查由谁驾驶</li>
+<li>可以发布全队人员可见通知</li>
+</ul>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>排班功能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据导出文档</title>
+    <url>/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<blockquote>
+<p>不同用户可见数据不同</p>
+<blockquote>
+<p>司机以上可以导出数据,生成Excel</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="数据转文档网站"><a href="#数据转文档网站" class="headerlink" title="数据转文档网站"></a>数据转文档网站</h2><p><strong>请务必在浏览器收藏,方便使用</strong><br><a href="https://www.lddgo.net/string/json-to-excel">在线JSON转Excel (lddgo.net)</a></p>
+<hr>
+<h2 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h2><blockquote>
+<p>以快捷排行数据为例<br><img src="/../images/outExcel.gif"></p>
+</blockquote>
+<p><strong>步奏:</strong></p>
+<ol>
+<li>开启表格</li>
+<li>长按表格提示是否复制表格数据</li>
+<li>确认后复制进上方给出网站</li>
+<li>点击下载</li>
+</ol>
+<p><strong>注意:</strong><br>各种表格导出方式略有不同,但复制数据与下载文档方式没区别</p>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>积分功能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>订阅消息通知</title>
+    <url>/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</url>
+    <content><![CDATA[<blockquote>
+<p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
+</blockquote>
+<hr>
+<p><img src="/../images/mesSubscribe.gif"></p>
+<p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>积分功能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>登陆与密码</title>
+    <url>/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/</url>
+    <content><![CDATA[<blockquote>
+<p>仅能通过工号登陆</p>
+</blockquote>
+<hr>
+<h1 id="登陆与密码说明"><a href="#登陆与密码说明" class="headerlink" title="登陆与密码说明"></a>登陆与密码说明</h1><p>密码将<strong>绑定微信号与工号</strong><br>即<strong>只有在</strong>换了微信号使用该工号登陆时<strong>才需要</strong>输入密码</p>
+<hr>
+<h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="/../images/loginFail.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p>
+<hr>
+<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="/../images/loginSuc.gif"></p>
+<ul>
+<li>请牢记密码</li>
+<li>密码只有在更换微信登陆工号时需要使用</li>
+<li>绝大部分用户从未使用过密码登陆,导致遗忘的比比皆是</li>
+</ul>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>登陆相关</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>准备材料</title>
+    <url>/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</url>
+    <content><![CDATA[<blockquote>
+<p>只有导入了用户数据才能登陆系统</p>
+</blockquote>
+<hr>
+<p><a href="../doc/2%E5%8F%B7%E7%BA%BF%E4%B8%89%E9%98%9F%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E4%BF%A1%E6%81%AF%E8%A1%A8%E6%A8%A1%E6%9D%BF202401111951.xlsx">(〜￣△￣)〜 点击此处下载个人信息文档</a></p>
+<p><strong>注意:</strong></p>
+<p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>登陆相关</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>介绍与进入</title>
+    <url>/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/</url>
+    <content><![CDATA[<blockquote>
+<p>如果有表达不清楚的地方,欢迎联系工号604058</p>
+</blockquote>
+<hr>
+<h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p><strong>积分的组成</strong>由用户自身初始数据与后期积分操作相关</p>
+<p>本程序制作的初衷在于:</p>
+<ul>
+<li>让各级别用户都能参与</li>
+<li>通过各司其职避免某级别用户工作量过大</li>
+<li>避免遗漏加分带来的损失</li>
+<li>可视化展现积分变化,较少信息差</li>
+</ul>
+<hr>
+<h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="/../images/mini-QR.jpg" alt="二维码"></p>
+<p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="/../images/seach_name.gif" alt="搜索"></p>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>登陆相关</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>V1.3.12</title>
     <url>/V1.3.12/</url>
     <content><![CDATA[<blockquote>
@@ -88,261 +343,6 @@
       </categories>
       <tags>
         <tag>V1.3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>V1.3.13</title>
-    <url>/V1.3.13/</url>
-    <content><![CDATA[<blockquote>
-<p>2024.6.4</p>
-</blockquote>
-<hr>
-<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>加载数据进度条</li>
-<li>在队长每月必发积分条目列表中增加了数条</li>
-<li>参考导入人员信息方法,上传表格生成考核与捐款赋分</li>
-</ol>
-<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>加载过程分割为多次进行,避免单次获取过多数据,导致系统加载失败</li>
-<li>将部分积分类型的算法改为下载后合成,增加可溯源恢复性</li>
-</ol>
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>队长每月必发只记录自己发的积分申请,改为全队已发</li>
-<li>队长每月必发功能已发数字错误</li>
-<li>队长每月必发功能数据筛选逻辑优化</li>
-<li>部分情况,队长和司机收不到积分信息</li>
-<li>部分情况收不到新待处理流程通知</li>
-<li>工程师无法通过点击通知进入正确版本小程序</li>
-<li>带小数点数字计算逻辑问题</li>
-</ol>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
-<li>裁剪大数据,减少单次渲染的工作量</li>
-<li>改用同步函数读取数据,避免数据量增大后,读取失败</li>
-<li>即时删除不再用到的数据,减少内存占用</li>
-<li>将处理上限为1M的缓存操作改为上限为100M的数据存储操作</li>
-<li>提取出所有访问数据库的函数,放到一个文件夹方便复用和管理</li>
-</ol>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>更新日志</category>
-      </categories>
-      <tags>
-        <tag>V1.3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>介绍与进入</title>
-    <url>/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/</url>
-    <content><![CDATA[<blockquote>
-<p>如果有表达不清楚的地方,欢迎联系工号604058</p>
-</blockquote>
-<hr>
-<h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p><strong>积分的组成</strong>由用户自身初始数据与后期积分操作相关</p>
-<p>本程序制作的初衷在于:</p>
-<ul>
-<li>让各级别用户都能参与</li>
-<li>通过各司其职避免某级别用户工作量过大</li>
-<li>避免遗漏加分带来的损失</li>
-<li>可视化展现积分变化,较少信息差</li>
-</ul>
-<hr>
-<h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="/../images/mini-QR.jpg" alt="二维码"></p>
-<p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="/../images/seach_name.gif" alt="搜索"></p>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>登陆相关</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>准备材料</title>
-    <url>/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</url>
-    <content><![CDATA[<blockquote>
-<p>只有导入了用户数据才能登陆系统</p>
-</blockquote>
-<hr>
-<p>[# 点击下载](..&#x2F;doc&#x2F;2号线三队用户积分信息表模板 202401111951.xlsx)</p>
-<p><strong>注意:</strong></p>
-<p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>登陆相关</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>司机用户积分操作</title>
-    <url>/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</url>
-    <content><![CDATA[<blockquote>
-<p>个人信息会影响部分积分条目</p>
-<blockquote>
-<p>更改后会自动生成对应的分数</p>
-</blockquote>
-</blockquote>
-<hr>
-<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p>
-<ol>
-<li>点击<strong>积分更改</strong>查看现有个人信息</li>
-<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
-<li>点击<strong>确定</strong>向队长发出申请</li>
-<li>队长同意则更改成功</li>
-</ol>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>司机功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>登陆与密码</title>
-    <url>/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/</url>
-    <content><![CDATA[<blockquote>
-<p>仅能通过工号登陆</p>
-</blockquote>
-<hr>
-<h1 id="登陆与密码说明"><a href="#登陆与密码说明" class="headerlink" title="登陆与密码说明"></a>登陆与密码说明</h1><p>密码将<strong>绑定微信号与工号</strong><br>即<strong>只有在</strong>换了微信号使用该工号登陆时<strong>才需要</strong>输入密码</p>
-<hr>
-<h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="/../images/loginFail.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p>
-<hr>
-<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="/../images/loginSuc.gif"></p>
-<ul>
-<li>请牢记密码</li>
-<li>密码只有在更换微信登陆工号时需要使用</li>
-<li>绝大部分用户从未使用过密码登陆,导致遗忘的比比皆是</li>
-</ul>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>登陆相关</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据导出文档</title>
-    <url>/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<blockquote>
-<p>不同用户可见数据不同</p>
-<blockquote>
-<p>司机以上可以导出数据,生成Excel</p>
-</blockquote>
-</blockquote>
-<hr>
-<h2 id="数据转文档网站"><a href="#数据转文档网站" class="headerlink" title="数据转文档网站"></a>数据转文档网站</h2><p><strong>请务必在浏览器收藏,方便使用</strong><br><a href="https://www.lddgo.net/string/json-to-excel">在线JSON转Excel (lddgo.net)</a></p>
-<hr>
-<h2 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h2><blockquote>
-<p>以快捷排行数据为例<br><img src="/../images/outExcel.gif"></p>
-</blockquote>
-<p><strong>步奏:</strong></p>
-<ol>
-<li>开启表格</li>
-<li>长按表格提示是否复制表格数据</li>
-<li>确认后复制进上方给出网站</li>
-<li>点击下载</li>
-</ol>
-<p><strong>注意:</strong><br>各种表格导出方式略有不同,但复制数据与下载文档方式没区别</p>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>司机用户积分操作</title>
-    <url>/%E5%8F%B8%E6%9C%BA%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<blockquote>
-<p>每类用户有不同的可申请积分项,其他用户可参考本文</p>
-</blockquote>
-<hr>
-<h2 id="发起积分流程"><a href="#发起积分流程" class="headerlink" title="发起积分流程"></a>发起积分流程</h2><h3 id="相关设定"><a href="#相关设定" class="headerlink" title="相关设定"></a>相关设定</h3><ul>
-<li>可以随时记录自己满足的加分项</li>
-<li>仅可选择非红字标识积分条目</li>
-<li>可以记录<strong>最早到上个月1号</strong>的加分项</li>
-<li>每个月<strong>只能</strong>在25号之后提交</li>
-</ul>
-<h3 id="发起步奏"><a href="#发起步奏" class="headerlink" title="发起步奏"></a>发起步奏</h3><p><img src="/../images/sjSend.gif"></p>
-<ol>
-<li>新建并选择可以选的加分项</li>
-<li>选择上个月和本月日期</li>
-<li>如果可以选择倍数,请设置,不设置则为默认值</li>
-<li>添加备注</li>
-<li>新建完成</li>
-</ol>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>司机功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排班相关</title>
-    <url>/%E6%8E%92%E7%8F%AD%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<blockquote>
-<p>自动生成用户排班数据的相关功能</p>
-</blockquote>
-<hr>
-<h2 id="司机版"><a href="#司机版" class="headerlink" title="司机版"></a>司机版</h2><p><img src="/../images/sjPB.gif"></p>
-<ul>
-<li>可以查看到本月最后一天为止的所有车次与发车时间</li>
-<li>可以查指定班次的车次与发车时间</li>
-<li>提供本月全队公里数排行</li>
-</ul>
-<h2 id="队长版"><a href="#队长版" class="headerlink" title="队长版"></a>队长版</h2><p><img src="/../images/leaderPB.gif"></p>
-<ul>
-<li>可以查看当日全队班次信息与特殊交路信息</li>
-<li>可以根据车次查由谁驾驶</li>
-<li>可以发布全队人员可见通知</li>
-</ul>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>排班功能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>订阅消息通知</title>
-    <url>/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</url>
-    <content><![CDATA[<blockquote>
-<p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
-</blockquote>
-<hr>
-<p><img src="/../images/mesSubscribe.gif"></p>
-<p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
       </tags>
   </entry>
 </search>
