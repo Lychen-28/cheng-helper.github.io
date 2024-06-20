@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>V1.3.14</title>
+    <url>/V1.3.14/</url>
+    <content><![CDATA[<blockquote>
+<p>2024.6.21</p>
+</blockquote>
+<hr>
+<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
+<li>更新时可暂停积分功能使用</li>
+<li>新增文档上传生成积分项功能</li>
+<li>新增多个服务器返回信息弹窗</li>
+<li>数据库增加对形成积分数据的过程数据存储,增加抗灾能力</li>
+<li>队长必发功能添加自动识别季度末和年末,以生成额外选项</li>
+<li>系统开发者可以手动处理单条积分条目上限,即将超过上限的积分申请积分改为0</li>
+</ol>
+<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
+<li>现在只提前下载积分数值信息,详细加分项在查看详情时再下载</li>
+<li>主任用户现在仅下载本车间数据</li>
+<li>暂停使用驳回功能</li>
+<li>裁剪错误提示弹窗内容</li>
+</ol>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
+<li>登陆时卡顿</li>
+<li>多选人员的积分条目更新报错</li>
+</ol>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
+<li>合并积分数据相关数据库访问操作,降低数据库压力</li>
+<li>模块化数据库访问相关代码,方便复用,增加可读性</li>
+<li>以增加一个复杂运算为代价,将上传的数据减少到了1%</li>
+<li>拆分积分数据,并分表存储,减小单个数据单元大小</li>
+<li>统一各类excel上传与处理逻辑,方便以后功能扩展</li>
+<li>增加对excel生成积分的中间数据的存储,方便恢复系统</li>
+<li>进一步拆分数据,减少对大数据的操作</li>
+<li>分页下载详细积分数据,避免数据大小限制</li>
+<li>设置详细数据缓存,避免重复下载</li>
+<li>降低运行时缓存数据大小</li>
+<li>移除审批界面引入积分数据的步奏</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>更新日志</category>
+      </categories>
+      <tags>
+        <tag>V1.3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>V1.3.13</title>
     <url>/V1.3.13/</url>
     <content><![CDATA[<blockquote>
@@ -39,33 +86,6 @@
       </categories>
       <tags>
         <tag>V1.3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>司机用户积分操作</title>
-    <url>/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</url>
-    <content><![CDATA[<blockquote>
-<p>个人信息会影响部分积分条目</p>
-<blockquote>
-<p>更改后会自动生成对应的分数</p>
-</blockquote>
-</blockquote>
-<hr>
-<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p>
-<ol>
-<li>点击<strong>积分更改</strong>查看现有个人信息</li>
-<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
-<li>点击<strong>确定</strong>向队长发出申请</li>
-<li>队长同意则更改成功</li>
-</ol>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>司机功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
       </tags>
   </entry>
   <entry>
@@ -296,6 +316,33 @@
       </categories>
       <tags>
         <tag>V1.3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>司机更改个人信息</title>
+    <url>/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<blockquote>
+<p>个人信息会影响部分积分条目</p>
+<blockquote>
+<p>更改后会自动生成对应的分数</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p>
+<ol>
+<li>点击<strong>积分更改</strong>查看现有个人信息</li>
+<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
+<li>点击<strong>确定</strong>向队长发出申请</li>
+<li>队长同意则更改成功</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>司机功能</category>
+      </categories>
+      <tags>
+        <tag>积分功能</tag>
       </tags>
   </entry>
   <entry>
