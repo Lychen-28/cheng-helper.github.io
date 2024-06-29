@@ -101,7 +101,7 @@
 <li>可以记录<strong>最早到上个月1号</strong>的加分项</li>
 <li>每个月<strong>只能</strong>在25号之后提交</li>
 </ul>
-<h3 id="发起步奏"><a href="#发起步奏" class="headerlink" title="发起步奏"></a>发起步奏</h3><p><img src="/../images/sjSend.gif"></p>
+<h3 id="发起步奏"><a href="#发起步奏" class="headerlink" title="发起步奏"></a>发起步奏</h3><p><img src="https://s2.loli.net/2024/06/29/mNOuYni81Ilw52j.gif"></p>
 <ol>
 <li>新建并选择可以选的加分项</li>
 <li>选择上个月和本月日期</li>
@@ -126,13 +126,13 @@
 <p>自动生成用户排班数据的相关功能</p>
 </blockquote>
 <hr>
-<h2 id="司机版"><a href="#司机版" class="headerlink" title="司机版"></a>司机版</h2><p><img src="/../images/sjPB.gif"></p>
+<h2 id="司机版"><a href="#司机版" class="headerlink" title="司机版"></a>司机版</h2><p><img src="https://s2.loli.net/2024/06/29/IzXGgQTmsuH2tZe.gif"></p>
 <ul>
 <li>可以查看到本月最后一天为止的所有车次与发车时间</li>
 <li>可以查指定班次的车次与发车时间</li>
 <li>提供本月全队公里数排行</li>
 </ul>
-<h2 id="队长版"><a href="#队长版" class="headerlink" title="队长版"></a>队长版</h2><p><img src="/../images/leaderPB.gif"></p>
+<h2 id="队长版"><a href="#队长版" class="headerlink" title="队长版"></a>队长版</h2><p><img src="https://s2.loli.net/2024/06/29/gtaE2FQ9uTKrSz6.gif"></p>
 <ul>
 <li>可以查看当日全队班次信息与特殊交路信息</li>
 <li>可以根据车次查由谁驾驶</li>
@@ -161,7 +161,7 @@
 <h2 id="数据转文档网站"><a href="#数据转文档网站" class="headerlink" title="数据转文档网站"></a>数据转文档网站</h2><p><strong>请务必在浏览器收藏,方便使用</strong><br><a href="https://www.lddgo.net/string/json-to-excel">在线JSON转Excel (lddgo.net)</a></p>
 <hr>
 <h2 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h2><blockquote>
-<p>以快捷排行数据为例<br><img src="/../images/outExcel.gif"></p>
+<p>以快捷排行数据为例<br><img src="https://s2.loli.net/2024/06/29/8gb63tUYJZQH1La.gif"></p>
 </blockquote>
 <p><strong>步奏:</strong></p>
 <ol>
@@ -188,7 +188,7 @@
 <p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
 </blockquote>
 <hr>
-<p><img src="/../images/mesSubscribe.gif"></p>
+<p><img src="https://s2.loli.net/2024/06/29/H5xyNK49Sq8EPUD.gif"></p>
 <p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
 ]]></content>
       <categories>
@@ -209,9 +209,9 @@
 <hr>
 <h1 id="登陆与密码说明"><a href="#登陆与密码说明" class="headerlink" title="登陆与密码说明"></a>登陆与密码说明</h1><p>密码将<strong>绑定微信号与工号</strong><br>即<strong>只有在</strong>换了微信号使用该工号登陆时<strong>才需要</strong>输入密码</p>
 <hr>
-<h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="/../images/loginFail.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p>
+<h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="https://s2.loli.net/2024/06/29/XUnDVbwWQAg5N2Y.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p>
 <hr>
-<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="/../images/loginSuc.gif"></p>
+<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="https://s2.loli.net/2024/06/29/x9jDtiHfrcRdXBP.gif"></p>
 <ul>
 <li>请牢记密码</li>
 <li>密码只有在更换微信登陆工号时需要使用</li>
@@ -263,8 +263,8 @@
 <li>可视化展现积分变化,较少信息差</li>
 </ul>
 <hr>
-<h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="/../images/mini-QR.jpg" alt="二维码"></p>
-<p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="/../images/seach_name.gif" alt="搜索"></p>
+<h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="https://s2.loli.net/2024/06/29/Yf4QEC2LSXnhiVB.jpg" alt="二维码"></p>
+<p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="https://s2.loli.net/2024/06/29/WlXLPnc8bzDCRtA.gif" alt="搜索"></p>
 ]]></content>
       <categories>
         <category>小乘排班</category>
@@ -328,7 +328,7 @@
 </blockquote>
 </blockquote>
 <hr>
-<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p>
+<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="https://s2.loli.net/2024/06/29/DPSK5miEHgIQNlr.gif"></p>
 <ol>
 <li>点击<strong>积分更改</strong>查看现有个人信息</li>
 <li>点击<strong>发起变更</strong>以选择需要更改的项目</li>

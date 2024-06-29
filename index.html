@@ -118,6 +118,40 @@
   <section class="outer">
   
   
+  
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content">欢迎提改进措施 (^・ω・^) 我们的共同目标是减少工作量</div>
+</div>
+
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
   <article class="articles">
     
     
@@ -152,49 +186,7 @@
   </div>
    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>2024.6.21</p>
-</blockquote>
-<hr>
-<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>更新时可暂停积分功能使用</li>
-<li>新增文档上传生成积分项功能</li>
-<li>新增多个服务器返回信息弹窗</li>
-<li>数据库增加对形成积分数据的过程数据存储,增加抗灾能力</li>
-<li>队长必发功能添加自动识别季度末和年末,以生成额外选项</li>
-<li>系统开发者可以手动处理单条积分条目上限,即将超过上限的积分申请积分改为0</li>
-</ol>
-<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>现在只提前下载积分数值信息,详细加分项在查看详情时再下载</li>
-<li>主任用户现在仅下载本车间数据</li>
-<li>暂停使用驳回功能</li>
-<li>裁剪错误提示弹窗内容</li>
-</ol>
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>登陆时卡顿</li>
-<li>多选人员的积分条目更新报错</li>
-</ol>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
-<li>合并积分数据相关数据库访问操作,降低数据库压力</li>
-<li>模块化数据库访问相关代码,方便复用,增加可读性</li>
-<li>以增加一个复杂运算为代价,将上传的数据减少到了1%</li>
-<li>拆分积分数据,并分表存储,减小单个数据单元大小</li>
-<li>统一各类excel上传与处理逻辑,方便以后功能扩展</li>
-<li>增加对excel生成积分的中间数据的存储,方便恢复系统</li>
-<li>进一步拆分数据,减少对大数据的操作</li>
-<li>分页下载详细积分数据,避免数据大小限制</li>
-<li>设置详细数据缓存,避免重复下载</li>
-<li>降低运行时缓存数据大小</li>
-<li>移除审批界面引入积分数据的步奏</li>
-</ol>
- 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -239,43 +231,7 @@
   </div>
    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>2024.6.4</p>
-</blockquote>
-<hr>
-<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>加载数据进度条</li>
-<li>在队长每月必发积分条目列表中增加了数条</li>
-<li>参考导入人员信息方法,上传表格生成考核与捐款赋分</li>
-</ol>
-<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>加载过程分割为多次进行,避免单次获取过多数据,导致系统加载失败</li>
-<li>将部分积分类型的算法改为下载后合成,增加可溯源恢复性</li>
-</ol>
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>队长每月必发只记录自己发的积分申请,改为全队已发</li>
-<li>队长每月必发功能已发数字错误</li>
-<li>队长每月必发功能数据筛选逻辑优化</li>
-<li>部分情况,队长和司机收不到积分信息</li>
-<li>部分情况收不到新待处理流程通知</li>
-<li>工程师无法通过点击通知进入正确版本小程序</li>
-<li>带小数点数字计算逻辑问题</li>
-</ol>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
-<li>裁剪大数据,减少单次渲染的工作量</li>
-<li>改用同步函数读取数据,避免数据量增大后,读取失败</li>
-<li>即时删除不再用到的数据,减少内存占用</li>
-<li>将处理上限为1M的缓存操作改为上限为100M的数据存储操作</li>
-<li>提取出所有访问数据库的函数,放到一个文件夹方便复用和管理</li>
-</ol>
- 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -320,32 +276,7 @@
   </div>
    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>每类用户有不同的可申请积分项,其他用户可参考本文</p>
-</blockquote>
-<hr>
-<h2 id="发起积分流程"><a href="#发起积分流程" class="headerlink" title="发起积分流程"></a>发起积分流程</h2><h3 id="相关设定"><a href="#相关设定" class="headerlink" title="相关设定"></a>相关设定</h3><ul>
-<li>可以随时记录自己满足的加分项</li>
-<li>仅可选择非红字标识积分条目</li>
-<li>可以记录<strong>最早到上个月1号</strong>的加分项</li>
-<li>每个月<strong>只能</strong>在25号之后提交</li>
-</ul>
-<h3 id="发起步奏"><a href="#发起步奏" class="headerlink" title="发起步奏"></a>发起步奏</h3><p><img src="/../images/sjSend.gif"></p>
-<ol>
-<li>新建并选择可以选的加分项</li>
-<li>选择上个月和本月日期</li>
-<li>如果可以选择倍数,请设置,不设置则为默认值</li>
-<li>添加备注</li>
-<li>新建完成</li>
-</ol>
- 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -390,30 +321,7 @@
   </div>
    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>自动生成用户排班数据的相关功能</p>
-</blockquote>
-<hr>
-<h2 id="司机版"><a href="#司机版" class="headerlink" title="司机版"></a>司机版</h2><p><img src="/../images/sjPB.gif"></p>
-<ul>
-<li>可以查看到本月最后一天为止的所有车次与发车时间</li>
-<li>可以查指定班次的车次与发车时间</li>
-<li>提供本月全队公里数排行</li>
-</ul>
-<h2 id="队长版"><a href="#队长版" class="headerlink" title="队长版"></a>队长版</h2><p><img src="/../images/leaderPB.gif"></p>
-<ul>
-<li>可以查看当日全队班次信息与特殊交路信息</li>
-<li>可以根据车次查由谁驾驶</li>
-<li>可以发布全队人员可见通知</li>
-</ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -458,34 +366,7 @@
   </div>
    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>不同用户可见数据不同</p>
-<blockquote>
-<p>司机以上可以导出数据,生成Excel</p>
-</blockquote>
-</blockquote>
-<hr>
-<h2 id="数据转文档网站"><a href="#数据转文档网站" class="headerlink" title="数据转文档网站"></a>数据转文档网站</h2><p><strong>请务必在浏览器收藏,方便使用</strong><br><a target="_blank" rel="noopener" href="https://www.lddgo.net/string/json-to-excel">在线JSON转Excel (lddgo.net)</a></p>
-<hr>
-<h2 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h2><blockquote>
-<p>以快捷排行数据为例<br><img src="/../images/outExcel.gif"></p>
-</blockquote>
-<p><strong>步奏:</strong></p>
-<ol>
-<li>开启表格</li>
-<li>长按表格提示是否复制表格数据</li>
-<li>确认后复制进上方给出网站</li>
-<li>点击下载</li>
-</ol>
-<p><strong>注意:</strong><br>各种表格导出方式略有不同,但复制数据与下载文档方式没区别</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -530,20 +411,7 @@
   </div>
    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
-</blockquote>
-<hr>
-<p><img src="/../images/mesSubscribe.gif"></p>
-<p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -588,28 +456,7 @@
   </div>
    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>仅能通过工号登陆</p>
-</blockquote>
-<hr>
-<h1 id="登陆与密码说明"><a href="#登陆与密码说明" class="headerlink" title="登陆与密码说明"></a>登陆与密码说明</h1><p>密码将<strong>绑定微信号与工号</strong><br>即<strong>只有在</strong>换了微信号使用该工号登陆时<strong>才需要</strong>输入密码</p>
-<hr>
-<h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="/../images/loginFail.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p>
-<hr>
-<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="/../images/loginSuc.gif"></p>
-<ul>
-<li>请牢记密码</li>
-<li>密码只有在更换微信登陆工号时需要使用</li>
-<li>绝大部分用户从未使用过密码登陆,导致遗忘的比比皆是</li>
-</ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -654,21 +501,7 @@
   </div>
    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>只有导入了用户数据才能登陆系统</p>
-</blockquote>
-<hr>
-<p><a href="../doc/2%E5%8F%B7%E7%BA%BF%E4%B8%89%E9%98%9F%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E4%BF%A1%E6%81%AF%E8%A1%A8%E6%A8%A1%E6%9D%BF202401111951.xlsx">(〜￣△￣)〜 点击此处下载个人信息文档</a></p>
-<p><strong>注意:</strong></p>
-<p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -713,29 +546,7 @@
   </div>
    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>如果有表达不清楚的地方,欢迎联系工号604058</p>
-</blockquote>
-<hr>
-<h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p><strong>积分的组成</strong>由用户自身初始数据与后期积分操作相关</p>
-<p>本程序制作的初衷在于:</p>
-<ul>
-<li>让各级别用户都能参与</li>
-<li>通过各司其职避免某级别用户工作量过大</li>
-<li>避免遗漏加分带来的损失</li>
-<li>可视化展现积分变化,较少信息差</li>
-</ul>
-<hr>
-<h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="/../images/mini-QR.jpg" alt="二维码"></p>
-<p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="/../images/seach_name.gif" alt="搜索"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -780,45 +591,97 @@
   </div>
    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>2024.5.20</p>
-</blockquote>
-<hr>
-<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>自动生成队长用户月度&#x2F;季度&#x2F;半年&#x2F;全年必发积分流程列表</li>
-<li>记录队长发送过的积分流程,标注未发送的</li>
-<li>主任用户可以选择驳回的积分条目,而不是驳回整个积分申请</li>
-<li>快速排行榜表格现在可以根据用户技能等级筛选表格项</li>
-</ol>
-<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>取消积分表格同名项合并</li>
-<li>积分流程详情不再同名项合并</li>
-<li>仅检测最近两个月发出的申请</li>
-<li>更改部分弹窗位置</li>
-<li>删除模板相关功能</li>
-</ol>
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>队长发出积分申请工程师无法收到推送通知</li>
-<li>部分按钮无法使用</li>
-<li>表格数据条数显示错误</li>
-<li>部分情况流程处理完后红点不消失</li>
-<li>流程已被他人处理,依然弹出红点</li>
-<li>积分流程详情不显示赋分情况</li>
-<li>部分情况工程师收不到工程车积分申请</li>
-<li>部分情况驳回积分信息系统无法识别</li>
-</ol>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
-<li>压缩图片,减少加载时间</li>
-<li>重复代码抽象公共部分,形成公用函数</li>
-</ol>
- 
-      <!-- reward -->
-      
-    </div>
+
+    <!-- copyright -->
     
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/V1-3/" rel="tag">V1.3</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-司机更改个人信息"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/"
+    >司机更改个人信息</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/" class="article-date">
+  <time datetime="2024-05-20T01:25:30.000Z" itemprop="datePublished">2024-05-20</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">使用说明</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E5%8F%B8%E6%9C%BA%E5%8A%9F%E8%83%BD/">司机功能</a>
+  </div>
+   
+    </div>
+       
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/" rel="tag">积分功能</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-V1.3.11"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/V1.3.11/"
+    >V1.3.11</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/V1.3.11/" class="article-date">
+  <time datetime="2024-05-14T08:31:24.000Z" itemprop="datePublished">2024-05-14</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/">更新日志</a>
+  </div>
+   
+    </div>
+       
 
     <!-- copyright -->
     
@@ -837,11 +700,6 @@
   </article>
   
 
-  
-  <nav class="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
-  </nav>
   
 </section>
 </div>
@@ -867,6 +725,10 @@
     </ul>
     <ul>
       
+        <li>
+          <a href="https://beian.miit.gov.cn/" target="_black" rel="nofollow">鄂ICP备2024033513号-2</a>
+        </li>
+        
     </ul>
     <ul>
       

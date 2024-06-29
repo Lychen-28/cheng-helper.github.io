@@ -3,11 +3,11 @@
   <title>Cheng</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://help.chengbox.vip/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://help.chengbox.vip/"/>
   <updated>2024-06-20T14:39:20.928Z</updated>
-  <id>http://example.com/</id>
+  <id>https://help.chengbox.vip/</id>
   
   <author>
     <name>Lychen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>V1.3.14</title>
-    <link href="http://example.com/V1.3.14/"/>
-    <id>http://example.com/V1.3.14/</id>
+    <link href="https://help.chengbox.vip/V1.3.14/"/>
+    <id>https://help.chengbox.vip/V1.3.14/</id>
     <published>2024-06-21T06:20:12.000Z</published>
     <updated>2024-06-20T14:39:20.928Z</updated>
     
@@ -38,19 +38,19 @@
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="更新日志" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
+    <category term="更新日志" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
     
     
-    <category term="V1.3" scheme="http://example.com/tags/V1-3/"/>
+    <category term="V1.3" scheme="https://help.chengbox.vip/tags/V1-3/"/>
     
   </entry>
   
   <entry>
     <title>V1.3.13</title>
-    <link href="http://example.com/V1.3.13/"/>
-    <id>http://example.com/V1.3.13/</id>
+    <link href="https://help.chengbox.vip/V1.3.13/"/>
+    <id>https://help.chengbox.vip/V1.3.13/</id>
     <published>2024-06-04T12:20:12.000Z</published>
     <updated>2024-06-18T13:12:12.418Z</updated>
     
@@ -70,23 +70,23 @@
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="更新日志" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
+    <category term="更新日志" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
     
     
-    <category term="V1.3" scheme="http://example.com/tags/V1-3/"/>
+    <category term="V1.3" scheme="https://help.chengbox.vip/tags/V1-3/"/>
     
   </entry>
   
   <entry>
     <title>司机用户积分操作</title>
-    <link href="http://example.com/%E5%8F%B8%E6%9C%BA%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E6%93%8D%E4%BD%9C/"/>
-    <id>http://example.com/%E5%8F%B8%E6%9C%BA%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E6%93%8D%E4%BD%9C/</id>
+    <link href="https://help.chengbox.vip/%E5%8F%B8%E6%9C%BA%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E6%93%8D%E4%BD%9C/"/>
+    <id>https://help.chengbox.vip/%E5%8F%B8%E6%9C%BA%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E6%93%8D%E4%BD%9C/</id>
     <published>2024-05-21T01:23:30.000Z</published>
-    <updated>2024-05-21T01:42:46.001Z</updated>
+    <updated>2024-06-29T08:07:21.356Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>每类用户有不同的可申请积分项,其他用户可参考本文</p></blockquote><hr><h2 id="发起积分流程"><a href="#发起积分流程" class="headerlink" title="发起积分流程"></a>发起积分流程</h2><h3 id="相关设定"><a href="#相关设定" class="headerlink" title="相关设定"></a>相关设定</h3><ul><li>可以随时记录自己满足的加分项</li><li>仅可选择非红字标识积分条目</li><li>可以记录<strong>最早到上个月1号</strong>的加分项</li><li>每个月<strong>只能</strong>在25号之后提交</li></ul><h3 id="发起步奏"><a href="#发起步奏" class="headerlink" title="发起步奏"></a>发起步奏</h3><p><img src="/../images/sjSend.gif"></p><ol><li>新建并选择可以选的加分项</li><li>选择上个月和本月日期</li><li>如果可以选择倍数,请设置,不设置则为默认值</li><li>添加备注</li><li>新建完成</li></ol>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>每类用户有不同的可申请积分项,其他用户可参考本文</p></blockquote><hr><h2 id="发起积分流程"><a href="#发起积分流程" class="headerlink" title="发起积分流程"></a>发起积分流程</h2><h3 id="相关设定"><a href="#相关设定" class="headerlink" title="相关设定"></a>相关设定</h3><ul><li>可以随时记录自己满足的加分项</li><li>仅可选择非红字标识积分条目</li><li>可以记录<strong>最早到上个月1号</strong>的加分项</li><li>每个月<strong>只能</strong>在25号之后提交</li></ul><h3 id="发起步奏"><a href="#发起步奏" class="headerlink" title="发起步奏"></a>发起步奏</h3><p><img src="https://s2.loli.net/2024/06/29/mNOuYni81Ilw52j.gif"></p><ol><li>新建并选择可以选的加分项</li><li>选择上个月和本月日期</li><li>如果可以选择倍数,请设置,不设置则为默认值</li><li>添加备注</li><li>新建完成</li></ol>]]></content>
     
     
       
@@ -100,25 +100,25 @@
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="使用说明" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <category term="使用说明" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
-    <category term="司机功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E5%8F%B8%E6%9C%BA%E5%8A%9F%E8%83%BD/"/>
+    <category term="司机功能" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E5%8F%B8%E6%9C%BA%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="积分功能" scheme="http://example.com/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
+    <category term="积分功能" scheme="https://help.chengbox.vip/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
     
   </entry>
   
   <entry>
     <title>排班相关</title>
-    <link href="http://example.com/%E6%8E%92%E7%8F%AD%E7%9B%B8%E5%85%B3/"/>
-    <id>http://example.com/%E6%8E%92%E7%8F%AD%E7%9B%B8%E5%85%B3/</id>
+    <link href="https://help.chengbox.vip/%E6%8E%92%E7%8F%AD%E7%9B%B8%E5%85%B3/"/>
+    <id>https://help.chengbox.vip/%E6%8E%92%E7%8F%AD%E7%9B%B8%E5%85%B3/</id>
     <published>2024-05-21T01:22:30.000Z</published>
-    <updated>2024-05-21T01:39:52.932Z</updated>
+    <updated>2024-06-29T08:07:21.351Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>自动生成用户排班数据的相关功能</p></blockquote><hr><h2 id="司机版"><a href="#司机版" class="headerlink" title="司机版"></a>司机版</h2><p><img src="/../images/sjPB.gif"></p><ul><li>可以查看到本月最后一天为止的所有车次与发车时间</li><li>可以查指定班次的车次与发车时间</li><li>提供本月全队公里数排行</li></ul><h2 id="队长版"><a href="#队长版" class="headerlink" title="队长版"></a>队长版</h2><p><img src="/../images/leaderPB.gif"></p><ul><li>可以查看当日全队班次信息与特殊交路信息</li><li>可以根据车次查由谁驾驶</li><li>可以发布全队人员可见通知</li></ul>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>自动生成用户排班数据的相关功能</p></blockquote><hr><h2 id="司机版"><a href="#司机版" class="headerlink" title="司机版"></a>司机版</h2><p><img src="https://s2.loli.net/2024/06/29/IzXGgQTmsuH2tZe.gif"></p><ul><li>可以查看到本月最后一天为止的所有车次与发车时间</li><li>可以查指定班次的车次与发车时间</li><li>提供本月全队公里数排行</li></ul><h2 id="队长版"><a href="#队长版" class="headerlink" title="队长版"></a>队长版</h2><p><img src="https://s2.loli.net/2024/06/29/gtaE2FQ9uTKrSz6.gif"></p><ul><li>可以查看当日全队班次信息与特殊交路信息</li><li>可以根据车次查由谁驾驶</li><li>可以发布全队人员可见通知</li></ul>]]></content>
     
     
       
@@ -127,30 +127,30 @@
 &lt;p&gt;自动生成用户排班数据的相关功能&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h2 id=&quot;司机版&quot;&gt;&lt;a href=&quot;#司机版&quot; class=&quot;headerlink&quot; title=&quot;司机版&quot;&gt;&lt;/a&gt;司机版&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/</summary>
+&lt;h2 id=&quot;司机版&quot;&gt;&lt;a href=&quot;#司机版&quot; class=&quot;headerlink&quot; title=&quot;司机版&quot;&gt;&lt;/a&gt;司机版&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;h</summary>
       
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="使用说明" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <category term="使用说明" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
-    <category term="通用功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
+    <category term="通用功能" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="排班功能" scheme="http://example.com/tags/%E6%8E%92%E7%8F%AD%E5%8A%9F%E8%83%BD/"/>
+    <category term="排班功能" scheme="https://help.chengbox.vip/tags/%E6%8E%92%E7%8F%AD%E5%8A%9F%E8%83%BD/"/>
     
   </entry>
   
   <entry>
     <title>数据导出文档</title>
-    <link href="http://example.com/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%87%E6%A1%A3/"/>
-    <id>http://example.com/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%87%E6%A1%A3/</id>
+    <link href="https://help.chengbox.vip/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%87%E6%A1%A3/"/>
+    <id>https://help.chengbox.vip/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%87%E6%A1%A3/</id>
     <published>2024-05-20T12:23:30.000Z</published>
-    <updated>2024-05-20T17:02:40.972Z</updated>
+    <updated>2024-06-29T08:07:21.351Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>不同用户可见数据不同</p><blockquote><p>司机以上可以导出数据,生成Excel</p></blockquote></blockquote><hr><h2 id="数据转文档网站"><a href="#数据转文档网站" class="headerlink" title="数据转文档网站"></a>数据转文档网站</h2><p><strong>请务必在浏览器收藏,方便使用</strong><br><a href="https://www.lddgo.net/string/json-to-excel">在线JSON转Excel (lddgo.net)</a></p><hr><h2 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h2><blockquote><p>以快捷排行数据为例<br><img src="/../images/outExcel.gif"></p></blockquote><p><strong>步奏:</strong></p><ol><li>开启表格</li><li>长按表格提示是否复制表格数据</li><li>确认后复制进上方给出网站</li><li>点击下载</li></ol><p><strong>注意:</strong><br>各种表格导出方式略有不同,但复制数据与下载文档方式没区别</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>不同用户可见数据不同</p><blockquote><p>司机以上可以导出数据,生成Excel</p></blockquote></blockquote><hr><h2 id="数据转文档网站"><a href="#数据转文档网站" class="headerlink" title="数据转文档网站"></a>数据转文档网站</h2><p><strong>请务必在浏览器收藏,方便使用</strong><br><a href="https://www.lddgo.net/string/json-to-excel">在线JSON转Excel (lddgo.net)</a></p><hr><h2 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h2><blockquote><p>以快捷排行数据为例<br><img src="https://s2.loli.net/2024/06/29/8gb63tUYJZQH1La.gif"></p></blockquote><p><strong>步奏:</strong></p><ol><li>开启表格</li><li>长按表格提示是否复制表格数据</li><li>确认后复制进上方给出网站</li><li>点击下载</li></ol><p><strong>注意:</strong><br>各种表格导出方式略有不同,但复制数据与下载文档方式没区别</p>]]></content>
     
     
       
@@ -167,25 +167,25 @@
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="使用说明" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <category term="使用说明" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
-    <category term="通用功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
+    <category term="通用功能" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="积分功能" scheme="http://example.com/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
+    <category term="积分功能" scheme="https://help.chengbox.vip/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
     
   </entry>
   
   <entry>
     <title>订阅消息通知</title>
-    <link href="http://example.com/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/"/>
-    <id>http://example.com/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</id>
+    <link href="https://help.chengbox.vip/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/"/>
+    <id>https://help.chengbox.vip/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</id>
     <published>2024-05-20T12:23:20.000Z</published>
-    <updated>2024-05-21T01:51:07.435Z</updated>
+    <updated>2024-06-29T08:07:21.351Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p></blockquote><hr><p><img src="/../images/mesSubscribe.gif"></p><p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p></blockquote><hr><p><img src="https://s2.loli.net/2024/06/29/H5xyNK49Sq8EPUD.gif"></p><p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>]]></content>
     
     
       
@@ -194,31 +194,31 @@
 &lt;p&gt;队长和工程师用户进入移动审批时会弹窗提醒订阅&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;/../images/mesSubscribe.gif&quot;&gt;&lt;/p&gt;
-&lt;p&gt;同意之后&lt;br&gt;会收到微信弹出消息&lt;br&gt;提示有新的未处</summary>
+&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2024/06/29/H5xyNK49Sq8EPUD.gif&quot;&gt;&lt;/p&gt;
+&lt;p&gt;同意之后&lt;</summary>
       
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="使用说明" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <category term="使用说明" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
-    <category term="通用功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
+    <category term="通用功能" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="积分功能" scheme="http://example.com/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
+    <category term="积分功能" scheme="https://help.chengbox.vip/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
     
   </entry>
   
   <entry>
     <title>登陆与密码</title>
-    <link href="http://example.com/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/"/>
-    <id>http://example.com/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/</id>
+    <link href="https://help.chengbox.vip/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/"/>
+    <id>https://help.chengbox.vip/%E7%99%BB%E9%99%86%E4%B8%8E%E5%AF%86%E7%A0%81/</id>
     <published>2024-05-20T12:22:20.000Z</published>
-    <updated>2024-05-25T03:41:30.369Z</updated>
+    <updated>2024-06-29T08:07:21.351Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>仅能通过工号登陆</p></blockquote><hr><h1 id="登陆与密码说明"><a href="#登陆与密码说明" class="headerlink" title="登陆与密码说明"></a>登陆与密码说明</h1><p>密码将<strong>绑定微信号与工号</strong><br>即<strong>只有在</strong>换了微信号使用该工号登陆时<strong>才需要</strong>输入密码</p><hr><h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="/../images/loginFail.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p><hr><h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="/../images/loginSuc.gif"></p><ul><li>请牢记密码</li><li>密码只有在更换微信登陆工号时需要使用</li><li>绝大部分用户从未使用过密码登陆,导致遗忘的比比皆是</li></ul>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>仅能通过工号登陆</p></blockquote><hr><h1 id="登陆与密码说明"><a href="#登陆与密码说明" class="headerlink" title="登陆与密码说明"></a>登陆与密码说明</h1><p>密码将<strong>绑定微信号与工号</strong><br>即<strong>只有在</strong>换了微信号使用该工号登陆时<strong>才需要</strong>输入密码</p><hr><h2 id="登陆失败"><a href="#登陆失败" class="headerlink" title="登陆失败"></a>登陆失败</h2><p>如果登陆时显示:<br><img src="https://s2.loli.net/2024/06/29/XUnDVbwWQAg5N2Y.jpg"><br>表示个人信息尚未导入数据库<br>请联系队长确认</p><hr><h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p><img src="https://s2.loli.net/2024/06/29/x9jDtiHfrcRdXBP.gif"></p><ul><li>请牢记密码</li><li>密码只有在更换微信登陆工号时需要使用</li><li>绝大部分用户从未使用过密码登陆,导致遗忘的比比皆是</li></ul>]]></content>
     
     
       
@@ -232,21 +232,21 @@
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="使用说明" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <category term="使用说明" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
-    <category term="通用功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
+    <category term="通用功能" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="登陆相关" scheme="http://example.com/tags/%E7%99%BB%E9%99%86%E7%9B%B8%E5%85%B3/"/>
+    <category term="登陆相关" scheme="https://help.chengbox.vip/tags/%E7%99%BB%E9%99%86%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
   <entry>
     <title>准备材料</title>
-    <link href="http://example.com/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/"/>
-    <id>http://example.com/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</id>
+    <link href="https://help.chengbox.vip/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/"/>
+    <id>https://help.chengbox.vip/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</id>
     <published>2024-05-20T12:21:20.000Z</published>
     <updated>2024-06-18T13:17:48.846Z</updated>
     
@@ -264,25 +264,25 @@
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="使用说明" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <category term="使用说明" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
-    <category term="通用功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
+    <category term="通用功能" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="登陆相关" scheme="http://example.com/tags/%E7%99%BB%E9%99%86%E7%9B%B8%E5%85%B3/"/>
+    <category term="登陆相关" scheme="https://help.chengbox.vip/tags/%E7%99%BB%E9%99%86%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
   <entry>
     <title>介绍与进入</title>
-    <link href="http://example.com/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/"/>
-    <id>http://example.com/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/</id>
+    <link href="https://help.chengbox.vip/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/"/>
+    <id>https://help.chengbox.vip/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/</id>
     <published>2024-05-20T12:20:20.000Z</published>
-    <updated>2024-05-25T03:41:32.849Z</updated>
+    <updated>2024-06-29T08:07:21.357Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>如果有表达不清楚的地方,欢迎联系工号604058</p></blockquote><hr><h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p><strong>积分的组成</strong>由用户自身初始数据与后期积分操作相关</p><p>本程序制作的初衷在于:</p><ul><li>让各级别用户都能参与</li><li>通过各司其职避免某级别用户工作量过大</li><li>避免遗漏加分带来的损失</li><li>可视化展现积分变化,较少信息差</li></ul><hr><h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="/../images/mini-QR.jpg" alt="二维码"></p><p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="/../images/seach_name.gif" alt="搜索"></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>如果有表达不清楚的地方,欢迎联系工号604058</p></blockquote><hr><h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p><strong>积分的组成</strong>由用户自身初始数据与后期积分操作相关</p><p>本程序制作的初衷在于:</p><ul><li>让各级别用户都能参与</li><li>通过各司其职避免某级别用户工作量过大</li><li>避免遗漏加分带来的损失</li><li>可视化展现积分变化,较少信息差</li></ul><hr><h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="https://s2.loli.net/2024/06/29/Yf4QEC2LSXnhiVB.jpg" alt="二维码"></p><p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="https://s2.loli.net/2024/06/29/WlXLPnc8bzDCRtA.gif" alt="搜索"></p>]]></content>
     
     
       
@@ -296,21 +296,21 @@
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="使用说明" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <category term="使用说明" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
-    <category term="通用功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
+    <category term="通用功能" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="登陆相关" scheme="http://example.com/tags/%E7%99%BB%E9%99%86%E7%9B%B8%E5%85%B3/"/>
+    <category term="登陆相关" scheme="https://help.chengbox.vip/tags/%E7%99%BB%E9%99%86%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
   <entry>
     <title>V1.3.12</title>
-    <link href="http://example.com/V1.3.12/"/>
-    <id>http://example.com/V1.3.12/</id>
+    <link href="https://help.chengbox.vip/V1.3.12/"/>
+    <id>https://help.chengbox.vip/V1.3.12/</id>
     <published>2024-05-20T12:20:12.000Z</published>
     <updated>2024-05-20T15:18:35.749Z</updated>
     
@@ -329,23 +329,23 @@
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="更新日志" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
+    <category term="更新日志" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
     
     
-    <category term="V1.3" scheme="http://example.com/tags/V1-3/"/>
+    <category term="V1.3" scheme="https://help.chengbox.vip/tags/V1-3/"/>
     
   </entry>
   
   <entry>
     <title>司机更改个人信息</title>
-    <link href="http://example.com/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/"/>
-    <id>http://example.com/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</id>
+    <link href="https://help.chengbox.vip/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/"/>
+    <id>https://help.chengbox.vip/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</id>
     <published>2024-05-20T01:25:30.000Z</published>
-    <updated>2024-06-20T14:43:09.283Z</updated>
+    <updated>2024-06-29T08:07:21.357Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>个人信息会影响部分积分条目</p><blockquote><p>更改后会自动生成对应的分数</p></blockquote></blockquote><hr><h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="/../images/sjInfo.gif"></p><ol><li>点击<strong>积分更改</strong>查看现有个人信息</li><li>点击<strong>发起变更</strong>以选择需要更改的项目</li><li>点击<strong>确定</strong>向队长发出申请</li><li>队长同意则更改成功</li></ol>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>个人信息会影响部分积分条目</p><blockquote><p>更改后会自动生成对应的分数</p></blockquote></blockquote><hr><h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="https://s2.loli.net/2024/06/29/DPSK5miEHgIQNlr.gif"></p><ol><li>点击<strong>积分更改</strong>查看现有个人信息</li><li>点击<strong>发起变更</strong>以选择需要更改的项目</li><li>点击<strong>确定</strong>向队长发出申请</li><li>队长同意则更改成功</li></ol>]]></content>
     
     
       
@@ -362,21 +362,21 @@
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="使用说明" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <category term="使用说明" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
-    <category term="司机功能" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E5%8F%B8%E6%9C%BA%E5%8A%9F%E8%83%BD/"/>
+    <category term="司机功能" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/%E5%8F%B8%E6%9C%BA%E5%8A%9F%E8%83%BD/"/>
     
     
-    <category term="积分功能" scheme="http://example.com/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
+    <category term="积分功能" scheme="https://help.chengbox.vip/tags/%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
     
   </entry>
   
   <entry>
     <title>V1.3.11</title>
-    <link href="http://example.com/V1.3.11/"/>
-    <id>http://example.com/V1.3.11/</id>
+    <link href="https://help.chengbox.vip/V1.3.11/"/>
+    <id>https://help.chengbox.vip/V1.3.11/</id>
     <published>2024-05-14T08:31:24.000Z</published>
     <updated>2024-05-25T03:41:56.593Z</updated>
     
@@ -396,12 +396,12 @@
     
     
     
-    <category term="小乘排班" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
     
-    <category term="更新日志" scheme="http://example.com/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
+    <category term="更新日志" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
     
     
-    <category term="V1.3" scheme="http://example.com/tags/V1-3/"/>
+    <category term="V1.3" scheme="https://help.chengbox.vip/tags/V1-3/"/>
     
   </entry>
   
