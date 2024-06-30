@@ -1,42 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>V1.3.14</title>
-    <url>/V1.3.14/</url>
+    <title>V1.3.12</title>
+    <url>/V1.3.12/</url>
     <content><![CDATA[<blockquote>
-<p>2024.6.21</p>
+<p>2024.5.20</p>
 </blockquote>
 <hr>
 <h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>更新时可暂停积分功能使用</li>
-<li>新增文档上传生成积分项功能</li>
-<li>新增多个服务器返回信息弹窗</li>
-<li>数据库增加对形成积分数据的过程数据存储,增加抗灾能力</li>
-<li>队长必发功能添加自动识别季度末和年末,以生成额外选项</li>
-<li>系统开发者可以手动处理单条积分条目上限,即将超过上限的积分申请积分改为0</li>
+<li>自动生成队长用户月度&#x2F;季度&#x2F;半年&#x2F;全年必发积分流程列表</li>
+<li>记录队长发送过的积分流程,标注未发送的</li>
+<li>主任用户可以选择驳回的积分条目,而不是驳回整个积分申请</li>
+<li>快速排行榜表格现在可以根据用户技能等级筛选表格项</li>
 </ol>
 <h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>现在只提前下载积分数值信息,详细加分项在查看详情时再下载</li>
-<li>主任用户现在仅下载本车间数据</li>
-<li>暂停使用驳回功能</li>
-<li>裁剪错误提示弹窗内容</li>
+<li>取消积分表格同名项合并</li>
+<li>积分流程详情不再同名项合并</li>
+<li>仅检测最近两个月发出的申请</li>
+<li>更改部分弹窗位置</li>
+<li>删除模板相关功能</li>
 </ol>
 <h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>登陆时卡顿</li>
-<li>多选人员的积分条目更新报错</li>
+<li>队长发出积分申请工程师无法收到推送通知</li>
+<li>部分按钮无法使用</li>
+<li>表格数据条数显示错误</li>
+<li>部分情况流程处理完后红点不消失</li>
+<li>流程已被他人处理,依然弹出红点</li>
+<li>积分流程详情不显示赋分情况</li>
+<li>部分情况工程师收不到工程车积分申请</li>
+<li>部分情况驳回积分信息系统无法识别</li>
 </ol>
 <h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
-<li>合并积分数据相关数据库访问操作,降低数据库压力</li>
-<li>模块化数据库访问相关代码,方便复用,增加可读性</li>
-<li>以增加一个复杂运算为代价,将上传的数据减少到了1%</li>
-<li>拆分积分数据,并分表存储,减小单个数据单元大小</li>
-<li>统一各类excel上传与处理逻辑,方便以后功能扩展</li>
-<li>增加对excel生成积分的中间数据的存储,方便恢复系统</li>
-<li>进一步拆分数据,减少对大数据的操作</li>
-<li>分页下载详细积分数据,避免数据大小限制</li>
-<li>设置详细数据缓存,避免重复下载</li>
-<li>降低运行时缓存数据大小</li>
-<li>移除审批界面引入积分数据的步奏</li>
+<li>压缩图片,减少加载时间</li>
+<li>重复代码抽象公共部分,形成公用函数</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>更新日志</category>
+      </categories>
+      <tags>
+        <tag>V1.3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>V1.3.11</title>
+    <url>/V1.3.11/</url>
+    <content><![CDATA[<blockquote>
+<p>2024.5.14</p>
+</blockquote>
+<hr>
+<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
+<li>主页版本号显示</li>
+<li>车间主任现在可以选择某用户积分明细中的条目，进行删除，删除后将删除整个积分申请流程，并通知所有分数发生变动的人员</li>
+<li>考虑到使用不便,删除了查询已阅按钮,添加整月分数变化表格代替</li>
+<li>删除了查询已办按钮,添加了车队积分详情表代替</li>
+</ol>
+<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
+<li>工程师的待办列表将置顶自己负责车队的积分条目</li>
+<li>更换建议的表格生成网站 - <a href="https://www.lddgo.net/string/json-to-excel">https://www.lddgo.net/string/json-to-excel</a></li>
+<li>移除司机每月提交申请次数与相同条目次数限制</li>
+<li>部分按钮增加了圆角和阴影</li>
+</ol>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
+<li>修复某些跳转太快的情况，数据加载不全的问题</li>
+<li>修复了班表更新失败的问题</li>
+<li>修复了部分情况通知接收不到问题</li>
+<li>修复了积分页面数据不同步问题</li>
+</ol>
+<h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><ol>
+<li>优化内存释放逻辑,避免系统卡顿</li>
+<li>删除已弃用代码，增加渲染速度</li>
+<li>压缩部分图片，增加渲染速度</li>
+<li>对于小数据，使用全局变量保存实现页面间数据共享，减少页面加载时间</li>
+<li>对于大数据，使用按需加载策略，减少页面加载时间</li>
+<li>尽量避免使用setdata方法,降低渲染负担</li>
+<li>计算时使用浅复制替代深复制,降低运算负担</li>
+<li>增加筛选条件减减轻络数据传输负担</li>
+<li>彻底解耦合审批页面与积分页面数据，提高系统灵活性</li>
+<li>重写积分申请的处理算法，计算量降低超过99%</li>
+<li>优化红点检测代码,从全量变为增量,处理速度理论上提高800%</li>
 </ol>
 ]]></content>
       <categories>
@@ -86,6 +129,81 @@
       </categories>
       <tags>
         <tag>V1.3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>V1.3.14</title>
+    <url>/V1.3.14/</url>
+    <content><![CDATA[<blockquote>
+<p>2024.6.21</p>
+</blockquote>
+<hr>
+<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
+<li>更新时可暂停积分功能使用</li>
+<li>新增文档上传生成积分项功能</li>
+<li>新增多个服务器返回信息弹窗</li>
+<li>数据库增加对形成积分数据的过程数据存储,增加抗灾能力</li>
+<li>队长必发功能添加自动识别季度末和年末,以生成额外选项</li>
+<li>系统开发者可以手动处理单条积分条目上限,即将超过上限的积分申请积分改为0</li>
+</ol>
+<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
+<li>现在只提前下载积分数值信息,详细加分项在查看详情时再下载</li>
+<li>主任用户现在仅下载本车间数据</li>
+<li>暂停使用驳回功能</li>
+<li>裁剪错误提示弹窗内容</li>
+</ol>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
+<li>登陆时卡顿</li>
+<li>多选人员的积分条目更新报错</li>
+</ol>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
+<li>合并积分数据相关数据库访问操作,降低数据库压力</li>
+<li>模块化数据库访问相关代码,方便复用,增加可读性</li>
+<li>以增加一个复杂运算为代价,将上传的数据减少到了1%</li>
+<li>拆分积分数据,并分表存储,减小单个数据单元大小</li>
+<li>统一各类excel上传与处理逻辑,方便以后功能扩展</li>
+<li>增加对excel生成积分的中间数据的存储,方便恢复系统</li>
+<li>进一步拆分数据,减少对大数据的操作</li>
+<li>分页下载详细积分数据,避免数据大小限制</li>
+<li>设置详细数据缓存,避免重复下载</li>
+<li>降低运行时缓存数据大小</li>
+<li>移除审批界面引入积分数据的步奏</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>更新日志</category>
+      </categories>
+      <tags>
+        <tag>V1.3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>介绍与进入</title>
+    <url>/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/</url>
+    <content><![CDATA[<blockquote>
+<p>如果有表达不清楚的地方,欢迎联系工号604058</p>
+</blockquote>
+<hr>
+<h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p><strong>积分的组成</strong>由用户自身初始数据与后期积分操作相关</p>
+<p>本程序制作的初衷在于:</p>
+<ul>
+<li>让各级别用户都能参与</li>
+<li>通过各司其职避免某级别用户工作量过大</li>
+<li>避免遗漏加分带来的损失</li>
+<li>可视化展现积分变化,较少信息差</li>
+</ul>
+<hr>
+<h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="https://s2.loli.net/2024/06/29/Yf4QEC2LSXnhiVB.jpg" alt="二维码"></p>
+<p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="https://s2.loli.net/2024/06/29/WlXLPnc8bzDCRtA.gif" alt="搜索"></p>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>登陆相关</tag>
       </tags>
   </entry>
   <entry>
@@ -149,6 +267,53 @@
       </tags>
   </entry>
   <entry>
+    <title>准备材料</title>
+    <url>/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</url>
+    <content><![CDATA[<blockquote>
+<p>只有导入了用户数据才能登陆系统</p>
+</blockquote>
+<hr>
+<p><a href="../doc/2%E5%8F%B7%E7%BA%BF%E4%B8%89%E9%98%9F%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E4%BF%A1%E6%81%AF%E8%A1%A8%E6%A8%A1%E6%9D%BF202401111951.xlsx">(〜￣△￣)〜 点击此处下载个人信息文档</a></p>
+<p><strong>注意:</strong></p>
+<p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>通用功能</category>
+      </categories>
+      <tags>
+        <tag>登陆相关</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>司机更改个人信息</title>
+    <url>/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<blockquote>
+<p>个人信息会影响部分积分条目</p>
+<blockquote>
+<p>更改后会自动生成对应的分数</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="https://s2.loli.net/2024/06/29/DPSK5miEHgIQNlr.gif"></p>
+<ol>
+<li>点击<strong>积分更改</strong>查看现有个人信息</li>
+<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
+<li>点击<strong>确定</strong>向队长发出申请</li>
+<li>队长同意则更改成功</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>使用说明</category>
+        <category>司机功能</category>
+      </categories>
+      <tags>
+        <tag>积分功能</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据导出文档</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%87%E6%A1%A3/</url>
     <content><![CDATA[<blockquote>
@@ -171,25 +336,6 @@
 <li>点击下载</li>
 </ol>
 <p><strong>注意:</strong><br>各种表格导出方式略有不同,但复制数据与下载文档方式没区别</p>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>积分功能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>订阅消息通知</title>
-    <url>/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</url>
-    <content><![CDATA[<blockquote>
-<p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
-</blockquote>
-<hr>
-<p><img src="https://s2.loli.net/2024/06/29/H5xyNK49Sq8EPUD.gif"></p>
-<p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
 ]]></content>
       <categories>
         <category>小乘排班</category>
@@ -228,168 +374,22 @@
       </tags>
   </entry>
   <entry>
-    <title>准备材料</title>
-    <url>/%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99/</url>
+    <title>订阅消息通知</title>
+    <url>/%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</url>
     <content><![CDATA[<blockquote>
-<p>只有导入了用户数据才能登陆系统</p>
+<p>队长和工程师用户进入移动审批时会弹窗提醒订阅</p>
 </blockquote>
 <hr>
-<p><a href="../doc/2%E5%8F%B7%E7%BA%BF%E4%B8%89%E9%98%9F%E7%94%A8%E6%88%B7%E7%A7%AF%E5%88%86%E4%BF%A1%E6%81%AF%E8%A1%A8%E6%A8%A1%E6%9D%BF202401111951.xlsx">(〜￣△￣)〜 点击此处下载个人信息文档</a></p>
-<p><strong>注意:</strong></p>
-<p>每一个可以打开<strong>下拉框</strong>的单元格<br><strong>必须</strong>在下拉框中选择信息!!!<br><img src="/../images/userInfoExcel.png" alt="信息模板填写"></p>
+<p><img src="https://s2.loli.net/2024/06/29/H5xyNK49Sq8EPUD.gif"></p>
+<p>同意之后<br>会收到微信弹出消息<br>提示有新的未处理流程</p>
 ]]></content>
       <categories>
         <category>小乘排班</category>
         <category>使用说明</category>
         <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>登陆相关</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>介绍与进入</title>
-    <url>/%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%BF%9B%E5%85%A5/</url>
-    <content><![CDATA[<blockquote>
-<p>如果有表达不清楚的地方,欢迎联系工号604058</p>
-</blockquote>
-<hr>
-<h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p><strong>积分的组成</strong>由用户自身初始数据与后期积分操作相关</p>
-<p>本程序制作的初衷在于:</p>
-<ul>
-<li>让各级别用户都能参与</li>
-<li>通过各司其职避免某级别用户工作量过大</li>
-<li>避免遗漏加分带来的损失</li>
-<li>可视化展现积分变化,较少信息差</li>
-</ul>
-<hr>
-<h2 id="如何进入小程序"><a href="#如何进入小程序" class="headerlink" title="如何进入小程序"></a>如何进入小程序</h2><p><strong>方法一：</strong><br>微信扫下方二维码<br><img src="https://s2.loli.net/2024/06/29/Yf4QEC2LSXnhiVB.jpg" alt="二维码"></p>
-<p><strong>方法二：</strong><br>如下图所示，在微信主页面下拉，搜索小乘排班<br><img src="https://s2.loli.net/2024/06/29/WlXLPnc8bzDCRtA.gif" alt="搜索"></p>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>通用功能</category>
-      </categories>
-      <tags>
-        <tag>登陆相关</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>V1.3.12</title>
-    <url>/V1.3.12/</url>
-    <content><![CDATA[<blockquote>
-<p>2024.5.20</p>
-</blockquote>
-<hr>
-<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>自动生成队长用户月度&#x2F;季度&#x2F;半年&#x2F;全年必发积分流程列表</li>
-<li>记录队长发送过的积分流程,标注未发送的</li>
-<li>主任用户可以选择驳回的积分条目,而不是驳回整个积分申请</li>
-<li>快速排行榜表格现在可以根据用户技能等级筛选表格项</li>
-</ol>
-<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>取消积分表格同名项合并</li>
-<li>积分流程详情不再同名项合并</li>
-<li>仅检测最近两个月发出的申请</li>
-<li>更改部分弹窗位置</li>
-<li>删除模板相关功能</li>
-</ol>
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>队长发出积分申请工程师无法收到推送通知</li>
-<li>部分按钮无法使用</li>
-<li>表格数据条数显示错误</li>
-<li>部分情况流程处理完后红点不消失</li>
-<li>流程已被他人处理,依然弹出红点</li>
-<li>积分流程详情不显示赋分情况</li>
-<li>部分情况工程师收不到工程车积分申请</li>
-<li>部分情况驳回积分信息系统无法识别</li>
-</ol>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
-<li>压缩图片,减少加载时间</li>
-<li>重复代码抽象公共部分,形成公用函数</li>
-</ol>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>更新日志</category>
-      </categories>
-      <tags>
-        <tag>V1.3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>司机更改个人信息</title>
-    <url>/%E5%8F%B8%E6%9C%BA%E6%9B%B4%E6%94%B9%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/</url>
-    <content><![CDATA[<blockquote>
-<p>个人信息会影响部分积分条目</p>
-<blockquote>
-<p>更改后会自动生成对应的分数</p>
-</blockquote>
-</blockquote>
-<hr>
-<h2 id="查看与发起步奏"><a href="#查看与发起步奏" class="headerlink" title="查看与发起步奏"></a>查看与发起步奏</h2><p><img src="https://s2.loli.net/2024/06/29/DPSK5miEHgIQNlr.gif"></p>
-<ol>
-<li>点击<strong>积分更改</strong>查看现有个人信息</li>
-<li>点击<strong>发起变更</strong>以选择需要更改的项目</li>
-<li>点击<strong>确定</strong>向队长发出申请</li>
-<li>队长同意则更改成功</li>
-</ol>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>使用说明</category>
-        <category>司机功能</category>
       </categories>
       <tags>
         <tag>积分功能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>V1.3.11</title>
-    <url>/V1.3.11/</url>
-    <content><![CDATA[<blockquote>
-<p>2024.5.14</p>
-</blockquote>
-<hr>
-<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>主页版本号显示</li>
-<li>车间主任现在可以选择某用户积分明细中的条目，进行删除，删除后将删除整个积分申请流程，并通知所有分数发生变动的人员</li>
-<li>考虑到使用不便,删除了查询已阅按钮,添加整月分数变化表格代替</li>
-<li>删除了查询已办按钮,添加了车队积分详情表代替</li>
-</ol>
-<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>工程师的待办列表将置顶自己负责车队的积分条目</li>
-<li>更换建议的表格生成网站 - <a href="https://www.lddgo.net/string/json-to-excel">https://www.lddgo.net/string/json-to-excel</a></li>
-<li>移除司机每月提交申请次数与相同条目次数限制</li>
-<li>部分按钮增加了圆角和阴影</li>
-</ol>
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>修复某些跳转太快的情况，数据加载不全的问题</li>
-<li>修复了班表更新失败的问题</li>
-<li>修复了部分情况通知接收不到问题</li>
-<li>修复了积分页面数据不同步问题</li>
-</ol>
-<h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><ol>
-<li>优化内存释放逻辑,避免系统卡顿</li>
-<li>删除已弃用代码，增加渲染速度</li>
-<li>压缩部分图片，增加渲染速度</li>
-<li>对于小数据，使用全局变量保存实现页面间数据共享，减少页面加载时间</li>
-<li>对于大数据，使用按需加载策略，减少页面加载时间</li>
-<li>尽量避免使用setdata方法,降低渲染负担</li>
-<li>计算时使用浅复制替代深复制,降低运算负担</li>
-<li>增加筛选条件减减轻络数据传输负担</li>
-<li>彻底解耦合审批页面与积分页面数据，提高系统灵活性</li>
-<li>重写积分申请的处理算法，计算量降低超过99%</li>
-<li>优化红点检测代码,从全量变为增量,处理速度理论上提高800%</li>
-</ol>
-]]></content>
-      <categories>
-        <category>小乘排班</category>
-        <category>更新日志</category>
-      </categories>
-      <tags>
-        <tag>V1.3</tag>
       </tags>
   </entry>
 </search>
