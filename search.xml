@@ -17,6 +17,43 @@
       </tags>
   </entry>
   <entry>
+    <title>V1.3.15</title>
+    <url>/V1.3.15/</url>
+    <content><![CDATA[<blockquote>
+<p>2024.7.4</p>
+</blockquote>
+<hr>
+<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
+<li>业务考试与安全考试文档上传</li>
+<li>使用情况表格</li>
+</ol>
+<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
+<li>统一部分数据的数据格式,可能造成部分功能异常!!!</li>
+</ol>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
+<li>驳回导致分数负数</li>
+<li>新队长用户积分功能不可用</li>
+<li>部分情况工程师操作申请,积分变动失败</li>
+<li>部分情况收不到推送通知</li>
+<li>部分情况总分计算错误</li>
+<li>更新交路表无法自动替换老版本</li>
+<li>部分情况无法操作已读</li>
+<li>部分情况每月必发功能不可用</li>
+</ol>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
+<li>使用说明网站减少首页内容,增加读取速度</li>
+<li>将体量大的图片放入SM图床,减少服务器流量占用</li>
+</ol>
+]]></content>
+      <categories>
+        <category>小乘排班</category>
+        <category>更新日志</category>
+      </categories>
+      <tags>
+        <tag>V1.3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>V1.3.14</title>
     <url>/V1.3.14/</url>
     <content><![CDATA[<blockquote>
@@ -261,6 +298,7 @@
       </categories>
       <tags>
         <tag>登陆相关</tag>
+        <tag>资源下载</tag>
       </tags>
   </entry>
   <entry>
