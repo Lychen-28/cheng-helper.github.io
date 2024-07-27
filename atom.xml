@@ -6,7 +6,7 @@
   <link href="https://help.chengbox.vip/atom.xml" rel="self"/>
   
   <link href="https://help.chengbox.vip/"/>
-  <updated>2024-07-24T15:01:57.660Z</updated>
+  <updated>2024-07-27T06:38:50.665Z</updated>
   <id>https://help.chengbox.vip/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>V1.3.16</title>
+    <link href="https://help.chengbox.vip/V1.3.16/"/>
+    <id>https://help.chengbox.vip/V1.3.16/</id>
+    <published>2024-07-28T12:20:12.000Z</published>
+    <updated>2024-07-27T06:38:50.665Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>2024.7.28</p></blockquote><hr><h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol><li>公里数导入模板文档</li><li>主任批量驳回</li><li>工程车批量人员选择</li><li>选择需要文档生成的积分条目时提示框</li><li>点击待阅按钮时,如果没有,则显示驳回列表</li><li>用于自定义扣分的”安”类积分选项</li><li>涉及上限积分申请判断与自动拒绝</li></ol><h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol><li>删除队长每月必发列表中的错误积分项</li><li>更改个人数据获取流程</li><li>更改部分权限</li></ol><h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol><li>部分情况已读无法删除</li><li>部分情况交路表无法自动更新</li><li>主任用户查看不到已发流程</li><li>部分情况无法订阅通知</li><li>输入拒绝原因界面点击取消也继续执行程序</li></ol><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol><li>减少工程师用户需要获取的数据量,避免卡顿</li><li>增加错误可选积分项出现时的禁止弹窗</li><li></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;2024.7.28&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;新增&quot;&gt;&lt;a href=&quot;#新增&quot; class=&quot;headerlink&quot; title=&quot;新增&quot;&gt;&lt;/a&gt;新增&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;公里数导入模板文档&lt;/li&gt;
+</summary>
+      
+    
+    
+    
+    <category term="小乘排班" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/"/>
+    
+    <category term="更新日志" scheme="https://help.chengbox.vip/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
+    
+    
+    <category term="V1.3" scheme="https://help.chengbox.vip/tags/V1-3/"/>
+    
+  </entry>
   
   <entry>
     <title>上传文档生成积分模板</title>
