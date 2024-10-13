@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>V1.3.16 |  Cheng</title>
+      <title>第八章 网络安全基础 |  Cheng</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -65,7 +65,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-V1.3.16"
+  id="post-第8章 网络安全基础"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -76,7 +76,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  V1.3.16
+  第八章 网络安全基础
 </h1>
  
 
@@ -84,11 +84,11 @@
     </header>
      
     <div class="article-meta">
-      <a href="/V1.3.16/" class="article-date">
-  <time datetime="2024-07-28T12:20:12.000Z" itemprop="datePublished">2024-07-28</time>
+      <a href="/%E7%AC%AC8%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2024-10-13T12:22:20.000Z" itemprop="datePublished">2024-10-13</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/">更新日志</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a> / <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a>
   </div>
   
 <div class="word_count">
@@ -96,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">232</span>
+            <span class="post-count">2.5k</span>
         </span>
     </span>
 
@@ -105,7 +105,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">8 分钟</span>
         </span>
     </span>
 </div>
@@ -120,36 +120,156 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>2024.7.28</p>
-</blockquote>
-<hr>
-<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>公里数导入模板文档</li>
-<li>主任批量驳回</li>
-<li>工程车批量人员选择</li>
-<li>选择需要文档生成的积分条目时提示框</li>
-<li>点击待阅按钮时,如果没有,则显示驳回列表</li>
-<li>用于自定义扣分的”安”类积分选项</li>
-<li>涉及上限积分申请判断与自动拒绝</li>
-</ol>
-<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>删除队长每月必发列表中的错误积分项</li>
-<li>更改个人数据获取流程</li>
-<li>更改部分权限</li>
-</ol>
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>部分情况已读无法删除</li>
-<li>部分情况交路表无法自动更新</li>
-<li>主任用户查看不到已发流程</li>
-<li>部分情况无法订阅通知</li>
-<li>输入拒绝原因界面点击取消也继续执行程序</li>
-</ol>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
-<li>减少工程师用户需要获取的数据量,避免卡顿</li>
-<li>增加错误可选积分项出现时的禁止弹窗</li>
-<li></li>
-</ol>
+  <p>基本属性：</p>
+<ul>
+<li>机密性<ul>
+<li>只有发送方和预定接收方能理解报文内容</li>
+<li>发送前加密</li>
+</ul>
+</li>
+<li>消息完整性：发送篡改一定会被检测到</li>
+<li>可访问和可用性：允许授权用户或实体使用</li>
+<li>身份认证：对数据来源进行确认</li>
+</ul>
+<h3 id="安全威胁"><a href="#安全威胁" class="headerlink" title="安全威胁"></a>安全威胁</h3><p>映射：</p>
+<ul>
+<li>攻击前探路找出运行了什么服务</li>
+<li>利用 ping 确定主机地址</li>
+<li>利用端口扫描工具，如 Nmap ，依次尝试与每个端口建立 TCP 连接<br>嗅探：</li>
+<li>通常发生于以太网和无线网</li>
+<li>利用混杂模式的网络接口，接收广播帧，读到未加密数据<br>IP 欺骗：设置分组的源 IP 地址为任意值</li>
+</ul>
+<h2 id="数据加密"><a href="#数据加密" class="headerlink" title="数据加密"></a>数据加密</h2><p>密码学是信息安全的核心基础</p>
+<ul>
+<li>密码编码学</li>
+<li>密码分析学<br>明文-&gt;加密-&gt;密文-&gt;解密-&gt;密文<br>密码体制 5 要素：</li>
+<li>M：明文空间，可能出现的明文的有限集</li>
+<li>C：密文空间</li>
+<li>K：密钥空间</li>
+<li>E：加密算法</li>
+<li>D：解密算法<br>必须满足：</li>
+<li>Dk（Ek（x））&#x3D; x</li>
+<li>破译者有效时间内不能破解 K 或明文 x</li>
+</ul>
+<h3 id="传统加密"><a href="#传统加密" class="headerlink" title="传统加密"></a>传统加密</h3><h4 id="替代密码"><a href="#替代密码" class="headerlink" title="替代密码"></a>替代密码</h4><p>经典应用位凯撒密码<br>如将 q &#x3D; 26 的字母表右移 k 位<br>例题与公式见 P273</p>
+<h4 id="换位密码"><a href="#换位密码" class="headerlink" title="换位密码"></a>换位密码</h4><p>打乱明文字符的位置和次序</p>
+<ul>
+<li>将明文 P 按密钥 K 的长度 n 进行分组</li>
+<li>如果不是整数倍，则按约定填充</li>
+<li>K 一般为无重复字母的单词</li>
+<li>根据 K 中字母在字母表的顺序，更改每个组的输出顺序</li>
+</ul>
+<h3 id="对称密钥加密"><a href="#对称密钥加密" class="headerlink" title="对称密钥加密"></a>对称密钥加密</h3><p>加密密钥和解密密钥相同，分为：</p>
+<ul>
+<li>流密码（序列密码）：伪随机数发生器产生密码流，对明文消息流加密</li>
+<li>分组密码（块密码）：将明文消息分成若干固定长度的消息组，每组单独加密&#x2F;解密<br>计算机网络常用的对称密钥加密为分组加密，常见的有：</li>
+</ul>
+<h4 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h4><p>使用 56 位的密钥，明文为 64位分组序列，共进行16 轮的加密，每轮加密都会进行复杂的替代和置换操作，并且每轮加密都会使用一个由 56位密钥导出的48 位子密钥，最终输出与明文等长的 64位密文</p>
+<h4 id="三重DES"><a href="#三重DES" class="headerlink" title="三重DES"></a>三重DES</h4><p>避免由于密码位数太短， DES 被穷举攻击<br>使用 2 个密钥执行 3 次 DES 算法：</p>
+<ul>
+<li>加密过程：加密-解密-加密</li>
+<li>解密过程：解密-加密-解密</li>
+</ul>
+<h4 id="AES加密算法"><a href="#AES加密算法" class="headerlink" title="AES加密算法"></a>AES加密算法</h4><p>密钥和分组长度可变<br>使用置换，替代，多轮加密，轮数随密钥和分组长度增加而增加<br>加密过程：字节替代，行位移，列混淆，轮密钥加<br>解密过程为上述逆过程</p>
+<h4 id="IDEA加密算法"><a href="#IDEA加密算法" class="headerlink" title="IDEA加密算法"></a>IDEA加密算法</h4><p>广泛应用于安全电子邮件<br>64 位分组长度，密钥 128 位<br>速度快，抵抗密码分析</p>
+<h3 id="非对称-公开密钥加密"><a href="#非对称-公开密钥加密" class="headerlink" title="非对称&#x2F;公开密钥加密"></a>非对称&#x2F;公开密钥加密</h3><p>避免密码分发时被偷取，设置公开密钥密码</p>
+<ul>
+<li>A有公钥 K+与私钥 K-</li>
+<li>当 B 给 A 发送：<ul>
+<li>B 使用 A 的公钥与众所周知的加密算法加密给 A 的报文 m，即 K+（m）</li>
+<li>A 接收到后使用私钥解密，即 K-（K+（m）），得到 m</li>
+</ul>
+</li>
+<li>当 A 给 B 发送：<ul>
+<li>A 使用私钥加密，即 K-（m）</li>
+<li>B 用公钥解密，即 K+（K-（m））&#x3D; m<br>使用最广泛的时 RSA 算法，通常与DES 或 AES结合使用，即使用 DES 密钥作为公钥</li>
+</ul>
+</li>
+</ul>
+<h2 id="消息完整性"><a href="#消息完整性" class="headerlink" title="消息完整性"></a>消息完整性</h2><p>也称为消息认证，用于证明报文来自声称的发送方，预防篡改，预防抵赖（包括否认发送与否认接收）</p>
+<h3 id="检测方法"><a href="#检测方法" class="headerlink" title="检测方法"></a>检测方法</h3><p>需要用到密码散列函数H（m），对报文散列化</p>
+<ul>
+<li>单向性：无法通过散列值h逆推出报文</li>
+<li>抗弱碰撞性：对于报文 x，计算上不可能找到 y，使 H（x） &#x3D; H（y）</li>
+<li>抗强对抗性：任意两个不同的报文 x，y，其散列值不同</li>
+</ul>
+<h4 id="典型散列函数"><a href="#典型散列函数" class="headerlink" title="典型散列函数"></a>典型散列函数</h4><h5 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h5><p>可以得到 128 位散列值<br>存在相同散列值的报文，且已被破解</p>
+<h5 id="SHA-1"><a href="#SHA-1" class="headerlink" title="SHA-1"></a>SHA-1</h5><p>生成 160 位散列值，常用于创建数字签名</p>
+<h3 id="报文认证"><a href="#报文认证" class="headerlink" title="报文认证"></a>报文认证</h3><p>报文摘要：h &#x3D; H（m），可以作为报文 m 的数字指纹<br>报文认证：利用数字指纹，验证：</p>
+<ul>
+<li>消息源：验证来源真实</li>
+<li>消息：消息未被篡改</li>
+</ul>
+<h4 id="简单报文认证"><a href="#简单报文认证" class="headerlink" title="简单报文认证"></a>简单报文认证</h4><p>发送方将报文摘要和报文组成<strong>扩展报文（m,H(m)）</strong><br>接收方从扩展报文提取出报文 m，进行H（m），将结果与 h 做比较，若相等则认证成功<br><strong>缺陷：</strong> 由于散列函数是公开的，攻击者可以截获报文后，转为发送自己利用散列函数生成摘要，并组成的扩展报文，同样能完成报文认证，即无法实现对消息来源认证</p>
+<h4 id="报文认证码MAC"><a href="#报文认证码MAC" class="headerlink" title="报文认证码MAC"></a>报文认证码MAC</h4><p>发送方和接收方共享一个认证密钥s<br>与上方的不同为所有散列函数计算变为：H（m+s）<br><strong>缺陷：</strong> 只要拥有认证密钥就能生成可以认证成功的扩展报文，即无法保证消息在接收方没被篡改</p>
+<h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><p>解决上述两个方法的缺陷<br>引入非对称加密</p>
+<h4 id="简单数字签名"><a href="#简单数字签名" class="headerlink" title="简单数字签名"></a>简单数字签名</h4><p>发送方利用私钥 K-加密报文 m，生气<strong>签名报文</strong> K-（m），发送扩展报文（m,K-(m)）给接收方<br>接收方使用发送方的公钥 K+解密，检验 K+(K-(m)) &#x3D; m,如果成立，则 m 一定是发送方加密的</p>
+<h4 id="签名报文摘要"><a href="#签名报文摘要" class="headerlink" title="签名报文摘要"></a>签名报文摘要</h4><p>由于加密算法对整个报文加密计算量大，扩展报文数据量大，浪费接收方流量<br>发送方对报文摘要 H(m)使用私钥加密，K-(H(m))<br>其他与上文一样</p>
+<h2 id="身份认证"><a href="#身份认证" class="headerlink" title="身份认证"></a>身份认证</h2><p>通过鉴别协议建立互相信任的各方的标识，仅当鉴别完成后，才继续工作</p>
+<ul>
+<li>接收方在收到消息前发送一个一次性随机数</li>
+<li>随机数被发送方以对称或非对称加密</li>
+<li>接收方解密后确认值为自己发送的随机数</li>
+</ul>
+<h2 id="密钥分发中心与证书认证机构"><a href="#密钥分发中心与证书认证机构" class="headerlink" title="密钥分发中心与证书认证机构"></a>密钥分发中心与证书认证机构</h2><p>对称密钥效率高，速度快<br>因此需要建立一个大家都信任的密钥分发中心 KDC</p>
+<ul>
+<li>每一方都和 KDC 之间都保持一个长期的共享密钥</li>
+<li>双方借助 KDC 在通信双方之间创建一个临时的会话密钥，即对称密钥<br>分发方式一：</li>
+<li>A 将会话密钥通过共享密钥加密后给 KDC</li>
+<li>KDC 解密后利用 B 的共享密钥加密发送给 B</li>
+<li>B 接收到后解密获取会话密钥，这样 A 和 B 的对称加密建立成功<br>方式二：</li>
+<li>A向 KDC 发送与 B 通信的请求</li>
+<li>KDC 随机选一个会话密钥，分别用 A 和 B 的共享密钥加密后，发给 A 和 B</li>
+<li>A 和 B 接受并解密后，对称加密通信建立成功</li>
+</ul>
+<h3 id="证书认证机构"><a href="#证书认证机构" class="headerlink" title="证书认证机构"></a>证书认证机构</h3><p>用于证实你拥有的公钥是你要通信的实体的公钥<br>将公钥与特定实体绑定，并生成证书，通常由认证中心 CA 完成<br>A 想要 B 的公钥时，先获取 B 的公钥证书，然后通过 CA 的公钥解密证书以获得 B 的公钥</p>
+<h2 id="防火墙与入侵检测系统"><a href="#防火墙与入侵检测系统" class="headerlink" title="防火墙与入侵检测系统"></a>防火墙与入侵检测系统</h2><p>隔离内部网络和公共互联网，筛选可以通过的分组<br>必须保证所有进出内部网络的流量都经过防火墙<br>分类：</p>
+<ul>
+<li>无状态分组过滤器：<ul>
+<li>往往部署在内部网络和网络边缘路由器</li>
+<li>筛选基于：<ul>
+<li>IP 地址</li>
+<li>端口号</li>
+<li>ICMP 报文类型</li>
+<li>TCP 报文段的 SYN 和 ACK 标志位</li>
+</ul>
+</li>
+<li>使用访问控制列表 ACL 实现防火墙规则</li>
+</ul>
+</li>
+<li>有状态分组过滤器：<ul>
+<li>避免放行所有满足条件分组</li>
+<li>使用连接表跟踪每个 TCP 连接，根据建立 SYN 和拆除 FIN，确定状态和是否放行</li>
+</ul>
+</li>
+<li>应用网关：<ul>
+<li>前两种都无法鉴别用户身份</li>
+<li>会进行身份鉴别，只有授权用户才能与目的主机建立连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="入侵检测系统IDS"><a href="#入侵检测系统IDS" class="headerlink" title="入侵检测系统IDS"></a>入侵检测系统IDS</h3><p>当观察到潜在的恶意流量，能产生警告<br>深入查到分组携带的实际数据<br><strong>非军事区 DMZ ：</strong> 低安全度区域，不仅进行深度分组检查，同时要将每个过往分组与大量特征进行比较</p>
+<h2 id="网络安全协议"><a href="#网络安全协议" class="headerlink" title="网络安全协议"></a>网络安全协议</h2><h3 id="安全电子邮件"><a href="#安全电子邮件" class="headerlink" title="安全电子邮件"></a>安全电子邮件</h3><p>应用层安全协议<br>PGP 标准，对邮件的内容进行数字证书，保证不被篡改和不被否认<br>加密阶段：</p>
+<ul>
+<li>对报文 m 进行 SHA-1 散列函数散列，得到 H(m)</li>
+<li>A 的私钥配合 RSA 算法进行数字签名，得到 K-(H(m))</li>
+<li>压缩 m 和数字签名，并使用对称密钥 Ks 进行 3DES</li>
+<li>将对称密钥使用 K-与 RSA 加密</li>
+<li>对加密的密钥和压缩包进行 Base64编码<br>解密阶段：反过程</li>
+</ul>
+<h3 id="安全套接字层SSL"><a href="#安全套接字层SSL" class="headerlink" title="安全套接字层SSL"></a>安全套接字层SSL</h3><p>传输层安全协议，面向 TCP<br>Web 页面可能隐藏恶意程序，并且 HTTP 报文是明文形式传输，很容易遭受攻击<br>为了解决 Web 应用安全问题，在 应用层与传输层之间构建一个安全层，最经典的就是：</p>
+<ul>
+<li>安全套接字层 SSL</li>
+<li>传输层安全 TLS<br>TLS 是 SSL 的变体，区别不大<br>SSL 提供的安全服务：</li>
+<li>机密性</li>
+<li>完整性</li>
+<li>身份认证<br>HTTP 协议使用了 SSL 后称为安全 HTTP 或 HTTPS</li>
+</ul>
+<h3 id="IPSec"><a href="#IPSec" class="headerlink" title="IPSec"></a>IPSec</h3><p>网络层安全协议<br>创建运行在公共网络只上的虚拟专用网 VPN<br>核心协议是 AH 协议和 ESP 协议<br>两种模式</p>
+<ul>
+<li>传输模式</li>
+<li>隧道模式<br>两两组合有四种组合</li>
+</ul>
  
       <!-- reward -->
       
@@ -214,12 +334,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://help.chengbox.vip/V1.3.16/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://help.chengbox.vip/%E7%AC%AC8%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/V1-3/" rel="tag">V1.3</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/" rel="tag">开发笔记</a></li></ul>
 
     </footer>
   </div>
@@ -227,19 +347,19 @@
    
   <nav class="article-nav">
     
-      <a href="/%E7%AC%AC8%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+      <a href="/%E7%AC%AC7%E7%AB%A0%20%E6%97%A0%E7%BA%BF%E4%B8%8E%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            第八章 网络安全基础
+            第七章 无线与移动网络
           
         </div>
       </a>
     
     
-      <a href="/%E4%B8%8A%E4%BC%A0%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E7%A7%AF%E5%88%86%E6%A8%A1%E6%9D%BF/" class="article-nav-link">
+      <a href="/V1.3.16/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">上传文档生成积分模板</div>
+        <div class="article-nav-title">V1.3.16</div>
       </a>
     
   </nav>

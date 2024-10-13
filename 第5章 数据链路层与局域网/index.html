@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>第五章 数据链路层与局域网 |  Cheng</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="Cheng" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-第5章 数据链路层与局域网"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  第五章 数据链路层与局域网
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E7%AC%AC5%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E4%B8%8E%E5%B1%80%E5%9F%9F%E7%BD%91/" class="article-date">
+  <time datetime="2024-10-13T12:22:20.000Z" itemprop="datePublished">2024-10-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a> / <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">4.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">15 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>网络层数据报封装在数据链路层帧中，在物理线路之上的逻辑数据通路中传送<br>典型硬件实体：网络适配器<br>结点：数据链路的端点<br>链路：结点间信道<br>提供的服务：</p>
+<ul>
+<li>组帧：<ul>
+<li>帧头：发送与接收结点的地址信息</li>
+<li>帧尾：差错编码</li>
+<li>帧定界：在头和尾，用于识别帧的开始和结束</li>
+</ul>
+</li>
+<li>链路接入：<ul>
+<li>点对点链路：独占通信链路，控制简单</li>
+<li>广播链路：通信链路被多个结点共享，彼此会干扰，因此必须运行媒介访问控制MAC协议，用于协调</li>
+</ul>
+</li>
+<li>可靠交付：<ul>
+<li>有线链路：没必要，所以不提供可靠传输服务</li>
+<li>无线链路：参考传输层可靠传输方式</li>
+</ul>
+</li>
+<li>差错控制：控制由信噪比等导致的误比特率高造成的影响</li>
+</ul>
+<h2 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h2><p>噪音分类：</p>
+<ul>
+<li>随机噪音：引起随机差错或独立差错</li>
+<li>冲击噪音：突发差错<br>突发长度：突发错误第一位到最后一位长度</li>
+</ul>
+<h3 id="基本方式"><a href="#基本方式" class="headerlink" title="基本方式"></a>基本方式</h3><ul>
+<li>检错重发：<ul>
+<li>发送方对数据进行差错编码</li>
+<li>接收方利用差错编码判断数据是否有错</li>
+<li>有错则要求重发</li>
+<li>例如等停协议，滑动窗口</li>
+</ul>
+</li>
+<li>前向纠错 FEC：<ul>
+<li>发送方对数据进行纠错编码</li>
+<li>接收方通过纠错编码，定位错误位置并纠正</li>
+<li>适用于单工链路与对实时性要求高应用</li>
+</ul>
+</li>
+<li>反馈校验：<ul>
+<li>接受端将数据原封不动发给发送方</li>
+<li>原理简单，易于实现，不需要差错编码</li>
+<li>传输效率差，实时性差</li>
+</ul>
+</li>
+<li>检错丢弃：<ul>
+<li>发现错误直接丢弃</li>
+<li>适合实时性要求高的应用</li>
+</ul>
+</li>
+<li>混合差错控制：<ul>
+<li>检错重发与前向纠错结合</li>
+</ul>
+</li>
+</ul>
+<h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>香农信道编码定理：可以通过编码使数据传输过程不发生错误<br>差错编码基本原理：待传输的数据加上冗余信息，接收端检测冗余信息与原数据关系是否存在<br>比如发送 01 时将数据变为 0101，但这个方式无法实现纠错</p>
+<h3 id="检错与纠错"><a href="#检错与纠错" class="headerlink" title="检错与纠错"></a>检错与纠错</h3><p>汉明距离 dc ：两个等长码之间，对应位不同的数量<br>编码集的汉明距离 ds：其中任意两个编码汉明距离最小值</p>
+<ul>
+<li>对于检错编码：<ul>
+<li>如果 ds&#x3D;r+1 ，则可以检测 r 位差错</li>
+</ul>
+</li>
+<li>对于纠错编码：<ul>
+<li>如果 ds&#x3D;2r+1，则可以纠正 r 位差错</li>
+<li>发生错误时恢复成距离最近的正确编码</li>
+</ul>
+</li>
+<li>例题见 P180</li>
+</ul>
+<h3 id="典型差错编码"><a href="#典型差错编码" class="headerlink" title="典型差错编码"></a>典型差错编码</h3><p>异或运算 XOR：</p>
+<ul>
+<li>符号为圈中加号</li>
+<li>相同为 0 否则 1</li>
+<li>相当于加法没进位</li>
+</ul>
+<h4 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h4><ul>
+<li>1 位冗余信息，放在 a0，使 1 的位数为奇数（偶数）</li>
+<li>即满足各位 XOR 结果为 1（0）<ul>
+<li>其中式子为<strong>监督关系式</strong></li>
+<li>结果为<strong>校正因子 S</strong></li>
+</ul>
+</li>
+<li>50% 检错率</li>
+<li>编码简单，开销小</li>
+<li>用于低速串行链路</li>
+</ul>
+<h4 id="汉明码"><a href="#汉明码" class="headerlink" title="汉明码"></a>汉明码</h4><p>当信息足够长时编码效率高</p>
+<h5 id="纠错原理"><a href="#纠错原理" class="headerlink" title="纠错原理"></a>纠错原理</h5><p>在<strong>k 位信息位</strong>增加<strong>r 位冗余位</strong>，得到<strong>码字长度n</strong>为k+r，以增加<strong>r 个</strong>校正因子与监督关系式<br>如有两个校正因子，比如 10，则有四种情况，其中一种表明正确，其余三种可以指明出错的位置<br>为实现纠错，要求：<br>2^r &gt;&#x3D; n+1<br>因此 k 越大，编码效率越高<br><strong>缺点：</strong> 只能纠正一位错误<br>例题见 P181</p>
+<h4 id="循环冗余码CRC"><a href="#循环冗余码CRC" class="headerlink" title="循环冗余码CRC"></a>循环冗余码CRC</h4><p>在现代网络数据链路层广泛使用于检错，也称为多项式编码<br>将二进制串看成多项式<br>如：100101 看成 x^5+x^2+1<br>发送方与接收方商定一个多项式 G(x)，其中最高最低位必须是 1，长度必须比数据帧短<br>在帧的尾部附加一个校验和使帧对应的多项式 M（x)能被 G(x)除尽，如果结果为 0 则没出错<br>例题见 P183</p>
+<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><ul>
+<li>检错能力强：能 100% 检查出 16 位以下错误</li>
+<li>编码效率高：冗余位与数据位数无关，信息位长时，开销很小</li>
+</ul>
+<h2 id="多路访问控制协议MAC"><a href="#多路访问控制协议MAC" class="headerlink" title="多路访问控制协议MAC"></a>多路访问控制协议MAC</h2><p>对于广播通信方式，信道上有很多结点，需要 MAC 协议来协调结点的数据发送<br>主要分为 3 种</p>
+<h3 id="信道划分MAC"><a href="#信道划分MAC" class="headerlink" title="信道划分MAC"></a>信道划分MAC</h3><p>通过<strong>多路复用技术</strong>，将信道划分并分配给不同结点，各结点只使用被分配的资源</p>
+<h4 id="频分多路复用FDM"><a href="#频分多路复用FDM" class="headerlink" title="频分多路复用FDM"></a>频分多路复用FDM</h4><p>对应的多路复用 MAC 协议为后方加 A，即 <strong>FDMA</strong>，下同<br>常用于模拟传输的宽带网络<br>将信号调制到互不重叠的频带上<br>往往每路语音信号占4kHz，其中 3.1kHz 为语音频带，两侧各留 0.45kHz保护频带</p>
+<ul>
+<li>优点：分路方便，在模拟通信领域应用广泛</li>
+<li>缺点：<ul>
+<li>串扰：各路信号之间相互干扰</li>
+<li>所需设备随输入路数增大而增多，不易小量化</li>
+<li>不提供差错控制</li>
+</ul>
+</li>
+</ul>
+<h4 id="时分多路复用TDM"><a href="#时分多路复用TDM" class="headerlink" title="时分多路复用TDM"></a>时分多路复用TDM</h4><p>将信号在时域内划分为多个等长时隙，每路信号占用不同时隙，实现信道共享</p>
+<ul>
+<li><strong>同步时分多路复用 STDM</strong><ul>
+<li>按固定顺序，把时隙分配给n路信号</li>
+<li>发送端以 n 为周期，将 n 路信号的采样构成一个时分复用帧</li>
+<li>接收端采样严格同步的时隙分割方式，完成分离与还原</li>
+<li>缺点：可能出现空闲时隙，造成信道资源浪费</li>
+</ul>
+</li>
+<li><strong>异步时分多路复用ATDM</strong><ul>
+<li>也称为<strong>统计时分多路复用 STDM</strong></li>
+<li>给数据量大的用户分配较多时隙，数据量小…</li>
+<li>给每个时隙加上用户的标识</li>
+<li>主要用于高速远程传播，即广域网</li>
+<li>缺点：<ul>
+<li>技术复杂性高</li>
+<li>信道共享冲突问题</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="波分多路复用WDM"><a href="#波分多路复用WDM" class="headerlink" title="波分多路复用WDM"></a>波分多路复用WDM</h4><p>用于光纤通信<br>通常用光的波长来代替频率讨论<br>在一根光纤中，传输多路不同波长的光信号<br>长距离传输需要光纤放大器 EDFA，两个之间 120km</p>
+<h5 id="密集波分复用-DWDM："><a href="#密集波分复用-DWDM：" class="headerlink" title="密集波分复用 DWDM："></a>密集波分复用 DWDM：</h5><ul>
+<li>波长划分更密集，复用度更高，信道利用率更高</li>
+<li>关键技术：光放大器</li>
+<li>现代光纤通信网络的重要基础</li>
+</ul>
+<h4 id="码分多路复用CDM"><a href="#码分多路复用CDM" class="headerlink" title="码分多路复用CDM"></a>码分多路复用CDM</h4><p>扩频技术：利用更长的互相正交的码组分别编码原始信息，实现信道共享<br>两码组 X 和 Y 相互正交充分必要条件即 p(X,Y) &#x3D; 0<br>例题见 P189</p>
+<h3 id="随机访问MAC协议"><a href="#随机访问MAC协议" class="headerlink" title="随机访问MAC协议"></a>随机访问MAC协议</h3><p>争用接入：所有用户随机地向信道上发送信息，胜利者暂时占用信道<br>如果同时一个以上用户在信道上发送信息，则产生<strong>冲突</strong>，发送失败，每个用户随机退让一段时间，再次尝试</p>
+<h4 id="ALOHA协议"><a href="#ALOHA协议" class="headerlink" title="ALOHA协议"></a>ALOHA协议</h4><p>最早最基本的无线数据通信协议<br>通信站点随机接入共享信道（天空），频率相同，任意两个同频率广播帧都会使双方失效<br><strong>根本缺点：</strong> 发送前不判断信道是否空闲</p>
+<h5 id="纯ALOHA"><a href="#纯ALOHA" class="headerlink" title="纯ALOHA"></a>纯ALOHA</h5><p>发送站发出后侦听一段时间，等待应答信号，未收到则等待一个随机时间后再次发送<br>性能：</p>
+<ul>
+<li>吞吐率 S：在一帧的发送时间 T0 内成功发送的平均帧数，0&lt;S&lt;1</li>
+<li>信道利用率：S 接近 1 的程度</li>
+<li>网络负载 G：T0 内发送的平均帧数，无论是否成功</li>
+<li>S &#x3D; Ge^-2G</li>
+<li>G &#x3D; 0.5 时,S最高</li>
+</ul>
+<h5 id="时隙ALOHA"><a href="#时隙ALOHA" class="headerlink" title="时隙ALOHA"></a>时隙ALOHA</h5><p>需要所有通信站在时间上同步<br>把信道时间分成离散的时隙 Slot<br>每个时隙为发送一帧所需时间<br>在时隙开始时发送<br>如果出现冲突，下一时隙概率 P 重发<br>性能：</p>
+<ul>
+<li>S &#x3D; Ge^-G</li>
+<li>G &#x3D; 1时 S 最大</li>
+<li>冲突危险区为纯的一半</li>
+<li>冲突概率低</li>
+</ul>
+<h4 id="载波监听多路访问协议"><a href="#载波监听多路访问协议" class="headerlink" title="载波监听多路访问协议"></a>载波监听多路访问协议</h4><p>先听后说：发送数据前，监听信道上其他站点是否在发送</p>
+<h5 id="非坚持CSMA"><a href="#非坚持CSMA" class="headerlink" title="非坚持CSMA"></a>非坚持CSMA</h5><p>若发现信道忙，等待一个随机时间，然后重新开始侦听</p>
+<ul>
+<li>优点：减少了冲突概率</li>
+<li>缺点：信道空闲时间长，发送延迟大，容易被捷足先登</li>
+</ul>
+<h5 id="1-坚持CSMA"><a href="#1-坚持CSMA" class="headerlink" title="1-坚持CSMA"></a>1-坚持CSMA</h5><p>若发现信道忙，继续侦听，直至发现空闲</p>
+<ul>
+<li>优点：减少了信道空闲时间</li>
+<li>缺点：可能多个站点同时侦听，导致冲突概率大</li>
+</ul>
+<h5 id="P-坚持CMSA"><a href="#P-坚持CMSA" class="headerlink" title="P-坚持CMSA"></a>P-坚持CMSA</h5><p>坚持监听，发现空闲后，以概率 P在下一时隙侦听并发送数据</p>
+<h4 id="带冲突检测的载波监听多路访问协议"><a href="#带冲突检测的载波监听多路访问协议" class="headerlink" title="带冲突检测的载波监听多路访问协议"></a>带冲突检测的载波监听多路访问协议</h4><p><strong>CSMA&#x2F;CD</strong> 其中 CD 标识冲突检测，用于在发送数据的同时监听信道，发生冲突，立即停止发送，发出<strong>冲突强化信号</strong>，使所有通信站知道冲突发生，并等待随机时间，停止发送，避免冲突后继续发送导致<strong>信道资源浪费</strong><br>即：<strong>先听后说，边听边说，不说不听</strong><br>工作状态：</p>
+<ul>
+<li>传输状态</li>
+<li>竞争状态</li>
+<li>空闲状态<br>由于传播时延，仍然会产生冲突<br>由于需要检测信号强度判断冲突，只适用于有线信道<br>要使用 CSMA&#x2F;CD，需要满足的物理要求，公式与例题见 P194</li>
+</ul>
+<h3 id="受控接入-MAC-协议"><a href="#受控接入-MAC-协议" class="headerlink" title="受控接入 MAC 协议"></a>受控接入 MAC 协议</h3><p>各个用户必须服从控制才能接入信道</p>
+<h4 id="集中式控制"><a href="#集中式控制" class="headerlink" title="集中式控制"></a>集中式控制</h4><p>一个主机通过<strong>轮询技术</strong>调度其他通信站接入信道<br><strong>轮叫轮询：</strong> </p>
+<ul>
+<li>按顺序逐个轮询</li>
+<li>有数据则发给主机</li>
+<li>缺点：轮询过程不停循环，开销较大<br><strong>传递轮询：</strong><br>每台主机两条输入线</li>
+<li>接收主机发来的消息</li>
+<li>接收允许发送数据的控制信息<br>当 N 向主机发送数据时，其他站可以检测到线路上有数据在发送<br>N 无信息或者发送完毕，将 N-1站地址给主机<br>缺点：主机出问题，全网瘫痪</li>
+</ul>
+<h4 id="分散式控制"><a href="#分散式控制" class="headerlink" title="分散式控制"></a>分散式控制</h4><p>现代网络主要是用的方法<br><strong>令牌Token：</strong> 通信站使用通信的许可，在信道空闲时在信道传输，通信站获取令牌后可以在一定时间内发送数据，发送完毕重新将令牌发送到信道上<br>令牌标志位 1：有站点正在占用<br><strong>令牌环</strong>主要操作过程：</p>
+<ol>
+<li>网络空闲时，令牌在环路绕行，标志位为 0</li>
+<li>某站点等待并获取令牌，标志位置为1</li>
+<li>每个站点边转发边检测数据帧目的地址，接收发给自己的</li>
+<li>数据帧绕环一周后，发送站将其撤销，即自生自灭，并作差错检验</li>
+<li>重新产生令牌<br>最严重两种错误：</li>
+</ol>
+<ul>
+<li>设立<strong>主动令牌管理站</strong></li>
+<li>令牌丢失：设置超时时间，超过则由<strong>主动令牌管理站</strong>清理数据碎片，重发令牌</li>
+<li>数据帧无法撤销：第一次经过<strong>主动令牌管理站</strong>会将监控位置为 1，发现有 1 的则清理数据碎片，重发令牌</li>
+</ul>
+<h2 id="局域网"><a href="#局域网" class="headerlink" title="局域网"></a>局域网</h2><p>主要是星型拓扑和树型<br>TCP&#x2F;IP 体系结构的网络局域网是以太网<br>网络适配器上运行介质访问控制MAC协议 </p>
+<h3 id="数据链路层寻址"><a href="#数据链路层寻址" class="headerlink" title="数据链路层寻址"></a>数据链路层寻址</h3><h4 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h4><p>实现网络层地址（IP 地址）与链路层地址映射的地址解析协议</p>
+<h4 id="链路层地址与MAC"><a href="#链路层地址与MAC" class="headerlink" title="链路层地址与MAC"></a>链路层地址与MAC</h4><p>主机或路由器的<strong>链路层地址</strong>来自其网络适配器（网卡）<br>每个网络接口对应一个<br>适配器的 MAC 地址无论到哪都不会改变，类似于身份证<br>而 IP 地址会随进入不同子网而变化，类似于邮政地址<br>也称为：</p>
+<ul>
+<li>MAC 地址</li>
+<li>物理地址</li>
+<li>局域网地址<br><strong>注意：</strong> 链路层交换机的接口没有 MAC 地址，交换机只透明地实现路由器与主机间的链路层帧转发<br>特点：</li>
+<li>长度 6 字节</li>
+<li>第一个字节的倒数第二位为 G&#x2F;L 位<ul>
+<li>0：Global，全球管理，全球唯一</li>
+<li>1：Local，本地管理，由用户自行分配</li>
+<li>以太网不理会 G&#x2F;L 位</li>
+</ul>
+</li>
+<li>16 进制表示</li>
+<li>使用：或-连接</li>
+<li>最初网卡的 MAC 地址不变</li>
+<li>现在可以更改，但是在局域网内唯一</li>
+<li>广播帧 MAC 地址：FF:FF:FF:FF:FF:FF</li>
+</ul>
+<h4 id="地址解析协议ARP"><a href="#地址解析协议ARP" class="headerlink" title="地址解析协议ARP"></a>地址解析协议ARP</h4><p>在所在子网内，根据 IP 地址获取 MAC 地址<br>在每台主机和路由器维护一个 APR 表，存储其他主机或路由器 IP 与 MAC 映射关系<br>每个映射设置一个寿命值 TTL 指示删除时间<br>ARP 表找不到映射时，广播询问局域网内所有主机和路由器<br>ARP 与 DNS 区别</p>
+<ul>
+<li>解析内容不同</li>
+<li>解析范围不同</li>
+<li>实现机制不同</li>
+</ul>
+<h3 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h3><p>最流行有线局域网技术<br>IEEE 802.3以以太网为基础<br>本书中这两个词等价<br>无连接不可靠服务，直接丢弃检查出错的 MAC 帧，无差错控制，由上层协议（TCP等）实现差错控制</p>
+<ul>
+<li>经典以太网：采用同轴电缆连接</li>
+<li>总线型以太网 10Base-5:<ul>
+<li>速率：10Mbit&#x2F;s</li>
+<li>最短帧长 64 字节</li>
+<li>一个冲突域中最多 5 个网段，每个最长 500m</li>
+<li>网段之间有中继器</li>
+<li>MAC协议采用 CSMA&#x2F;CD</li>
+</ul>
+</li>
+<li>10Base-T<ul>
+<li>采用非屏蔽双绞线 UTP</li>
+<li>速率：10Mbit&#x2F;s</li>
+<li>连接到物理层集线器（几乎不再使用），集线器与集线器也能互连</li>
+<li>组网方便，故障隔离</li>
+</ul>
+</li>
+<li>快速以太网100Base-T：<ul>
+<li>UTP 或光缆（100Base-FX）</li>
+<li>CSMA&#x2F;CD</li>
+<li>100Mbit&#x2F;s</li>
+</ul>
+</li>
+<li>千兆以太网<ul>
+<li>CSMA&#x2F;CD</li>
+<li>1000Mbit&#x2F;s</li>
+</ul>
+</li>
+<li>万兆以太网<br>冲突域：在一个局域网内，多个结点往物理介质中发送信号，发生冲突导致发送失败，则这几个结点在一个冲突域<br>广播域：接受得到互相广播帧的结点在一个广播域</li>
+</ul>
+<h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><p>网桥：</p>
+<ul>
+<li>先检查接收到帧的目的 IP 地址，再确定转发到哪个端口</li>
+<li>只适用于用通信量不大的局域网</li>
+<li>否则因为广播风暴产生拥塞</li>
+<li>对于结点透明<br>交换机：</li>
+<li>原理：多端口网桥</li>
+<li>基本工作方式：存储转发</li>
+<li>有多种速率端口</li>
+<li>端口工作方式：<ul>
+<li><strong>混杂模式：</strong> 默认使用，无论帧 MAC 地址，都会接收，有差错控制</li>
+<li>直通交换：部分使用，接受到帧的第 6 个字节，就根据目的 MAC 地址转发，不差错控制</li>
+</ul>
+</li>
+</ul>
+<p>当一帧到达，以帧的目的 MAC地址为主键查询内部交换表</p>
+<ul>
+<li>如果交换表内有对应项：<ul>
+<li>对应端口与接收到该帧的端口相同：丢弃</li>
+<li>否则按查表结果转发</li>
+</ul>
+</li>
+<li>没对应项：泛洪：向除了接收到该帧的端口外所有其他端口转发</li>
+</ul>
+<p>交换表由<strong>自学习</strong>构建：只在接收信息时记录来源端口与 源MAC 地址，无目的 MAC 地址对应表项则泛洪，每个表项存在有效时间<br>以此实现即插即用<br>通过生成树协议，即无环路，避免兜圈</p>
+<p>交换机优点：</p>
+<ul>
+<li>消除冲突</li>
+<li>支持异质链路</li>
+<li>易于网络管理</li>
+</ul>
+<h4 id="以太网络"><a href="#以太网络" class="headerlink" title="以太网络"></a>以太网络</h4><p>交换以太网：</p>
+<ul>
+<li>使用交换机代替集线器</li>
+<li>交换机连接的主机不再属于同一个冲突域，一个冲突域只有一台主机，不会发生传统的冲突</li>
+<li>通信时独占带宽，如 10 个用户，则总容量相当于翻了十倍<br>传统共享式以太网：</li>
+<li>不使用交换机</li>
+<li>多个用户平均分配带宽，如 10 个用户，则每人带宽为 10 分之一</li>
+</ul>
+<h3 id="虚拟局域网-VLAN"><a href="#虚拟局域网-VLAN" class="headerlink" title="虚拟局域网 VLAN"></a>虚拟局域网 VLAN</h3><p>如果广播域太大，广播帧会被大量复制，导致广播风暴<br>需要尽可能限定广播域规模<br>基本手段：利用路由器分割广播域<br>VLAN：</p>
+<ul>
+<li>另一种分割广播域手段</li>
+<li>设置在交换机上</li>
+<li>软件的方式划分局域网中的工作组，以限制接收到广播的主机数<br>三种方式：</li>
+<li>基于交换机端口划分</li>
+<li>基于 MAC 地址划分</li>
+<li>基于上层协议类型或地址划分：有利于基于应用划分</li>
+</ul>
+<h2 id="点对点链路协议"><a href="#点对点链路协议" class="headerlink" title="点对点链路协议"></a>点对点链路协议</h2><p>MAC 协议都用于共享链路<br>点对点链路用于广域网，不存在介质共享，所以不需要 MAC 协议</p>
+<h3 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h3><p>使用最多<br>定界符： 在首尾，7E,即01111110<br>为实现透明传输：如果数据中含有相同的，在数据之后加上转义字节 01111101，如：0111111001111101</p>
+<h3 id="高级数据链路控制HDLC"><a href="#高级数据链路控制HDLC" class="headerlink" title="高级数据链路控制HDLC"></a>高级数据链路控制HDLC</h3><p>应用于点对点和点对多链路<br>定界符同上<br>为实现透明传输： 位填充：每发现 5 个连续的 1 就插入一个 0，如：01111110 -&gt; 011111010</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://help.chengbox.vip/%E7%AC%AC5%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E4%B8%8E%E5%B1%80%E5%9F%9F%E7%BD%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/" rel="tag">开发笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/%E7%AC%AC4%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%B1%82/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            第四章 网络层
+          
+        </div>
+      </a>
+    
+    
+      <a href="/%E7%AC%AC6%E7%AB%A0%20%E7%89%A9%E7%90%86%E5%B1%82/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">第六章 物理层</div>
+      </a>
+    
+  </nav>
+
+  
+   
+    
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023-2024
+        <i class="ri-heart-fill heart_icon"></i> Lychen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+        <li>
+          <a href="https://beian.miit.gov.cn/" target="_black" rel="nofollow">鄂ICP备2024033513号-2</a>
+        </li>
+        
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Cheng"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>V1.3.16 |  Cheng</title>
+      <title>第二章 网络应用 |  Cheng</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -65,7 +65,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-V1.3.16"
+  id="post-第2章 网络应用"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -76,7 +76,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  V1.3.16
+  第二章 网络应用
 </h1>
  
 
@@ -84,11 +84,11 @@
     </header>
      
     <div class="article-meta">
-      <a href="/V1.3.16/" class="article-date">
-  <time datetime="2024-07-28T12:20:12.000Z" itemprop="datePublished">2024-07-28</time>
+      <a href="/%E7%AC%AC2%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8/" class="article-date">
+  <time datetime="2024-10-13T12:22:20.000Z" itemprop="datePublished">2024-10-13</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/">更新日志</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a> / <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a>
   </div>
   
 <div class="word_count">
@@ -96,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">232</span>
+            <span class="post-count">1.6k</span>
         </span>
     </span>
 
@@ -105,7 +105,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">5 分钟</span>
         </span>
     </span>
 </div>
@@ -120,36 +120,51 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>2024.7.28</p>
-</blockquote>
-<hr>
-<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>公里数导入模板文档</li>
-<li>主任批量驳回</li>
-<li>工程车批量人员选择</li>
-<li>选择需要文档生成的积分条目时提示框</li>
-<li>点击待阅按钮时,如果没有,则显示驳回列表</li>
-<li>用于自定义扣分的”安”类积分选项</li>
-<li>涉及上限积分申请判断与自动拒绝</li>
-</ol>
-<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>删除队长每月必发列表中的错误积分项</li>
-<li>更改个人数据获取流程</li>
-<li>更改部分权限</li>
-</ol>
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>部分情况已读无法删除</li>
-<li>部分情况交路表无法自动更新</li>
-<li>主任用户查看不到已发流程</li>
-<li>部分情况无法订阅通知</li>
-<li>输入拒绝原因界面点击取消也继续执行程序</li>
-</ol>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
-<li>减少工程师用户需要获取的数据量,避免卡顿</li>
-<li>增加错误可选积分项出现时的禁止弹窗</li>
-<li></li>
-</ol>
+  <h2 id="从体系结构角度分类"><a href="#从体系结构角度分类" class="headerlink" title="从体系结构角度分类"></a>从体系结构角度分类</h2><h3 id="客户-服务器C-S"><a href="#客户-服务器C-S" class="headerlink" title="客户&#x2F;服务器C&#x2F;S"></a>客户&#x2F;服务器C&#x2F;S</h3><p>最典型，最基本<br>服务器程序需先运行，有固定网络地址，长期运行</p>
+<h3 id="纯P2P"><a href="#纯P2P" class="headerlink" title="纯P2P"></a>纯P2P</h3><p>对等端软件运行在普通用户计算设备上，可直接与其他对等端通信<br>由于对等端动态加入或离开，并没有中心服务器，很难知道哪些对等端在线，地址与提供的服务</p>
+<h3 id="混合结构网络"><a href="#混合结构网络" class="headerlink" title="混合结构网络"></a>混合结构网络</h3><p>每个用户通过C&#x2F;S方式向服务器注册自己的网络地址，声明提供的服务与共享的资源，并发现其他用户</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>基本通信方式：C&#x2F;S<br>进程间遵循应用层协议交换应用层报文M<br>通过套接字将M传输给传输层<br>传输层需要为每个套接字分配一个编号：端口号<br>通过网络层地址（ip）与端口号标识应用程序</p>
+<h3 id="传输层提供的服务"><a href="#传输层提供的服务" class="headerlink" title="传输层提供的服务"></a>传输层提供的服务</h3><h4 id="面向连接的可靠字节流传输服务TCP"><a href="#面向连接的可靠字节流传输服务TCP" class="headerlink" title="面向连接的可靠字节流传输服务TCP"></a>面向连接的可靠字节流传输服务TCP</h4><ul>
+<li>面向连接的服务：通过交换传输层控制信息，完成握手，建立一天全双工的逻辑TCP连接，发送完毕拆除</li>
+<li>可靠的数据传送服务：端到端无差错，按序交付</li>
+</ul>
+<h4 id="无连接的不可靠数据报传输服务UDP"><a href="#无连接的不可靠数据报传输服务UDP" class="headerlink" title="无连接的不可靠数据报传输服务UDP"></a>无连接的不可靠数据报传输服务UDP</h4><p>仅提供最小的“尽力”服务，没有握手过程，不保证报文到达接收进程，也可能乱序到达</p>
+<h4 id="TCP与UDP均不提供端到端吞吐量与时延保障服务"><a href="#TCP与UDP均不提供端到端吞吐量与时延保障服务" class="headerlink" title="TCP与UDP均不提供端到端吞吐量与时延保障服务"></a>TCP与UDP均不提供端到端吞吐量与时延保障服务</h4><h2 id="域名系统DNS"><a href="#域名系统DNS" class="headerlink" title="域名系统DNS"></a>域名系统DNS</h2><p>用户代理：使用网络应用的客户端软件定期访问服务器IP地址与端口号<br>域名：更容易读懂的代表ip地址与端口号的名字<br>DNS的任务：将域名映射为IP地址，即域名解析，需要建立分布式数据库，存储映射关系<br>层次树状结构的命名：……。三级域名。二级域名。顶级域名<br>顶级域名：国家，通用，基础结构域名arpa，用于反向域名解析</p>
+<h3 id="域名服务器"><a href="#域名服务器" class="headerlink" title="域名服务器"></a>域名服务器</h3><p>53端口<br>权威域名服务器：保存区中所有映射<br>顶级域名服务器：管理在该顶级域名注册的所有二级域名<br>根域名服务器：最重要，知道所有顶级域名服务器的域名和ip，共有13个，从a到m<br>本地域名服务器：任何主机在网络地址配置时都会配置一个<br>中间域名服务器：在权威和根之间</p>
+<h4 id="解析过程"><a href="#解析过程" class="headerlink" title="解析过程"></a>解析过程</h4><p>无论递归还是迭代，顺序都是，本地，根，顶级，权威<br>由于根压力很大，增加缓存机制，跳过根域名查询，提高查询效率</p>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>Web应用的应用层协议，HTTP&#x2F;1.1是主流<br>80端口</p>
+<h3 id="HTTP连接"><a href="#HTTP连接" class="headerlink" title="HTTP连接"></a>HTTP连接</h3><p>基于传输层的TCP传输报文，向服务器发送请求报文之前需建立TCP连接</p>
+<h4 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h4><p>HTTP&#x2F;1.0默认使用非持久连接，每次请求传输一个对象都需要建立一个TCP连接<br>1.1默认流水方式持久连接，只在服务端返回报文中显式添加connection:close首部行时断开<br>非持久连接，并行连接，流水方式，非流水方式图见P60</p>
+<h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>起始行，首部行，空白行，实体主体</p>
+<h4 id="起始行"><a href="#起始行" class="headerlink" title="起始行"></a>起始行</h4><p>请求和响应报文主要区别是起始行<br>请求：方法，URL，协议版本<br>响应：协议版本，状态码，短语<br>方法：</p>
+<ul>
+<li>GET:请求读取URL标识的信息</li>
+<li>HEAD:请求读取URL标识的信息的首部</li>
+<li>POST:给服务器添加信息</li>
+<li>OPTION:请求一些选项信息</li>
+<li>PUT:在指定URL存储文档<br>状态码：短语</li>
+<li>100:continue</li>
+<li>200:ok</li>
+<li>301:moved permanently</li>
+<li>400:bad request</li>
+<li>401:unauthorized </li>
+<li>404:not found</li>
+<li>505:http version not supported</li>
+</ul>
+<h4 id="首部行"><a href="#首部行" class="headerlink" title="首部行"></a>首部行</h4><p>用于携带附加信息，可有0到多行</p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>无状态协议：HTTP服务器并不保存客户的任何信息<br>Cookie用于在无状态的HTTP之上建立用户会话<br>存放于报文首部行，每个浏览器独立存储<br>永久Cookie：存放于硬盘<br>会话Cookie：存放于内存，关闭浏览器消失</p>
+<h2 id="电子邮件系统"><a href="#电子邮件系统" class="headerlink" title="电子邮件系统"></a>电子邮件系统</h2><p>组成：邮件服务器，邮件传输协议，用户代理，邮件读取协议<br>地址：邮箱名@邮箱所在主机域名<br>核心：邮件服务器，用于接发邮件，报告传送情况</p>
+<h3 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h3><p>电子邮件核心应用层协议<br>实现邮件服务器间或与用户代理间邮件传输<br>使用TCP持久连接，25端口</p>
+<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><p>只能传送7位ASCII码文本内容，通过MIME将非该种文本转换为这种<br>内容不能包含CRLF.CRLF，用于识别内容结束<br>“推动”协议，与HTTP“拉动”协议不同</p>
+<h3 id="电子邮件格式"><a href="#电子邮件格式" class="headerlink" title="电子邮件格式"></a>电子邮件格式</h3><p>首部，空白，主体</p>
+<h3 id="邮件读取协议"><a href="#邮件读取协议" class="headerlink" title="邮件读取协议"></a>邮件读取协议</h3><h4 id="邮局协议POP3"><a href="#邮局协议POP3" class="headerlink" title="邮局协议POP3"></a>邮局协议POP3</h4><p>TCP，110端口<br>3个阶段：授权，事务处理，更新<br>事务处理读取后会标记删除，更新阶段删除</p>
+<h4 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h4><p>支持创建远程文件夹，与只读部分邮件<br>网络带宽压力更小</p>
+<h4 id="HTTP-1"><a href="#HTTP-1" class="headerlink" title="HTTP"></a>HTTP</h4><p>最流行，此时用户代理向邮件服务器发送也使用HTTP，邮件服务器间还是SMTP</p>
+<h2 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h2><p>消除不同操作系统下处理文件的不兼容性<br>C&#x2F;S应用<br>使用两个并行的TCP连接<br>21端口的控制连接是持久的，整个会话期间打开<br>20端口的数据连接传送完毕即关闭，非持久<br>即带外控制，使用同一个连接控制和处理数据为带内控制</p>
+<h2 id="P2P"><a href="#P2P" class="headerlink" title="P2P"></a>P2P</h2><p>对服务器依赖很小，随时加入离开，伸缩性强</p>
+<h3 id="当有n个用户，各下载大小为F的文件"><a href="#当有n个用户，各下载大小为F的文件" class="headerlink" title="当有n个用户，各下载大小为F的文件"></a>当有n个用户，各下载大小为F的文件</h3><h4 id="C-S方式"><a href="#C-S方式" class="headerlink" title="C&#x2F;S方式"></a>C&#x2F;S方式</h4><p>服务器需上传nF<br>每个用户需下载F<br>即最小完成分发时间为<br>nF&#x2F;服务器上传带宽us<br>与<br>F&#x2F;最慢客户下载带宽dmin<br>中最大值</p>
+<h4 id="P2P方式"><a href="#P2P方式" class="headerlink" title="P2P方式"></a>P2P方式</h4><p>每个对等方在接收到部分文件后，马上可以将拥有的数据向其他对等方分发<br>文件分发最快时间当n足够大，趋近于常量</p>
+<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><p>套接字地址由ip+port组成<br>SOCK_STREAM：面向TCP接口<br>SOCK_DGRAM：面向UDP<br>服务器函数：listen,accept<br>客户端函数：connect</p>
  
       <!-- reward -->
       
@@ -214,12 +229,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://help.chengbox.vip/V1.3.16/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://help.chengbox.vip/%E7%AC%AC2%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/V1-3/" rel="tag">V1.3</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/" rel="tag">开发笔记</a></li></ul>
 
     </footer>
   </div>
@@ -227,19 +242,19 @@
    
   <nav class="article-nav">
     
-      <a href="/%E7%AC%AC8%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+      <a href="/%E7%AC%AC1%E7%AB%A0%20%E6%A6%82%E8%BF%B0/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            第八章 网络安全基础
+            第一章 概述
           
         </div>
       </a>
     
     
-      <a href="/%E4%B8%8A%E4%BC%A0%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E7%A7%AF%E5%88%86%E6%A8%A1%E6%9D%BF/" class="article-nav-link">
+      <a href="/%E7%AC%AC3%E7%AB%A0%20%E4%BC%A0%E8%BE%93%E5%B1%82/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">上传文档生成积分模板</div>
+        <div class="article-nav-title">第三章 传输层</div>
       </a>
     
   </nav>

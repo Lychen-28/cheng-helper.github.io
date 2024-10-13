@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>第三章 传输层 |  Cheng</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="Cheng" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-第3章 传输层"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  第三章 传输层
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E7%AC%AC3%E7%AB%A0%20%E4%BC%A0%E8%BE%93%E5%B1%82/" class="article-date">
+  <time datetime="2024-10-13T12:22:20.000Z" itemprop="datePublished">2024-10-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a> / <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">10 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>是除应用层外唯一的端到端层，即只存在于端系统，路由器等网络设备中实现<br>提供端到端报文传输服务<br>在传输层角度，端不是主机，而是其中应用程序</p>
+<h2 id="基本服务"><a href="#基本服务" class="headerlink" title="基本服务"></a>基本服务</h2><p>核心任务：提供端到端逻辑通信服务<br>两个主要协议：TCP,UDP<br>分段：将应用层报文切分并封装上首部信息（用于分解）成传输层报文段，反过程为重组<br>其他重要功能：差错检验，复用，分解，流量控制，拥塞控制</p>
+<h3 id="寻址和端口"><a href="#寻址和端口" class="headerlink" title="寻址和端口"></a>寻址和端口</h3><p>标识应用进程的寻址方式：IP地址+端口号port</p>
+<h4 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h4><p>共16位，即65536个<br>0-1023为熟知端口号</p>
+<h2 id="复用和分解"><a href="#复用和分解" class="headerlink" title="复用和分解"></a>复用和分解</h2><p>复用：同一主机，多个应用程序利用同一传输协议进行网络通信<br>分解：根据首部信息，将接收到的报文段交付给正确应用程序<br>关键：传输层协议唯一标识一个套接字</p>
+<h3 id="无连接的多路复用和分解"><a href="#无连接的多路复用和分解" class="headerlink" title="无连接的多路复用和分解"></a>无连接的多路复用和分解</h3><p>重要依据：创建UDP套接字时自动分配或使用bind()绑定端口号<br>UDP报文段包括：应用数据，源端口号，目的端口号<br>通过目的端口号实现将报文段分解到相应套接字<br>唯一标识一个UDP套接字：目的IP地址，目的端口号<br>目的IP地址位于网络层IP数据报首部字段</p>
+<h3 id="面向连接的复用和分解"><a href="#面向连接的复用和分解" class="headerlink" title="面向连接的复用和分解"></a>面向连接的复用和分解</h3><p>唯一标识TCP套接字四元组：源&#x2F;目标ip，端口<br>也唯一标识TCP连接<br>两种Ip地址位于网络层IP数据报首部字段<br>端口号位于TCP报文段首部字段</p>
+<h2 id="等-停与滑动窗口"><a href="#等-停与滑动窗口" class="headerlink" title="等-停与滑动窗口"></a>等-停与滑动窗口</h2><p>TCP报文段要交给IP传送，IP只提供尽力服务，即不可靠数据传输服务<br>因此需要在不可靠的网络层基础上实现可靠数据传输</p>
+<h3 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h3><p>理想传输信道：不产生差错，按序交付<br>可能出现的问题：</p>
+<ul>
+<li>比特差错</li>
+<li>乱序</li>
+<li>数据丢失<br>实现可靠传输的措施：</li>
+<li>差错检验：通过数据上冗余差错编码信息，实现传输过程比特差错检验与纠正</li>
+<li>确认：基于差错编码，如果接收方确认数据没差错，则发送ACK数据包，即肯定确认，否则发送NAK数据包，即否定确认</li>
+<li>重传：如果发送方收到NAK，重新发送</li>
+<li>序号：解决乱序到达与重复接收并提交问题</li>
+<li>计时器：计时器超时未收到接收方确认，则重发</li>
+</ul>
+<h3 id="停-等协议"><a href="#停-等协议" class="headerlink" title="停-等协议"></a>停-等协议</h3><p>最简单的自动重传请求协议ARQ<br>基本策略：<br>发送一个报文段后，停下来等待接收方确认，NAK或超时则重发</p>
+<h4 id="变化与细节"><a href="#变化与细节" class="headerlink" title="变化与细节"></a>变化与细节</h4><ol>
+<li>ACK与NAK也需要差错检验，如果发送方发现有差错，采取有错推断原则</li>
+<li>序列号只需要一位，即0和1两种，模2运算实现向前移动</li>
+<li>一般不实用NAK，通过ACK加序列号发送，重复ACK序列号组合视为NAK</li>
+<li>计时器过短会导致过多数据重传，过长会导致传输对数据包丢失反应迟钝</li>
+</ol>
+<h3 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h3><p>解决停-等协议信道利用率低的问题<br>信道利用率：<br>发送信息时间与总时间只比<br>由于RTT远远大于发送时间，所以停-等低<br>例题与公式见P102<br>解决思路：</p>
+<ul>
+<li>增加序列号范围，以标记多个同时发送的数据包</li>
+<li>发送方或接收方需缓存多个分组，保证按序提交</li>
+</ul>
+<h4 id="流水线协议（管道协议）"><a href="#流水线协议（管道协议）" class="headerlink" title="流水线协议（管道协议）"></a>流水线协议（管道协议）</h4><p>在等待确认之前，连续发送多个分组<br>如3个，则引导利用率提高三倍<br>最典型的流水线协议：滑动窗口协议</p>
+<h4 id="滑动窗口协议-1"><a href="#滑动窗口协议-1" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h4><p>发送方需缓存已发送但未收到确认的分组，方便重发<br>接收方需缓存已正确接收的分组，实现按序提交<br>即发送方和接收方各维护一个窗口Ws和Wr<br>最具代表性的为：</p>
+<ul>
+<li>回退N步协议GBN</li>
+<li>选择重传协议SR</li>
+</ul>
+<h4 id="GBN"><a href="#GBN" class="headerlink" title="GBN"></a>GBN</h4><p>发送端缓存能力较强，即Ws较大，Wr往往为1<br>只要发送窗口不满就能持续发送<br>累计确认方式：<br>当收到ACKn表示n以下的数据都已被正确接收，窗口滑动至n+1并重启计时器<br>当n小于窗口基序号，不予理会<br>只有一个计时器，指向窗口基序号，超时，重发所有窗口中分组<br>优点：接收方操作简单<br>缺点：会丢弃所有未按序到达分组，浪费网络资源<br>适用于：信道丢包率低，误码率低，接收方缓存能力低的情况</p>
+<h4 id="SR"><a href="#SR" class="headerlink" title="SR"></a>SR</h4><p>避免正确到达分组被接收方丢弃<br>增加接收方缓存能力，Wr&gt;1，往往Ws&#x3D;Wr<br>减少不必要的重传，改进协议性能<br>发送方仅重传未被正确接收的分组<br>在两个窗口中必须有足够序列号位数k，实现每一个分组序列号唯一，即窗口总数&#x3D;2^k</p>
+<p>无论GBN还是SR，引导利用率都是Ws倍停等</p>
+<h2 id="用户数据报协议UDP"><a href="#用户数据报协议UDP" class="headerlink" title="用户数据报协议UDP"></a>用户数据报协议UDP</h2><p>提供无连接，不可靠，尽力传输服务<br>可能乱序到达，没有拥塞控制<br>有复用，分解与简单差错检验，几乎与网络层的IP相同<br>通过设计可靠传输机制，可以实现可靠传输<br>典型应用：DNS，媒体应用等希望速率高，且能容忍部分数据丢失的情况<br>优点：</p>
+<ul>
+<li>容易控制发送什么数据与何时发，无拥塞控制，传输速率更高</li>
+<li>无需建立连接，更少时延</li>
+<li>无需维护连接状态，系统开销小</li>
+<li>首部开销小：8字节，TCP20</li>
+</ul>
+<h3 id="UDP数据报结构"><a href="#UDP数据报结构" class="headerlink" title="UDP数据报结构"></a>UDP数据报结构</h3><p>首部四个字段，每个2字节</p>
+<ul>
+<li>源端口号</li>
+<li>目的端口号</li>
+<li>长度</li>
+<li>校验和</li>
+</ul>
+<h4 id="校验和"><a href="#校验和" class="headerlink" title="校验和"></a>校验和</h4><p>检验传输过程，数据是否发生过改变<br>所有数据按16位对齐，依次相加，最高位进位的数字加到最低位，最后将结果取反，得到校验和<br>没有差错恢复能力，丢弃错误报文段，或交给应用层，由应用层决策如何处理</p>
+<h2 id="传输控制协议TCP"><a href="#传输控制协议TCP" class="headerlink" title="传输控制协议TCP"></a>传输控制协议TCP</h2><p>必须先建立TCP连接，最后释放<br>无差错，不丢失，不重复<br>面向字节流：TCP把数据视为无结构字节流<br>全双工通信：通信双方都能随时向信道发送和接收数据，两端也设有缓存<br>发送时，TCP可以从缓存中取出数据并放入报文段<br>取出的数据量受限于最大报文段长度MSS，即报文段封装的应用层数据的最大长度<br>接收时，TCP将数据放入缓存，供应用程序适时读取<br>TCP将大文件划分成长度为MSS的若干块，</p>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>图见P116</p>
+<ul>
+<li>第一次握手：<ul>
+<li>A的TCP向B发出连接请求报文段（SYN段）</li>
+<li>不含应用层数据</li>
+<li>同部位SYN为1</li>
+<li>指定初始序列号seq&#x3D;x</li>
+<li>SYN段要消耗一个序号</li>
+<li>此时A处于SYN_SENT状态</li>
+<li>B处于LISTEN状态</li>
+</ul>
+</li>
+<li>第二次握手<ul>
+<li>如果B同意连接，发回确认报文段（SYNACK段）</li>
+<li>不包含应用层数据</li>
+<li>SYN&#x3D;1</li>
+<li>ACK&#x3D;1</li>
+<li>确认序号ack_seq&#x3D;x+1</li>
+<li>自己选择的初始序号seq&#x3D;y</li>
+<li>此时B处于SYN_RCVD状态</li>
+</ul>
+</li>
+<li>第三次握手<ul>
+<li>A接收到SYNACK段，向B发送确认报文段</li>
+<li>可携带应用层数据</li>
+<li>ACK&#x3D;1</li>
+<li>SYN&#x3D;0(因为已完成连接)</li>
+<li>seq&#x3D;x+1</li>
+<li>ack_seq&#x3D;y+1</li>
+<li>此时A处于ESTABLISHED 状态</li>
+<li>B收到确认消息后也进入ESTABLISHED状态</li>
+</ul>
+</li>
+</ul>
+<h3 id="为什么不用二次握手"><a href="#为什么不用二次握手" class="headerlink" title="为什么不用二次握手"></a>为什么不用二次握手</h3><ul>
+<li>确保双方完全了解对方状态</li>
+<li>预防过期，失效的连接申请到达，导致半连接，即只有一方建立了连接</li>
+</ul>
+<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>任何一方都能请求终止连接，释放资源</p>
+<ul>
+<li>第一次挥手<ul>
+<li>A向B发送释放连接报文段</li>
+<li>FIN&#x3D;1</li>
+<li>seq&#x3D;u</li>
+<li>此时A处于FIN_WAIT状态，能收不能发数据</li>
+</ul>
+</li>
+<li>第二次挥手<ul>
+<li>B向A响应</li>
+<li>ACK&#x3D;1</li>
+<li>seq&#x3D;v</li>
+<li>确认序号ack_seq&#x3D;u+1</li>
+<li>B处于CLOSE_WAIT状态，仍可发数据</li>
+</ul>
+</li>
+<li>第三次挥手<ul>
+<li>B向A发送释放连接报文段</li>
+<li>FIN&#x3D;1</li>
+<li>seq&#x3D;w</li>
+<li>确认序号ack_seq&#x3D;u+1</li>
+<li>此时B处于LAST_ACK，不再能发送数据</li>
+</ul>
+</li>
+<li>第四次挥手<ul>
+<li>A向B发送响应</li>
+<li>ACK&#x3D;1</li>
+<li>seq&#x3D;u+1</li>
+<li>ack_seq&#x3D;w+1</li>
+<li>A发送后进入TIME_WAIT，为确保另一端能正确接收到，等待一段时间后再CLOSE</li>
+<li>等待时机为2最大段生存时间MSL</li>
+<li>B收到后CLOSE</li>
+</ul>
+</li>
+</ul>
+<h3 id="可靠数据传输-1"><a href="#可靠数据传输-1" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h3><p>实现机制：</p>
+<ul>
+<li>差错编码</li>
+<li>确认：累积确认</li>
+<li>序号：每个字节编号</li>
+<li>重传：主要针对计时器超时和三次确认</li>
+<li>计时器：单一的重传计时器，自适应算法设置超时时间，当报文传送给IP，启动计时器<br>基于：滑动窗口协议，发送窗口大小动态变化，即<br>Ws&#x3D;流量控制（接收端窗口）RcvWin与拥塞控制窗口CongWin中最小值</li>
+</ul>
+<h4 id="超时时间"><a href="#超时时间" class="headerlink" title="超时时间"></a>超时时间</h4><p>比RTT大一些即可<br>通过RTT采样SampleRTT来估计RTT大小，即某报文段发出到确认收到时间间隔，取未重传的某次发送时间<br>由于SampleRTT会随网络情况波动，因此采用：<br>指数加权移动平均的方法来计算均值EstimatedRTT<br>公式见P120<br>阿尔法为加权系数，通常为0.125<br>越新的RTT计算新均值权重越大<br>RTT偏差DevRTT用于表现变化程度，即网络平稳程度，越小越平稳<br>贝塔为加权系数，通常为0.25<br>超时时间TimeoutInterval&#x3D;ERTT+4DevRTT<br>超时即发送发送窗口基序号SendBase指向的报文段<br>同报文段每次重传下一次超时时间都是之前的两倍，而不是上面计算出的值，即指数型增长，这也增加了端到端延迟，因此添加了：<br>快速重传，即收到3次同样ACK即视为NAK，立即重发<br>注意：</p>
+<ul>
+<li>此处为第四次收到ack_seq&#x3D;x，即重发seq&#x3D;x</li>
+<li>发送seq期待收到的ack_seq为期待的下一个数据的序号</li>
+</ul>
+<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>即控制发送窗口大小<br>避免发送方速度太快，超过接收方接收能力，导致被淹没<br>不仅用于传输层，也用于数据链路层<br>TCP首部2字节告知接受窗大小，发送窗不能超过该值</p>
+<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>避免发送方速度太快，超过网络处理能力，数据拥挤在中间设备<br>分为拥塞预防和拥塞消除<br>通过超时和三次重复ack判断是否发生拥塞<br>通过窗口大小调节发送速率</p>
+<h4 id="基本策略"><a href="#基本策略" class="headerlink" title="基本策略"></a>基本策略</h4><p>发送端维持一个拥塞窗口CongWin，表示未收到确认的情况下，可连续发送的字节数，初始为1MSS<br>未发生拥塞时，加性增大窗口<br>发生时，乘性减小窗口<br>即AIMD<br>这是一种拥塞消除<br>一般分为：</p>
+<ul>
+<li>慢启动阶段：每收到一个确认，CongWin+1MSS，即每经过一个RTT，翻倍</li>
+<li>拥塞避免阶段：CongWin达到阈值Threshold后，每个RTT，发送的报文段全部确认后，CongWin+1MSS</li>
+<li>发生拥塞：<ul>
+<li>Threshold&#x3D;CongWin&#x2F;2 </li>
+<li>CongWin&#x3D;1MSS</li>
+<li>称为TCP Tahoe算法</li>
+</ul>
+</li>
+<li>快速重传：收到3次重复确认，立即发送重复确认报文段</li>
+<li>快速恢复：<ul>
+<li>当发生超时，表示拥塞严重</li>
+<li>当发送三次确认，表示拥塞不严重，直从新阈值开始，进入拥塞避免阶段</li>
+<li>称为TCP Reno算法</li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://help.chengbox.vip/%E7%AC%AC3%E7%AB%A0%20%E4%BC%A0%E8%BE%93%E5%B1%82/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/" rel="tag">开发笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/%E7%AC%AC2%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            第二章 网络应用
+          
+        </div>
+      </a>
+    
+    
+      <a href="/%E7%AC%AC4%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%B1%82/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">第四章 网络层</div>
+      </a>
+    
+  </nav>
+
+  
+   
+    
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023-2024
+        <i class="ri-heart-fill heart_icon"></i> Lychen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+        <li>
+          <a href="https://beian.miit.gov.cn/" target="_black" rel="nofollow">鄂ICP备2024033513号-2</a>
+        </li>
+        
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Cheng"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

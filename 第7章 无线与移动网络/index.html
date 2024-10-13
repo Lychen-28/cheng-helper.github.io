@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>V1.3.16 |  Cheng</title>
+      <title>第七章 无线与移动网络 |  Cheng</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -65,7 +65,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-V1.3.16"
+  id="post-第7章 无线与移动网络"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -76,7 +76,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  V1.3.16
+  第七章 无线与移动网络
 </h1>
  
 
@@ -84,11 +84,11 @@
     </header>
      
     <div class="article-meta">
-      <a href="/V1.3.16/" class="article-date">
-  <time datetime="2024-07-28T12:20:12.000Z" itemprop="datePublished">2024-07-28</time>
+      <a href="/%E7%AC%AC7%E7%AB%A0%20%E6%97%A0%E7%BA%BF%E4%B8%8E%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C/" class="article-date">
+  <time datetime="2024-10-13T12:22:20.000Z" itemprop="datePublished">2024-10-13</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/">小乘排班</a> / <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%98%E6%8E%92%E7%8F%AD/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/">更新日志</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a> / <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a>
   </div>
   
 <div class="word_count">
@@ -96,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">232</span>
+            <span class="post-count">2.5k</span>
         </span>
     </span>
 
@@ -105,7 +105,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">8 分钟</span>
         </span>
     </span>
 </div>
@@ -120,36 +120,164 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>2024.7.28</p>
-</blockquote>
-<hr>
-<h2 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h2><ol>
-<li>公里数导入模板文档</li>
-<li>主任批量驳回</li>
-<li>工程车批量人员选择</li>
-<li>选择需要文档生成的积分条目时提示框</li>
-<li>点击待阅按钮时,如果没有,则显示驳回列表</li>
-<li>用于自定义扣分的”安”类积分选项</li>
-<li>涉及上限积分申请判断与自动拒绝</li>
+  <p>基础设施模式：无线主机通过基站（接入点 AP）实现中继<br>自组织网络（特定网络）：不通过基站<br>切换：移动主机在走出一个基站覆盖范围后，接入到达的范围对应的基站</p>
+<h2 id="无线链路"><a href="#无线链路" class="headerlink" title="无线链路"></a>无线链路</h2><p>有线无线网络主要区别在数据链路层（IEEE802.11 无线局域网，无线网卡，接入点）与物理层<br>网络层以上无任何区别<br>主要表现在：</p>
+<ul>
+<li>信号强度衰减</li>
+<li>同信号频段电波源互相干扰</li>
+<li>多径传播<br>显然更容易出现差错，因此除了 CRC 还有链路层 ARQ 协议来重传受损的帧<br>隐藏终端问题：如果 A 和 C 互相检测不到，而同时向 B 发送数据，会发生<strong>碰撞</strong> 以至于 B 接收不到任何数据</li>
+</ul>
+<h2 id="移动网络"><a href="#移动网络" class="headerlink" title="移动网络"></a>移动网络</h2><h3 id="移动性"><a href="#移动性" class="headerlink" title="移动性"></a>移动性</h3><p>如果在一个无线接入网内移动，但切换了切换了接入点（如无线路由器）那么：</p>
+<ul>
+<li>对于网络层，他没有移动</li>
+<li>对于数据链路层，移动了</li>
+</ul>
+<h3 id="保持IP-地址不变的重要性"><a href="#保持IP-地址不变的重要性" class="headerlink" title="保持IP 地址不变的重要性"></a>保持IP 地址不变的重要性</h3><p>电话号码本质上是网络层地址<br>只要网络层地址不变，对于应用，移动就是透明的，便于在移动中保持连接<br>对于 C&#x2F;S 应用（不包吃不间断连接），固定 IP 地址不是那么重要</p>
+<h3 id="基础设施"><a href="#基础设施" class="headerlink" title="基础设施"></a>基础设施</h3><ul>
+<li>归属网络home network：移动结点的永久居所</li>
+<li>归属代理home agent：归属网络中代表移动结点执行移动管理的实体</li>
+<li>外部网络（被访网络）：移动结点当前所在的非归属网络</li>
+<li>外部代理</li>
+<li>通信者：希望与该移动节点通信的实体</li>
+</ul>
+<h3 id="寻址"><a href="#寻址" class="headerlink" title="寻址"></a>寻址</h3><p>为了使用户移动对网络应用透明，希望移动结点保持地址不变<br>当移动结点位于外部网络，所有访问此结点的流量导向外部网络，两种方式保持网络层地址不变</p>
+<ul>
+<li>利用路由选择信息交换，实现向其他所有网络发出通告，告诉他们该移动结点在它网络中，并有一条路径可讲数据导向该移动结点永久地址<ul>
+<li>扩展性不好，不适合用于大型网络</li>
+</ul>
+</li>
+<li>将移动性从网络核心搬到网络边缘，由移动结点归属网实现，归属代理跟踪该接点的外部网络<ul>
+<li>外部代理给移动结点创建一个内网转交地址（外部地址） COA，移动结点与两个地址相关：永久地址和 COA</li>
+<li>外部代理告诉归属代理该接点拥有此 COA</li>
+<li>COA 通过外部代理将数据重新路由选择到移动结点</li>
+</ul>
+</li>
+</ul>
+<h3 id="路由选择"><a href="#路由选择" class="headerlink" title="路由选择"></a>路由选择</h3><h4 id="间接路由选择"><a href="#间接路由选择" class="headerlink" title="间接路由选择"></a>间接路由选择</h4><ol>
+<li>通信者将数据报寻址到移动结点永久地址，移动性对通信者透明</li>
+<li>归属代理截获这些数据报，封装成更大的数据报，通过移动节点的 COA，转发给外部代理</li>
+<li>外部代拆封成原始数据报，理转发给移动结点</li>
+<li>移动结点可以直接寻址到通信者<br>低效：因为三角路由选择</li>
 </ol>
-<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><ol>
-<li>删除队长每月必发列表中的错误积分项</li>
-<li>更改个人数据获取流程</li>
-<li>更改部分权限</li>
+<h4 id="直接路由选择"><a href="#直接路由选择" class="headerlink" title="直接路由选择"></a>直接路由选择</h4><p>增加复杂度，解决三角路由低效问题</p>
+<ul>
+<li>通信者所在网络有一个<strong>通信者代理</strong></li>
+<li>通信者代理向归属网络代理获取移动结点的 COA</li>
+<li>通信者代理通过<strong>隧道技术</strong>发往移动结点 COA<br>两个重要问题：</li>
+<li>需要移动用户定位协议，从归属代理获取移动结点 COA</li>
+<li>如果移动结点移动到另一个外部网络，更新通信者代理中的 COA，两种方法<ul>
+<li>建立新的协议告知通信者代理变化</li>
+<li>将移动结点的外部代理标识为<strong>锚外部代理</strong><ul>
+<li>移动结点在新的外部代理注册后，新外部代理向锚外部代理提供新 COA</li>
+<li>锚外部代理帮助转发后续数据报</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="无线局域网IEEE802-11"><a href="#无线局域网IEEE802-11" class="headerlink" title="无线局域网IEEE802.11"></a>无线局域网IEEE802.11</h2><p>使用 CSMA&#x2F;CA<br>具有降低传输速率以增加传输距离的能力<br>支持基础设施模式（配置了接入点）和自组织模式（端端直接互连）</p>
+<h3 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h3><ul>
+<li>基站：又称为接入点AP<ul>
+<li>安装时被分配一个服务集标识符 SSID</li>
+<li>分配一个信道号，每个 AP 只能选择一个信道</li>
+<li>以 IEEE802.11b 为例<ul>
+<li>共有 11 个信道</li>
+<li>两个信道由 4 个以上信道隔开才无重叠</li>
+<li>只有 1,6,11 三个非重叠信道</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基本服务集 BSS：包含一个或多个无线站点（如手机）和一个接入点的中央基站<br>每个无线站点和接入点具有 6 字节 MAC 地址，存储在适配器固件中，由 IEEE 管理，理论上全球唯一</li>
+</ul>
+<h4 id="无线主机发现AP"><a href="#无线主机发现AP" class="headerlink" title="无线主机发现AP"></a>无线主机发现AP</h4><ul>
+<li>每个 AP 周期性发送信标帧，包括其 SSID 和 MAC 地址</li>
+<li>用户扫描 11 个信道，获得信标帧后，选择其中一个 AP 关联</li>
+<li>关联后加入该 AP 所属子网</li>
+<li>向子网发送 DHCP 发现报文，获取子网中的 IP 地址，子网掩码，默认网关 IP 地址，本地域名服务器 IP 地址<br><strong>被动扫描：</strong> 无线主机扫描信道，监听<strong>信标帧</strong><br><strong>主动扫码：</strong> 主机向范围内所有 AP 发送<strong>探测帧</strong></li>
+</ul>
+<h3 id="IEEE-802-11的-MAC-协议"><a href="#IEEE-802-11的-MAC-协议" class="headerlink" title="IEEE 802.11的 MAC 协议"></a>IEEE 802.11的 MAC 协议</h3><p>采用带碰撞避免的 CSMA 即 CSMA&#x2F;CA<br>由于误比特率较高，使用链路层确认重传 ARQ 方案</p>
+<h4 id="信道预约"><a href="#信道预约" class="headerlink" title="信道预约"></a>信道预约</h4><ul>
+<li>发送数据前，先监听信道</li>
+<li>若空闲，等待一个分布式帧间间隔 DIFS 后，发送一个请求发送 RTS 控制帧</li>
+<li>目的站收到后如果介质空闲，则等待一个短帧间间隔 SIFS </li>
+<li>发送允许发送 CTS 控制帧给所有站点，其中包括通信持续时间（NAV）</li>
+<li>其他站点可以监听两者通信，持续期间不会发送</li>
+<li>发送站接收到CTS 后等待 SIFS，发送数据</li>
+<li>目的站接收完毕，等待 SIFS 发送 确认帧 ACK<br><strong>优点：</strong></li>
+<li>只在多个站点同时发送 RTS 时可能冲突，概率很低</li>
+<li>避免隐藏站点问题</li>
+</ul>
+<h2 id="蜂窝网络"><a href="#蜂窝网络" class="headerlink" title="蜂窝网络"></a>蜂窝网络</h2><p>IEEE802.11 覆盖范围有限，由蜂窝网络增大覆盖面积<br>便于随时随地接入因特网</p>
+<h3 id="体系结构-1"><a href="#体系结构-1" class="headerlink" title="体系结构"></a>体系结构</h3><p>第一代1G：为语音通话设计，模拟FDMA系统，已被淘汰<br>2G：</p>
+<ul>
+<li>最具代表性的是 GSM</li>
+<li>使用 200Hz 带宽</li>
+<li>通过 GPRS 和 EDGE 等技术，接入互联网<br><strong>GSM蜂窝：</strong></li>
+<li>被分为多个小区 cell，即地理覆盖区域</li>
+<li>每个小区包含一个收发基站 BTS，负责向位于校区内部的移动站点发送或接收信号</li>
+<li>使用 FDMA&#x2F;TDMA 组合技术：<ul>
+<li>信道被划分为F 个子频带</li>
+<li>每个子频带，时间被划分为T 个复用帧的时隙</li>
+<li>该信道能支持 F*T 个并发呼叫</li>
+</ul>
+</li>
+<li>一个基站控制器 BSC 服务几十个 BTS<ul>
+<li>为用户分配 BTS 信道</li>
+<li>寻呼：找出移动用户所在 cell</li>
+<li>移动用户切换</li>
+</ul>
+</li>
+<li>GSM基站系统 BSS 由 STS 和 BSC 构成</li>
+<li>通过移动交换中心 MSC 管理多个 BSC</li>
+<li>蜂窝服务提供商由若干个 MSC 构成</li>
+</ul>
+<h4 id="GSM-的移动性管理"><a href="#GSM-的移动性管理" class="headerlink" title="GSM 的移动性管理"></a>GSM 的移动性管理</h4><p>一种间接路由选择方法管理移动性：</p>
+<ul>
+<li>用户向某个蜂窝网提供商订购了服务</li>
+<li>该蜂窝网成了该用户归属网络<ul>
+<li>归属网络维护一个归属位置注册器 HLR，包括每个用户永久电话号码和位置信息</li>
+<li>当一个呼叫定位到用户，将与归属网络 MSC 联系</li>
+</ul>
+</li>
+<li>用户当前所在网络为被访网络<ul>
+<li>维护一个访问者位置注册器 VLR，记录服务网络中每一个用户</li>
+<li>用于协调到达或离开用户的呼叫建立</li>
+</ul>
+</li>
+</ul>
+<h5 id="呼叫过程"><a href="#呼叫过程" class="headerlink" title="呼叫过程"></a>呼叫过程</h5><ol>
+<li>通信者拨打电话号码后，通过前几位，判别归属网络，到达归属 MSC</li>
+<li>MSC 查询 HLR 确定用户位置，返回临时漫游号码 MSRN（当用户进入被访网络后，给用户临时分配）</li>
+<li>如果 HLR 不具有漫游号码，访问 VLR 地址，获取漫游号码</li>
+<li>确定漫游号码后，归属 MSC 向被访网络 MSC 呼叫</li>
+<li>被访网络 MSC 通过为用户提供服务的基站呼叫用户<br>切换：用户切换为其提供服务的基站</li>
 </ol>
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><ol>
-<li>部分情况已读无法删除</li>
-<li>部分情况交路表无法自动更新</li>
-<li>主任用户查看不到已发流程</li>
-<li>部分情况无法订阅通知</li>
-<li>输入拒绝原因界面点击取消也继续执行程序</li>
-</ol>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
-<li>减少工程师用户需要获取的数据量,避免卡顿</li>
-<li>增加错误可选积分项出现时的禁止弹窗</li>
-<li></li>
-</ol>
+<h3 id="3G"><a href="#3G" class="headerlink" title="3G"></a>3G</h3><p>由国际电信联盟 ITU 提出<br>被分为 CDMA 和 TDMA 两大类<br>CDMA 占主导</p>
+<h3 id="4G"><a href="#4G" class="headerlink" title="4G"></a>4G</h3><p>更高速率<br>由 3GPP 组织推出LTE</p>
+<h3 id="5G"><a href="#5G" class="headerlink" title="5G"></a>5G</h3><p>由三星提出<br>有望共用一个标准</p>
+<h2 id="移动IP网络"><a href="#移动IP网络" class="headerlink" title="移动IP网络"></a>移动IP网络</h2><p>由三部分组成：</p>
+<ul>
+<li>代理发现</li>
+<li>向归属代理注册</li>
+<li>数据报的间接路由选择</li>
+</ul>
+<h3 id="代理发现"><a href="#代理发现" class="headerlink" title="代理发现"></a>代理发现</h3><p>当某移动 IP 站点到达新网络，必须让外部代理过归属代理知道其身份，通过新的网络地址，使移动结点知道自己进入一个新的外部网络<br>两种方法实现：</p>
+<ul>
+<li>代理通告：<ul>
+<li>代理周期性得广播一个路由器发现 ICMP 报文，其中包含代理的 IP 地址</li>
+</ul>
+</li>
+<li>代理请求：<ul>
+<li>移动结点广播一个代理请求ICMP报文</li>
+<li>收到该请求的代理直接向该接点单播一个含有 COA 的代理通告</li>
+</ul>
+</li>
+</ul>
+<h3 id="向归属代理注册"><a href="#向归属代理注册" class="headerlink" title="向归属代理注册"></a>向归属代理注册</h3><p>注册和注销 COA 的协议<br>移动结点收到代理通告后，发出注册请求，到达外部代理和归属代理<br>归属代理收到后发出注册应答，到达外部代理和移动代理</p>
+<h2 id="其他典型无线网络"><a href="#其他典型无线网络" class="headerlink" title="其他典型无线网络"></a>其他典型无线网络</h2><h3 id="全球微波互联接入WiMax"><a href="#全球微波互联接入WiMax" class="headerlink" title="全球微波互联接入WiMax"></a>全球微波互联接入WiMax</h3><p>IEEE802.16<br>媲美有线网，一个信号塔覆盖数千米，传输距离更远，速度更快<br>不能实现用户移动过程中无缝切换，服务质量差，组网性能差</p>
+<h3 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h3><p>IEEE802.15.1<br>小范围，低功率，低成本</p>
+<h3 id="ZigBee"><a href="#ZigBee" class="headerlink" title="ZigBee"></a>ZigBee</h3><p>IEEE802.15.4<br>较之蓝牙，低功率，低速率，低工作周期<br>往往用于智能传感器设备</p>
  
       <!-- reward -->
       
@@ -214,12 +342,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://help.chengbox.vip/V1.3.16/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://help.chengbox.vip/%E7%AC%AC7%E7%AB%A0%20%E6%97%A0%E7%BA%BF%E4%B8%8E%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/V1-3/" rel="tag">V1.3</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/" rel="tag">开发笔记</a></li></ul>
 
     </footer>
   </div>
@@ -227,19 +355,19 @@
    
   <nav class="article-nav">
     
-      <a href="/%E7%AC%AC8%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+      <a href="/%E7%AC%AC6%E7%AB%A0%20%E7%89%A9%E7%90%86%E5%B1%82/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            第八章 网络安全基础
+            第六章 物理层
           
         </div>
       </a>
     
     
-      <a href="/%E4%B8%8A%E4%BC%A0%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E7%A7%AF%E5%88%86%E6%A8%A1%E6%9D%BF/" class="article-nav-link">
+      <a href="/%E7%AC%AC8%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">上传文档生成积分模板</div>
+        <div class="article-nav-title">第八章 网络安全基础</div>
       </a>
     
   </nav>

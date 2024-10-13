@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>第四章 网络层 |  Cheng</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="Cheng" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-第4章 网络层"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  第四章 网络层
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/%E7%AC%AC4%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%B1%82/" class="article-date">
+  <time datetime="2024-10-13T12:22:20.000Z" itemprop="datePublished">2024-10-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a> / <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">4.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">16 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>关注的是如何把网络层数据报送达目的主机<br>两个重要功能：</p>
+<ul>
+<li>转发：路由器都有路由转发表，使用网络层首部地址字段作为键，查表确定将分组转发到哪条链路</li>
+<li>路由选择：路由器运行路由协议，在网络上收集计算路由需要的信息，计算路由后存储到路由转发表<br>另一个重要功能：<br>连接建立：从源主机到目的主机的一条路径，每个经过的网络设备都要参与<br>根据是否在网络层提供连接服务分为：</li>
+<li>虚电路VC：仅在网络层提供连接服务</li>
+<li>数据报网络：仅在网络层提供无连接服务</li>
+</ul>
+<h2 id="数据报网络"><a href="#数据报网络" class="headerlink" title="数据报网络"></a>数据报网络</h2><p>按目的主机地址进行路由选择的网络<br>如：因特网<br>无连接<br>每个分组作为独立的数据报进行传送<br>每个数据报带有源和目的主机地址<br>发送与接收顺序不一定相同，路径不一定一致，接受方需要排序生成原始报文<br>出现差错由传输层协议，即端系统解决，只维护转发信息</p>
+<h2 id="虚电路网络"><a href="#虚电路网络" class="headerlink" title="虚电路网络"></a>虚电路网络</h2><p>为网络层逻辑连接，并不需要分配独立资源<br>仅在建立VC时需要路由选择<br>虚电路分组通过某链路时占用全部带宽<br>分组不包含源和目的地址，仅含有一个VCID<br>虚电路标识VCID：网络设备根据分组携带的VCID判断所属的虚电路，从而决策转发<br>往往用于数据通信网络<br>按序到达接收端<br>为避免交换大量信息，与缩短VCID长度，同一条VC在路径上的各个链路有不同VCID，因此网络设备需要记录VCID间接续关系<br>根据实用时间：</p>
+<ul>
+<li>永久型虚电路：建立时间可忽略</li>
+<li>交换型虚电路：临时建立，通信结束立即拆除<br>与数据报网络主要差别：<br>将顺序控制，差错控制和流量控制等功能交由网络来完成还是端系统完成</li>
+</ul>
+<h2 id="异构网络互连"><a href="#异构网络互连" class="headerlink" title="异构网络互连"></a>异构网络互连</h2><p>异构网络：通信技术与运行协议不同的网络<br>实现异构网络互连：</p>
+<ul>
+<li>协议转换：利用中间设备实现异构网络间的数据分组转换与转发，可以在物理层外任一层实现</li>
+<li>构建虚拟互联网络：在现有异构网络的基础上建立同构虚拟互联网络，只封装，提取和转发虚拟互联网络分组<br>IP网络是虚拟互联网，Internet是利用IP的最大互联网络，由网络层实现网络互连<br>隧道技术：解决同构网络互连<br>网络互联设备：</li>
+<li>物理层：中继器，集线器</li>
+<li>数据链路层：交换机，网桥</li>
+<li>网络层：路由器</li>
+<li>网络层以上：网关</li>
+</ul>
+<h2 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h2><h3 id="分布式路由查询："><a href="#分布式路由查询：" class="headerlink" title="分布式路由查询："></a>分布式路由查询：</h3><p>每个输入端口都存有转发表副本</p>
+<h3 id="输入端口："><a href="#输入端口：" class="headerlink" title="输入端口："></a>输入端口：</h3><p>有缓存排队功能，从物理端口接收到的信号，还原成数据链路层帧，提取IP数据报，根据IP地址检索路由表，决定交换到哪个输出端口<br>交换结构：将输入端口的IP数据报交换到指定输出端口</p>
+<ul>
+<li>基于内存交换：性能和价格最低</li>
+<li>基于总线交换：同时一个分组通过，其他等待</li>
+<li>基于网络交换：性能和价格最高</li>
+</ul>
+<h3 id="输出端口"><a href="#输出端口" class="headerlink" title="输出端口"></a>输出端口</h3><ul>
+<li>有缓存排队功能，通常先到先服务FCFS</li>
+<li>从队列取出进行数据链路层帧封装，通过物理线路发送</li>
+<li>排队到达一定大小，其后到达分组被丢弃</li>
+</ul>
+<h3 id="路由处理器"><a href="#路由处理器" class="headerlink" title="路由处理器"></a>路由处理器</h3><p>执行路由器各种指令</p>
+<ul>
+<li>检索路由表过程如果有一条路由项匹配成功：选择该接口转发</li>
+<li>没有匹配项：通过默认路由接口转发</li>
+<li>多个匹配项：最长前缀匹配选择</li>
+</ul>
+<h2 id="网络层拥塞控制"><a href="#网络层拥塞控制" class="headerlink" title="网络层拥塞控制"></a>网络层拥塞控制</h2><h3 id="网络拥塞"><a href="#网络拥塞" class="headerlink" title="网络拥塞"></a>网络拥塞</h3><p>需要传输的总量大于传输能力，导致缓冲区满，无法接收到新分组，即发生拥塞<br>网络负载在膝点附近，吞吐量和分组平均延迟达到理想平衡，网络使用效率最高<br>在网络层，拥塞控制同样是通过限制端系统向网络发送数据的速率来实现</p>
+<ul>
+<li>拥塞预防：增加网络资源</li>
+<li>拥塞消除：减小网络负载<br>流量控制与拥塞控制：</li>
+<li>流量控制：<ul>
+<li>主要考虑：接收端的数据处理能力</li>
+<li>目的：使发送端发送速率低于接收端接收能力</li>
+</ul>
+</li>
+<li>拥塞控制：<ul>
+<li>主要考虑：端系统之间的网络环境</li>
+<li>目的：使网络负载低于网络传送能力</li>
+</ul>
+</li>
+</ul>
+<h3 id="常用的拥塞控制措施"><a href="#常用的拥塞控制措施" class="headerlink" title="常用的拥塞控制措施"></a>常用的拥塞控制措施</h3><h4 id="流量感知路由"><a href="#流量感知路由" class="headerlink" title="流量感知路由"></a>流量感知路由</h4><p>拥塞预防<br>网络被抽象成无向带权图<br>根据权值，将网络流量引导到不同链路<br>权值：以带宽，延迟，负载为变量的函数<br>频繁切换引导到的链路会产生振荡<br>解决振荡：</p>
+<ul>
+<li>多路径路由：流量分散到多个链路上，保证负载不会太大，即减少切换</li>
+<li>缓慢转移流量</li>
+</ul>
+<h4 id="准入控制"><a href="#准入控制" class="headerlink" title="准入控制"></a>准入控制</h4><p>广泛用于VC的拥塞预防<br>基本思想：如果建立新虚电路会导致拥塞，则拒绝<br>通过平均流量和瞬时流量判断是否有能力接受新VC，比如10Mbit&#x2F;s链路，按瞬时流量，只能建立1Mbit&#x2F;sVC，但这样会导致带宽利用率低，因此需要考虑平均流量</p>
+<h4 id="流量调节"><a href="#流量调节" class="headerlink" title="流量调节"></a>流量调节</h4><p>通过调整发送方发送速率来消除拥塞<br>即某个网络结点感知到发生拥塞时，通知上游网络结点降低发送效率<br>需要解决的问题：</p>
+<ul>
+<li>如何感知拥塞：通过过去一段时间的平均排队延迟与瞬时排队延迟加权组合</li>
+<li>如何把拥塞信息通知到上游结点：<ul>
+<li>抑制分组：将某分组源地址作为目的地址，发送抑制分组，同时修改其一个标志位，避免被传输过程中，再次选择来发送抑制分组</li>
+<li>背压：由于抑制分组传输时间可能较长，让抑制分组在每一跳都发挥抑制作用，直到源结点，拥塞缓解更快，但是需要中间设备有更大缓冲区</li>
+</ul>
+</li>
+</ul>
+<h4 id="负载脱落"><a href="#负载脱落" class="headerlink" title="负载脱落"></a>负载脱落</h4><p>清除拥塞<br>有选择的主动丢弃一些数据报<br>应该丢掉哪些：<br>序号较小的数据报更有价值，可以帮助发送窗口滑动<br>在视频应用丢弃序号更大的数据报</p>
+<h2 id="Internet网络层"><a href="#Internet网络层" class="headerlink" title="Internet网络层"></a>Internet网络层</h2><p>一种数据报网络<br>主要包括</p>
+<ul>
+<li>网际协议IP</li>
+<li>路由协议</li>
+<li>互联网控制报文协议ICMP</li>
+</ul>
+<h3 id="IPv4"><a href="#IPv4" class="headerlink" title="IPv4"></a>IPv4</h3><p>最核心</p>
+<h4 id="IP数据报分片"><a href="#IP数据报分片" class="headerlink" title="IP数据报分片"></a>IP数据报分片</h4><p>当路由器要将一个IP数据报转发至某个输出端口，而数据报总长超过链路的最大传输单元MTU，路由器将根据分片标志DF确定如何处理：</p>
+<ul>
+<li>DF&#x3D;0：进行分片</li>
+<li>DF&#x3D;1：丢弃<br>路由器只负责分片，由目的主机的IP重组<br>重组过程：</li>
+</ul>
+<ol>
+<li>根据分片首部的标识字判断是否属于同一IP数据报</li>
+<li>通过分片字段MF&#x3D;1判断不是最后一个分片</li>
+<li>根据分片的偏移字段判断先后顺序</li>
+<li>结合数据报长度字段，判断是否缺少分片<br>相关计算公式见P146</li>
+</ol>
+<h3 id="IPv4编址"><a href="#IPv4编址" class="headerlink" title="IPv4编址"></a>IPv4编址</h3><p>一台主机可能有多个IP地址，如内外网<br>路由器每个接口都有一个IP地址</p>
+<h4 id="IP子网"><a href="#IP子网" class="headerlink" title="IP子网"></a>IP子网</h4><p>早期为定长前缀，称为分类地址<br>IP地址&#x2F;24<br>其中&#x2F;24为子网掩码<br>前24位为前缀Prefix或网络部分NetID，描述归属的网络<br>另一部分为后缀Postfix或主机部分HostID，表示网络内唯一地址<br>现在主流为无类地址，前缀长度可变</p>
+<h4 id="分类地址"><a href="#分类地址" class="headerlink" title="分类地址"></a>分类地址</h4><p>ABC分配给主机，路由器<br>D作为组播地址<br>E地址保留<br>ABC占总量87.5%</p>
+<ul>
+<li>A类：<ul>
+<li>前缀8位：0xxxxxxx</li>
+<li>首字节：0-127</li>
+<li>总共有2^7个A类网络</li>
+<li>IP地址总数：2^24</li>
+</ul>
+</li>
+<li>B类：<ul>
+<li>前缀16位：10（后跟14个x）</li>
+<li>首字节：128-191</li>
+<li>总共有2^14</li>
+<li>IP地址总数：2^16</li>
+</ul>
+</li>
+<li>C类：<ul>
+<li>前缀24位：110（后跟21个x）</li>
+<li>首字节：192-223</li>
+<li>总共有2^21</li>
+<li>IP地址总数：2^8</li>
+</ul>
+</li>
+<li>D类：<ul>
+<li>1110（后跟28个x）</li>
+</ul>
+</li>
+<li>E类：<ul>
+<li>1111（后跟28个x）</li>
+</ul>
+</li>
+</ul>
+<h4 id="特殊地址"><a href="#特殊地址" class="headerlink" title="特殊地址"></a>特殊地址</h4><ul>
+<li>本地主机地址：<ul>
+<li>0.0.0.0&#x2F;32：本网范围内表示本机</li>
+<li>0.0.0.0&#x2F;0：用于路由表表示默认路由</li>
+</ul>
+</li>
+<li>有限广播地址：<ul>
+<li>255.255.255.255&#x2F;32：用于在子网中广播信息</li>
+</ul>
+</li>
+<li>回送地址：<ul>
+<li>127.0.0.0&#x2F;8：用于发送给源主机</li>
+</ul>
+</li>
+<li>内网地址：<ul>
+<li>A类：10.0.0.0&#x2F;8</li>
+<li>B：172.16.0.0&#x2F;12</li>
+<li>C：192.128.0.0&#x2F;16</li>
+</ul>
+</li>
+</ul>
+<h4 id="无类地址CIDR"><a href="#无类地址CIDR" class="headerlink" title="无类地址CIDR"></a>无类地址CIDR</h4><p>不存在网络类别<br>a.b.c.d&#x2F;x</p>
+<h4 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h4><p>前缀越长，子网越小</p>
+<ul>
+<li>超网化：将较小子网，减少前缀，合并成较大的子网</li>
+<li>子网化：超网化逆过程<br>子网掩码：32位，前缀长度的位数，全为1，其他位全为0</li>
+<li>主机所在的子网地址：主机地址与子网掩码按位与运算</li>
+<li>子网内广播地址：主机地址与子网掩码按位或运算</li>
+<li>注意：可使用的ip地址数量-2，即广播地址与子网地址</li>
+<li>例题见P151.152</li>
+</ul>
+<h4 id="路由聚合"><a href="#路由聚合" class="headerlink" title="路由聚合"></a>路由聚合</h4><p>路由器转发表原理：<br>将到达的IP数据报的目的IP地址与路由表的每项的子网掩码按位与运算，获得主机地址，再与路由表项的网络地址进行匹配<br>如果匹配成功的表项超过一条，则选择前缀最长的那个匹配项，即最长前缀匹配优先原则<br>如果没有匹配，则在默认路径转发<br>路由聚合：<br>将具有相同下一跳地址与接口，并且在一个大子网的多个路由表项合为一个<br>例题见P154</p>
+<h4 id="动态主机配置协议DHCP"><a href="#动态主机配置协议DHCP" class="headerlink" title="动态主机配置协议DHCP"></a>动态主机配置协议DHCP</h4><p>组织被分配到网络地址块后，通过动态主机配置协议DHCP给组织内主机和路由器接口动态分配IP地址<br>DHCP在应用层实现，传输层UDP<br>工作流程：</p>
+<ol>
+<li>运行DHCP服务器，端口号67</li>
+<li>新接入的主机运行DHCP客户，端口号68</li>
+<li>客户向67端口发送DHCP发现Discover报文，以找到DHCP服务器<ul>
+<li>目的IP地址255.255.255.255</li>
+<li>源IP地址0.0.0.0</li>
+</ul>
+</li>
+<li>服务器收到DHCP发现报文后，发送DHCP提供Offer报文<ul>
+<li>目的IP同上</li>
+<li>包含了分配的<ul>
+<li>ip地址</li>
+<li>子网掩码</li>
+<li>默认网关</li>
+<li>本地域名服务器ip地址</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>主机收到提供报文后，发送DHCP请求Request报文<ul>
+<li>目的ip同上</li>
+<li>可能会收到多个服务器的提供报文，选择其中一个作为自己ip地址</li>
+<li>广播通知所有服务器，告知使用或未使用</li>
+</ul>
+</li>
+<li>被选定的服务器发送DHCP确认ACK</li>
+</ol>
+<h3 id="网络地址转换NAT"><a href="#网络地址转换NAT" class="headerlink" title="网络地址转换NAT"></a>网络地址转换NAT</h3><p>用于缓解IPv4地址耗尽<br>运行在在私有网络的边缘路由器<br>同时连接内部私有网络和公共互联网<br>从私有网络出去的数据报会记录替换关系在NAT转换表<br>通过查询NAT转换表，替换进私有网络的IP数据报的IP地址与端口号，实现私有网络中的主机与公共网络通信</p>
+<h4 id="NAT穿透技术"><a href="#NAT穿透技术" class="headerlink" title="NAT穿透技术"></a>NAT穿透技术</h4><p>由于NAT不能接受外网主机主动发起的通信，即对内网屏蔽<br>引入NAT穿透技术：<br>在NAT转换表建立内网到外网的映射，使内网服务以公网地址的身份暴露出去<br>如何建立：</p>
+<ul>
+<li>静态NAT配置：人工配置</li>
+<li>动态：内网主机主动发现NAT，请求NAT完成配置，比较典型的是UPnP协议</li>
+</ul>
+<h3 id="互联网控制报文协议ICMP"><a href="#互联网控制报文协议ICMP" class="headerlink" title="互联网控制报文协议ICMP"></a>互联网控制报文协议ICMP</h3><p>IP的一部分<br>用于在主机和路由器间实现差错信息报告与可达性（ping）等网络探询<br>也就是两类报文类型<br>包括两个字段</p>
+<ul>
+<li>type</li>
+<li>code</li>
+</ul>
+<h3 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h3><p>去掉IPv4首部分片字段，经过MTU较小链路直接丢弃，并给源主机发送ICMP反馈分组太大</p>
+<h4 id="IPv6地址"><a href="#IPv6地址" class="headerlink" title="IPv6地址"></a>IPv6地址</h4><ul>
+<li>首部40字节</li>
+<li>地址长度128位，由8组4位16进制数组成</li>
+<li>连续多组全0用::代替，且只能代替一次</li>
+<li>另一种形式：低32位写成IPv4形式</li>
+<li>分为三种<ul>
+<li>单播地址</li>
+<li>组播：仅能作为目的地址，给一个组内广播</li>
+<li>任播：同上，但只能给组内某个</li>
+</ul>
+</li>
+</ul>
+<h4 id="IPv4到IPv6迁移"><a href="#IPv4到IPv6迁移" class="headerlink" title="IPv4到IPv6迁移"></a>IPv4到IPv6迁移</h4><ul>
+<li>双协议栈：<ul>
+<li>结点同时支持双协议</li>
+<li>通过DNS查询感知另一个结点提供什么服务</li>
+</ul>
+</li>
+<li>隧道：<ul>
+<li>解决路径上有不同这种，结点，转换协议信息丢失</li>
+<li>如两头IPv6，则将整个IPv6数据报作为负载放入IPv4数据报中</li>
+<li>该IPv4数据报源与目的地址为隧道头尾结点地址</li>
+</ul>
+</li>
+</ul>
+<h2 id="路由算法与路由协议"><a href="#路由算法与路由协议" class="headerlink" title="路由算法与路由协议"></a>路由算法与路由协议</h2><p>默认路由器：主机通过局域网直接相连的路由器<br>默认网关：默认路由器对应该主机的接口<br>将网络抽象为带权无向图G&#x3D;(N,E)</p>
+<ul>
+<li>N：结点的集合</li>
+<li>E：边的集合</li>
+<li>权值：链路的费用或距离<br>结点x,y之间的权值用c(x,y)表示，之间不存在边，则权值为♾️，如a-b-c则c(a,c)&#x3D;♾️<br>其路径为｛a,b,c｝<br>最佳路由即最短路径<br>路由选择算法分为：</li>
+<li>全局式路由选择算法：每个路由器在计算路由时，获取完整网络拓扑信息，比如LS算法</li>
+<li>分布式路由选择算法：结点只需获取与其相连的链路费用，以及邻结点告知的到达其他结点最短距离，比如DV算法</li>
+</ul>
+<h3 id="链路状态路由选择算法LS"><a href="#链路状态路由选择算法LS" class="headerlink" title="链路状态路由选择算法LS"></a>链路状态路由选择算法LS</h3><p>周期性收到其他路由器广播的链路状态分组，并存储进链路状态数据库，构建网络拓扑图<br>求最短路径经典算法Dijkstra算法：</p>
+<ul>
+<li>D(v)：源结点到目的结点v的当前路径距离</li>
+<li>P(v)：路径上v的除源结点外前序结点</li>
+<li>S：初始只有源结点，存储从源结点到该结点的最短路径结点集合<br>最短路径即求最小D(v)的结点集合<br>例题见P163</li>
+</ul>
+<h3 id="距离向量路由选择算法DV"><a href="#距离向量路由选择算法DV" class="headerlink" title="距离向量路由选择算法DV"></a>距离向量路由选择算法DV</h3><p>每个结点测得与所有邻居结点的距离，并与其到达每个目标结点的最短距离，以距离向量的形式交换给所有邻居结点<br>每个结点以此计算并更新到每个目标结点的最短距离，并将新的距离向量通告给所有邻居，直到不再改变<br>每个路由器异步计算<br>算法的基础是B-F方程：</p>
+<ul>
+<li>令dx(y)为x到y路径的最低费用</li>
+<li>令v为x的邻居</li>
+<li>则dx(y)等于最小的c(x,v)+dv(y)</li>
+<li>Dx(y)：x的距离向量，结点x估计自己到y的最短距离</li>
+<li>每次收到距离变化与距离向量，会重新计算，最后收敛于dx(y)</li>
+<li>DV初始化距离向量</li>
+<li>例题见P166<br>无穷计数问题：来回跑<br>解决方案：</li>
+<li>毒性逆转：通过给v发送距离向量是，申明自己与目标结点距离♾️解决</li>
+<li>定义最大跳数：超过则距离向量为无穷大</li>
+</ul>
+<h3 id="层次化路由选择"><a href="#层次化路由选择" class="headerlink" title="层次化路由选择"></a>层次化路由选择</h3><p>由于LS和DV算法大量交换网络信息，降低带宽，而且收敛慢，对于大规模网络不可用<br>层次化路由选择：</p>
+<ul>
+<li>将互联网划分成多个自治系统AS</li>
+<li>每个AS运行相同的路由协议和选择算法<br>网关路由器：</li>
+<li>与其他AS互连的路由器</li>
+<li>其上运行自治系统间路由选择协议，用于交换可达性信息，如该AS可到哪些子网<br>AS内部只用确定到达网关路由器的最短路径<br>即分为两层：</li>
+<li>自治系统内路由选择</li>
+<li>自治系统间路由选择</li>
+</ul>
+<h3 id="Internet路由选择协议"><a href="#Internet路由选择协议" class="headerlink" title="Internet路由选择协议"></a>Internet路由选择协议</h3><p>层次化路由选择</p>
+<ul>
+<li>内部网关协议IGP<ul>
+<li>路由信息协议RIP</li>
+<li>开放最短路径优先协议OSPF</li>
+</ul>
+</li>
+<li>外部网关协议EGP<ul>
+<li>边界网关协议BGP</li>
+</ul>
+</li>
+</ul>
+<h4 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h4><p>应用于较小的AS<br>在 UDP 报文段中传输<br>基于DV算法<br>度量路径采用跳数<br>费用：源路由器和目的子网间经过的子网数，即路由器数量，也就是跳数<br>只能用于内径不超过15的AS内使用，即一个子网到另一个最多不超过15跳，16表示无穷大<br>最多25个子网<br>每个路由器都有转发表，转发表对比 DV 添加了下一跳信息 避免了无穷计数现象<br>会将转发表通过RIP 通告的形式交给所有邻居，邻居根据收到的 RIP通告更新转发表<br>例题见 P169</p>
+<h4 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h4><p>应用于较大的AS<br>基于 LS 算法，即 Dijkstra 算法求最短路径<br>在 IP 数据报中传输<br>OSPF 权值可以是跳数也能是带宽<br>每台路由器周期性，或在链路费用发生变化时，向 AS 内所有路由器广播链路状态分组<br>一个 OSPF 自治系统可以配置成多个区域，各自独立运行 OSPF 算法<br>即路由器分为：</p>
+<ul>
+<li>区域边界路由器</li>
+<li>主干路由器</li>
+<li>AS 边界路由器</li>
+</ul>
+<h4 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h4><p>功能：</p>
+<ul>
+<li>从相邻AS获取可达性信息</li>
+<li>向AS内部所有路由器传播某子网可达性信息</li>
+<li>基于上面，决定到达某子网最佳理由<br>由应用层实现<br>传输层 TCP<br>运行于网关路由器<br>BGP会话：过 179 端口连接另一路由器，即 BGP 对等方，并发送 BGP 报文<br>AS 内部为 iBGP 会话，外部为 eBGP 会话<br>重要属性：</li>
+<li>ASN：每个 AS 全局唯一的自治系统号</li>
+<li>AS-PATH：到达指定前缀需要经过的 AS 路径</li>
+<li>NEXT-HOP：开始 AS-PATH 的第一跳<br>规则：</li>
+</ul>
+<ol>
+<li>查看 AS 网络管理员设置本地偏好值</li>
+<li>若相同，选最短 AS-PATH</li>
+<li>若相同，选最近 NEXT-HOP</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://help.chengbox.vip/%E7%AC%AC4%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%B1%82/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/" rel="tag">开发笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/%E7%AC%AC3%E7%AB%A0%20%E4%BC%A0%E8%BE%93%E5%B1%82/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            第三章 传输层
+          
+        </div>
+      </a>
+    
+    
+      <a href="/%E7%AC%AC5%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E4%B8%8E%E5%B1%80%E5%9F%9F%E7%BD%91/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">第五章 数据链路层与局域网</div>
+      </a>
+    
+  </nav>
+
+  
+   
+    
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023-2024
+        <i class="ri-heart-fill heart_icon"></i> Lychen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+        <li>
+          <a href="https://beian.miit.gov.cn/" target="_black" rel="nofollow">鄂ICP备2024033513号-2</a>
+        </li>
+        
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Cheng"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
